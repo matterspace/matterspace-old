@@ -11,6 +11,7 @@ export function createFromGoogleProfile(db, profile) {
     if (!profile) throw Error('\'profile\' should be truthy');
 
     let user = {
+        name: safeRead((p) => p.emails[0].value, profile, null), // ToDo: fix this. There must be a way to auto-generate user-names on SSO
         display_name: profile.displayName,
         photo_url: safeRead((p) => p.photos[0].value, profile, null),
         email: safeRead((p) => p.emails[0].value, profile, null),

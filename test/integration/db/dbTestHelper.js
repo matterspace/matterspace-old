@@ -16,7 +16,11 @@ export function assertCanSaveFindAndDelete(db, entityName, originalObject) {
         .then((obj) => {
             for (var property in originalObject) {
                 if (originalObject.hasOwnProperty(property)) {
-                    assert.strictEqual(obj[property], originalObject[property]);
+                    //  check for edge-cases. Dates for instance, can't be normally compared because new Date(...) is always different than new Date(...)
+                    if (originalObject[property] instanceof Date)
+                        assert.equal(obj[property].getTime(), originalObject[property].getTime());
+                    else
+                        assert.equal(obj[property], originalObject[property]);
                 }
             }
             return obj

@@ -17,6 +17,10 @@ export function buildMassive(connectionString) {
 
     // promisefies the main instance and all entities declared in the entities array
     Promise.promisifyAll(massiveInstance);
-    entities.forEach(e => Promise.promisifyAll(massiveInstance[e]));
+    entities.forEach(e => {
+        if(!massiveInstance[e])
+            throw `You are trying to promisify '${e}' but it doesn't exist on the database`;
+        Promise.promisifyAll(massiveInstance[e])
+    });
     return massiveInstance;
 }

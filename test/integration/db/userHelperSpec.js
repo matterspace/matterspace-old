@@ -31,6 +31,7 @@ describe('userHelper', function () {
     it('updateFromGoogleProfile', done => {
         db.user.saveAsync({
             email: 'andrerpena@gmail.com',
+            name: 'andrerpena',
             display_name: 'André Pena'
         })
             .then(u => updateFromGoogleProfile(db, u, googleProfileSample))
@@ -61,6 +62,7 @@ describe('userHelper', function () {
         it('when a user with the same e-mail address already existed', done => {
             db.user.saveAsync({
                 email: 'andrerpena@gmail.com',
+                name: 'andrerpena',
                 display_name: 'André Pena'
             })
                 .then(() => findOrCreateFromGoogleProfile(db, googleProfileSample))

@@ -3,8 +3,8 @@ if(process.env.NODE_ENV != 'development') throw Error('Cannot read test config o
 
 // Postgres settings
 const POSTGRES_USER = 'postgres';
-const POSTGRES_PASSWORD = '@Radiscope';
-const POSTGRES_DATABASE = 'radiscope_tests';
+const POSTGRES_PASSWORD = '@Matterspace';
+const POSTGRES_DATABASE = 'matterspace_tests';
 const POSTGRES_HOST = 'localhost';
 const POSTGRES_PORT = 5432;
 

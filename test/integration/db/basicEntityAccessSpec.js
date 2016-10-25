@@ -12,6 +12,7 @@ describe('basicEntitiAccess', function () {
     it('can save, find and delete users', done => {
         let user = {
             email: 'andrerpena@gmail.com',
+            name: 'andrerpena',
             display_name: 'André Pena'
         };
         assertCanSaveFindAndDelete(db, 'user', user)
@@ -19,18 +20,20 @@ describe('basicEntitiAccess', function () {
             .catch(done);
     });
 
-    it('can save, find and delete tasks', done => {
+    it('can save, find and delete threads', done => {
         // we need a user for the task
         db.user.saveAsync({
             email: 'andrerpena@gmail.com',
+            name: 'andrerpena',
             display_name: 'André Pena'
         })
             .then((user) => {
-                let task = {
-                    user_id: user.id,
-                    text: 'Do something coooool!'
+                let thread = {
+                    created_by: user.id,
+                    created_at: new Date(1995, 11, 17),
+                    text_md: 'Do something coooool!'
                 };
-                assertCanSaveFindAndDelete(db, 'task', task, done)
+                assertCanSaveFindAndDelete(db, 'thread', thread, done)
                     .then(() => done())
                     .catch(done);
             });
