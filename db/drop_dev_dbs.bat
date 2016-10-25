@@ -1,7 +1,7 @@
-SET PGPASSWORD=@Radiscope
+SET PGPASSWORD=@Matterspace
 
-REM drops the radiscope dev db
-dropdb -U postgres radiscope
+REM drops the matterspace dev db
+dropdb -U postgres matterspace
 
-REM drops the radiscope_tests dev db
-dropdb -U postgres radiscope_tests
+REM drops the matterspace_tests dev db
+dropdb -U postgres matterspace_tests
