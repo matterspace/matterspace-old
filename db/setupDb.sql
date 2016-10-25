@@ -73,7 +73,7 @@ ALTER SEQUENCE product_id_seq OWNED BY product.id;
 
 CREATE TABLE reply (
     id integer NOT NULL,
-    created_by integer NOT NULL,
+    user_id integer NOT NULL,
     created_at timestamp without time zone NOT NULL,
     text_md text NOT NULL,
     thread_id integer
@@ -218,18 +218,27 @@ ALTER SEQUENCE user_products_id_seq OWNED BY user_products.id;
 
 
 --
--- Name: user_votes; Type: TABLE; Schema: public; Owner: postgres
+-- Name: vote; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE user_votes (
+CREATE TABLE vote (
     id integer NOT NULL,
     vote_type smallint NOT NULL,
     thread_id integer,
-    reply_id integer
+    reply_id integer,
+    user_id integer NOT NULL,
+    type integer NOT NULL
 );
 
 
-ALTER TABLE user_votes OWNER TO postgres;
+ALTER TABLE vote OWNER TO postgres;
+
+--
+-- Name: COLUMN vote.type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN vote.type IS 'This is a constant defined in code';
+
 
 --
 -- Name: user_votes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -249,7 +258,7 @@ ALTER TABLE user_votes_id_seq OWNER TO postgres;
 -- Name: user_votes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE user_votes_id_seq OWNED BY user_votes.id;
+ALTER SEQUENCE user_votes_id_seq OWNED BY vote.id;
 
 
 --
@@ -291,7 +300,7 @@ ALTER TABLE ONLY user_products ALTER COLUMN id SET DEFAULT nextval('user_product
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY user_votes ALTER COLUMN id SET DEFAULT nextval('user_votes_id_seq'::regclass);
+ALTER TABLE ONLY vote ALTER COLUMN id SET DEFAULT nextval('user_votes_id_seq'::regclass);
 
 
 --
@@ -338,7 +347,7 @@ ALTER TABLE ONLY user_products
 -- Name: user_votes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY user_votes
+ALTER TABLE ONLY vote
     ADD CONSTRAINT user_votes_pkey PRIMARY KEY (id);
 
 
@@ -409,7 +418,7 @@ CREATE UNIQUE INDEX user_products_id_uindex ON user_products USING btree (id);
 -- Name: user_votes_id_uindex; Type: INDEX; Schema: public; Owner: postgres
 --
 
-CREATE UNIQUE INDEX user_votes_id_uindex ON user_votes USING btree (id);
+CREATE UNIQUE INDEX user_votes_id_uindex ON vote USING btree (id);
 
 
 --
@@ -425,7 +434,7 @@ ALTER TABLE ONLY reply
 --
 
 ALTER TABLE ONLY reply
-    ADD CONSTRAINT reply_user_id_fk FOREIGN KEY (created_by) REFERENCES "user"(id);
+    ADD CONSTRAINT reply_user_id_fk FOREIGN KEY (user_id) REFERENCES "user"(id);
 
 
 --
@@ -456,7 +465,7 @@ ALTER TABLE ONLY user_products
 -- Name: user_votes_reply_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY user_votes
+ALTER TABLE ONLY vote
     ADD CONSTRAINT user_votes_reply_id_fk FOREIGN KEY (reply_id) REFERENCES reply(id);
 
 
@@ -464,8 +473,16 @@ ALTER TABLE ONLY user_votes
 -- Name: user_votes_thread_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY user_votes
+ALTER TABLE ONLY vote
     ADD CONSTRAINT user_votes_thread_id_fk FOREIGN KEY (thread_id) REFERENCES thread(id);
+
+
+--
+-- Name: vote_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY vote
+    ADD CONSTRAINT vote_user_id_fk FOREIGN KEY (user_id) REFERENCES "user"(id);
 
 
 --
