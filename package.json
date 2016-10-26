@@ -25,7 +25,7 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
-    "bootstrap": "^4.0.0-alpha.4",
+    "bootstrap": "^4.0.0-alpha.5",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-alpha.1",
     "cross-env": "^2.0.1",
@@ -36,6 +36,8 @@
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth2": "^0.1.6",
     "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-transition-group": "^15.3.2",
     "react-bootstrap": "^0.30.0",
     "react-dom": "^15.2.1",
     "react-flexbox-grid": "^0.10.2",
@@ -43,6 +45,7 @@
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.5",
     "react-tap-event-plugin": "^1.0.0",
+    "reactstrap": "^3.6.0",
     "redux": "^3.6.0",
     "redux-form": "^6.0.2",
     "redux-thunk": "^2.1.0"
@@ -87,7 +90,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "underscore": "^1.8.3",
-    "webpack": "^1.13.1",
+    "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.15.1",
     "webpack-hot-middleware": "^2.12.2"

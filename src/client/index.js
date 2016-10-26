@@ -8,7 +8,9 @@ import {browserHistory} from 'react-router'
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import '../../node_modules/bootstrap/scss/bootstrap.scss';
 import './styles/app.scss';
+
 
 injectTapEventPlugin();
 
