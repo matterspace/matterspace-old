@@ -3,8 +3,8 @@ if(process.env.NODE_ENV != 'development') throw Error('Cannot read dev config ou
 
 // Postgres settings
 const POSTGRES_USER = 'postgres';
-const POSTGRES_PASSWORD = '@Radiscope';
-const POSTGRES_DATABASE = 'radiscope';
+const POSTGRES_PASSWORD = '@Matterspace';
+const POSTGRES_DATABASE = 'matterspace';
 const POSTGRES_HOST = 'localhost';
 const POSTGRES_PORT = 5432;
 

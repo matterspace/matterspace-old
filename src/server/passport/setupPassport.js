@@ -22,8 +22,8 @@ export default function (passport) {
     // sets up passport for Google
     passport.use(new GoogleStrategy(
         {
-            clientID: '320185225883-if7pmgastp1ce5ksf53c84j5g3br2n8b.apps.googleusercontent.com',
-            clientSecret: 'PwMafDzb_qCik76-Y0fVPs7z',
+            clientID: '319064571712-2fuj8m6gj1n6cf71kubolr6rahg6ekhl.apps.googleusercontent.com',
+            clientSecret: 'sx9NRvIwB9kzfwAt0P6r97HI',
             callbackURL: 'http://localhost:4000/auth/google/callback'
         },
         function (accessToken, refreshToken, profile, done) {
