@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matterspace", "Matterspace\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matterspace.Tests", "Matterspace.Tests\Matterspace.Tests.csproj", "{D34EB13A-59D2-4B3B-8131-37EBC1101372}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matterspace.Model", "Matterspace.Model\Matterspace.Model.csproj", "{C7598F21-FC52-4081-B9D0-DE9C57084405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D34EB13A-59D2-4B3B-8131-37EBC1101372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D34EB13A-59D2-4B3B-8131-37EBC1101372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D34EB13A-59D2-4B3B-8131-37EBC1101372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7598F21-FC52-4081-B9D0-DE9C57084405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7598F21-FC52-4081-B9D0-DE9C57084405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7598F21-FC52-4081-B9D0-DE9C57084405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7598F21-FC52-4081-B9D0-DE9C57084405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
