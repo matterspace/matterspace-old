@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web.Configuration;
+using Matterspace.Lib;
 using Matterspace.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -46,6 +50,28 @@ namespace Matterspace
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = WebConfigurationManager.AppSettings[AppSettingsConstants.GoogleClientId],
+                ClientSecret = WebConfigurationManager.AppSettings[AppSettingsConstants.GoogleClientSecret],
+                Provider = new GoogleOAuth2AuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new Claim("name", context.Identity.FindFirstValue(ClaimTypes.Name)));
+                        context.Identity.AddClaim(new Claim("email", context.Identity.FindFirstValue(ClaimTypes.Email)));
+                        //This following line is need to retrieve the profile image
+                        context.Identity.AddClaim(new Claim("accesstoken", context.AccessToken, ClaimValueTypes.String, "Google"));
+
+                        // Gets the profile picture
+                        var pictureUrl = context.User["image"].Value<string>("url");
+                        context.Identity.AddClaim(new Claim("pictureUrl", pictureUrl));
+
+                        return Task.FromResult(0);
+                    }
+                }
+            });
+
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
@@ -59,11 +85,7 @@ namespace Matterspace
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+
         }
     }
 }

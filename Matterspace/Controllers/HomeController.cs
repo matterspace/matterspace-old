@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace Matterspace.Controllers
@@ -10,6 +11,8 @@ namespace Matterspace.Controllers
     {
         public ActionResult Index()
         {
+            var config = WebConfigurationManager.AppSettings["google-client-id"];
+
             return View();
         }
 
