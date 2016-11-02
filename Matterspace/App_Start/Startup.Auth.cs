@@ -11,6 +11,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Matterspace.Models;
+using Microsoft.Owin.Security.Facebook;
+using Matterspace.Lib.OAuth;
 
 namespace Matterspace
 {
@@ -66,6 +68,27 @@ namespace Matterspace
                         // Gets the profile picture
                         var pictureUrl = context.User["image"].Value<string>("url");
                         context.Identity.AddClaim(new Claim("pictureUrl", pictureUrl));
+
+                        return Task.FromResult(0);
+                    }
+                }
+            });
+
+            app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
+            {
+                AppId = WebConfigurationManager.AppSettings[AppSettingsConstants.FacebookAppId],
+                AppSecret = WebConfigurationManager.AppSettings[AppSettingsConstants.FacebookAppSecret],
+                BackchannelHttpHandler = new FacebookBackchannelHttpHandler(),
+                UserInformationEndpoint = WebConfigurationManager.AppSettings[AppSettingsConstants.FacebookUserInformationEndpoint],
+                Provider = new FacebookAuthenticationProvider()
+                {
+                    OnAuthenticated = (context) =>
+                    {
+                        context.Identity.AddClaim(new Claim("nome", context.Identity.FindFirstValue(ClaimTypes.Name)));
+                        context.Identity.AddClaim(new Claim("email", context.Identity.FindFirstValue(ClaimTypes.Email)));
+
+                        // Gets profile picture Facebook mode.
+                        context.Identity.AddClaim(new Claim("pictureUrl", context.User["picture"]["data"]["url"].ToString()));
 
                         return Task.FromResult(0);
                     }
