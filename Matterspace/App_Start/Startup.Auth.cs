@@ -84,7 +84,7 @@ namespace Matterspace
                 {
                     OnAuthenticated = (context) =>
                     {
-                        context.Identity.AddClaim(new Claim("nome", context.Identity.FindFirstValue(ClaimTypes.Name)));
+                        context.Identity.AddClaim(new Claim("name", context.Identity.FindFirstValue(ClaimTypes.Name)));
                         context.Identity.AddClaim(new Claim("email", context.Identity.FindFirstValue(ClaimTypes.Email)));
 
                         // Gets profile picture Facebook mode.
