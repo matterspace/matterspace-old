@@ -7,10 +7,13 @@
 
 <nav class="navbar navbar-light bg-faded">
     <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
+        </a>
         @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand" })
         @Html.Partial("_LoginPartial")
     </div>
-</nav>    
+</nav>
 
 
 @RenderBody()

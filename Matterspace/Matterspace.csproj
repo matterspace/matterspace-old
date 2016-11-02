@@ -233,6 +233,8 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\hero.png" />
+    <Content Include="Content\Images\MSLogo-xs.png" />
+    <Content Include="Content\Images\MSLogo.png" />
     <Content Include="Content\Login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
