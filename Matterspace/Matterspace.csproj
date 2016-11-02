@@ -313,6 +313,7 @@
     <Content Include="Views\Shared\_LayoutContainer.cshtml" />
     <Content Include="Views\Shared\_LayoutContainerFluid.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
