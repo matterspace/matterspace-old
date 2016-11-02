@@ -7,7 +7,7 @@
 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <div class="login-card-wrapper">
+    <div class="signin-signup-card-wrapper">
         <div class="card">
             <div class="card-header">
                 <span class="header-logo">
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="card-footer text-muted">
-                Not here? Join us
+                Not here? @Html.ActionLink("Join us", "Register")!
             </div>
         </div>
     </div>
