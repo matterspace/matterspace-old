@@ -53,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <a class="pull-right forgot-password" href="#">Forgot your password?</a>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword", "AccountController", htmlAttributes: new  { @class = "pull-right forgot-password" })
                     </div>
                 </div>
                 <div class="row">

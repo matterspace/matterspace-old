@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
+using Matterspace.Lib.Email;
 
 namespace Matterspace
 {
@@ -14,7 +15,13 @@ namespace Matterspace
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            EmailApi.SendEmail(new EmailMessage
+            {
+                Body = message.Body,
+                Destination = message.Destination,
+                Subject = message.Subject
+            });
+
             return Task.FromResult(0);
         }
     }
@@ -72,6 +79,7 @@ namespace Matterspace
                 Subject = "Security Code",
                 BodyFormat = "Your security code is {0}"
             });
+
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
