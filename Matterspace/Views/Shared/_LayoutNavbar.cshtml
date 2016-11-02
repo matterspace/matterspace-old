@@ -6,9 +6,12 @@
 }
 
 <nav class="navbar navbar-light bg-faded">
-    @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand" })
-    @Html.Partial("_LoginPartial")
-</nav>
+    <div class="container">
+        @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand" })
+        @Html.Partial("_LoginPartial")
+    </div>
+</nav>    
+
 
 @RenderBody()
 
