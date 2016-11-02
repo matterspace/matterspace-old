@@ -43,3 +43,10 @@
             margin: 0;
             padding: 0;
         }
+
+
+    .login-card-wrapper .header-logo {
+        position: relative;
+        margin-right: 4px;
+        top: -1px;
+    }
