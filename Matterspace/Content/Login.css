@@ -1,0 +1,45 @@
+﻿.login-card-wrapper {
+    margin: 100px auto;
+    max-width: 400px;
+}
+
+    .login-card-wrapper .sso-button-text {
+        margin-left: 10px;
+    }
+
+    .login-card-wrapper .sso-google {
+        color: white;
+        background-color: #DC4E42;
+    }
+
+    .login-card-wrapper .sso-facebook {
+        color: white;
+        background-color: #496EBC;
+    }
+
+    .login-card-wrapper .sign-in-via {
+    }
+
+    .login-card-wrapper .sign-in-or {
+        margin-top: 1em;
+    }
+
+    .login-card-wrapper .forgot-password {
+        position: relative;
+        margin-top: -10px;
+        margin-bottom: 1.1em;
+        font-size: 0.9em;
+    }
+
+    .login-card-wrapper .keep-me-signed-in {
+        margin-top: 0.6em;
+    }
+
+    .login-card-wrapper .validation-summary-errors {
+    }
+
+        .login-card-wrapper .validation-summary-errors ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
