@@ -231,6 +231,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Home.css" />
     <Content Include="Content\Images\hero.png" />
     <Content Include="Content\Login.css" />
     <Content Include="favicon.ico" />
