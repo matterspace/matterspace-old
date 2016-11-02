@@ -303,6 +303,8 @@
     <Content Include="Web.Secret.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Shared\_LayoutContainer.cshtml" />
+    <Content Include="Views\Shared\_LayoutContainerFluid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
