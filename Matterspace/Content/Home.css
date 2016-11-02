@@ -1,0 +1,88 @@
+﻿.hero {
+    background: url(/Content/images/hero.png) center left / cover no-repeat #072C45;
+    margin-left: -15px;
+    margin-right: -15px;
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+    .hero .main-message {
+        padding-top: 40px;
+        font-size: 1.3em;
+        margin: 0 auto;
+        padding-bottom: 0;
+    }
+
+        .hero .main-message .hero-sentence {
+            display: block;
+            white-space: nowrap;
+        }
+
+    .hero .secondary-message {
+        padding-top: 10px;
+        padding-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .hero .sign-up-button {
+        padding-top: 60px;
+    }
+
+    .hero .sign-in-button {
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+        .hero .sign-in-button a {
+            color: white;
+            text-decoration: underline;
+            padding-bottom: 50px;
+        }
+
+.card-wrapper {
+    margin-top: 1em;
+}
+
+    .card-wrapper .card-title-text {
+        margin-left: 6px;
+    }
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    .hero .main-message {
+        font-size: 2em;
+    }
+
+    .hero .secondary-message {
+        font-size: 1em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .hero .main-message {
+        font-size: 2.2em;
+    }
+
+     .hero .main-message .hero-sentence {
+            display: inline;
+        }
+    
+    .hero .secondary-message {
+        font-size: 1.2em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .hero {
+        padding: 15px 250px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

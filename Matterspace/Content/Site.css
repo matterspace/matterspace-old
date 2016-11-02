@@ -15,39 +15,35 @@
     white-space: normal;
 }
 
-.hero {
-    background: url(/Content/images/hero.png) center left / cover no-repeat #072C45;
-    margin-left: -15px;
-    margin-right: -15px;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-
-.hero .main-message {
+.site-footer {
+    position: relative;
     padding-top: 40px;
-    font-size: 2.2em;
-    margin: 0 auto;
-    padding-bottom: 0;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #767676;
+    border-top: 1px solid #eee;
 }
 
-.hero .secondary-message {
-    padding-top: 10px;
-    padding-bottom: 0;
-    font-size: 1.2em;
-}
+    .site-footer .site-footer-links {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+    }
 
-.hero .sign-up-button {
-    padding-top: 60px;
-}
+        .site-footer .site-footer-links li {
+            display: inline-block;
+            line-height: 16px;
+        }
 
-.hero .sign-in-button {
-    padding-top: 10px;
-    padding-bottom: 40px
-}
+            .site-footer .site-footer-links li + li {
+                margin-left: 10px;
+            }
 
-.hero .sign-in-button a {
-    color: white;
-    text-decoration: underline;
-    padding-bottom: 50px;
+.navbar .navbar-logo {
+    width: 20px;
+    position: relative;
+    top: -2px;
+    right: -6px;
 }
