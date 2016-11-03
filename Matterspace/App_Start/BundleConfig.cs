@@ -20,6 +20,7 @@ namespace Matterspace
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/no-np/tether.min.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
