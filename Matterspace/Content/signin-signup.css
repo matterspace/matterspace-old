@@ -5,13 +5,13 @@
         margin-left: 10px;
     }
     
-    .signin-signup-card-wrapper .facebook-signin-wrapper .sso-facebook {
+    .signin-signup-card-wrapper .sso-facebook {
         color: white;
         background-color: #496EBC;
         margin-bottom: 1em; /* in mobile devices, the facebook button will be over the google button, so it needs a margin so they don't stack'*/
     }
 
-    .signin-signup-card-wrapper .google-signin-wrapper .sso-google {
+    .signin-signup-card-wrapper .sso-google {
         color: white;
         background-color: #DC4E42;
     }
