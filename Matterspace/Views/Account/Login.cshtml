@@ -4,45 +4,55 @@
     ViewBag.Title = "Sign in to Matterspace · Matterspace";
     Layout = "../Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="signin-signup-card-wrapper">
-        <div class="card">
-            <div class="card-header">
-                <span class="header-logo">
-                    <img src="/Content/Images/MSLogo-xs.png"/>
-                </span>
-                <span>Matterspace</span>
-                
-            </div>
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="sign-in-via">
-                            Sign in via
-                        </p>
-                    </div>
+
+<div class="signin-signup-card-wrapper">
+    <div class="card">
+        <div class="card-header">
+            <span class="header-logo">
+                <img src="/Content/Images/MSLogo-xs.png" />
+            </span>
+            <span>Matterspace</span>
+
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="sign-in-via">
+                        Sign in via
+                    </p>
                 </div>
+            </div>
+
+            @using (Html.BeginForm("ExternalLogin", "Account", new { ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+
                 <div class="row">
                     <div class="col-md-6">
-                        <button id="Facebook" value="Facebook" class="btn btn-block sso-facebook" type="submit">
+                        <button id="Facebook" name="provider" value="Facebook" class="btn btn-block sso-facebook" type="submit">
                             <i class="fa fa-facebook-official" aria-hidden="true"></i><span class="sso-button-text">Facebook</span>
                         </button>
                     </div>
                     <div class="col-md-6">
-                        <button id="Google" value="Google" class="btn btn-block sso-google" type="submit">
+                        <button id="Google" name="provider" value="Google" class="btn btn-block sso-google" type="submit">
                             <i class="fa fa-google-plus-official" aria-hidden="true"></i><span class="sso-button-text">Google</span>
                         </button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="sign-in-or">
-                            or
-                        </p>
-                    </div>
+            }
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="sign-in-or">
+                        or
+                    </p>
                 </div>
+            </div>
+
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -50,46 +60,47 @@
                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" , placeholder = "Password" })
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword", "AccountController", htmlAttributes: new  { @class = "pull-right forgot-password" })
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword", "AccountController", htmlAttributes: new { @class = "pull-right forgot-password" })
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        @Html.ValidationSummary(true, "", new { @class= "alert alert-danger" })
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-block btn-success" type="submit">
-                            Sign in
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-check keep-me-signed-in">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="">
-                                @Html.CheckBoxFor(m => m.RememberMe, new { @class="form-check-input" })
-                                Keep me signed in
-                            </label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card-footer text-muted">
-                Not here? @Html.ActionLink("Join us", "Register")!
-            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-block btn-success" type="submit">
+                                Sign in
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-check keep-me-signed-in">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
+                                    Keep me signed in
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+            }
+        </div>
+        <div class="card-footer text-muted">
+            Not here? @Html.ActionLink("Join us", "Register")!
         </div>
     </div>
-}
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
