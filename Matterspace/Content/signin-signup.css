@@ -1,20 +1,19 @@
 ﻿.signin-signup-card-wrapper {
-    margin: 100px auto;
-    max-width: 400px;
 }
 
     .signin-signup-card-wrapper .sso-button-text {
         margin-left: 10px;
     }
-
-    .signin-signup-card-wrapper .sso-google {
-        color: white;
-        background-color: #DC4E42;
-    }
-
-    .signin-signup-card-wrapper .sso-facebook {
+    
+    .signin-signup-card-wrapper .facebook-signin-wrapper .sso-facebook {
         color: white;
         background-color: #496EBC;
+        margin-bottom: 1em; /* in mobile devices, the facebook button will be over the google button, so it needs a margin so they don't stack'*/
+    }
+
+    .signin-signup-card-wrapper .google-signin-wrapper .sso-google {
+        color: white;
+        background-color: #DC4E42;
     }
 
     .signin-signup-card-wrapper .sign-in-via {
@@ -50,3 +49,36 @@
         margin-right: 4px;
         top: -1px;
     }
+
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+
+    .signin-signup-card-wrapper {
+        margin: 20px auto;
+        max-width: 400px;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+    .signin-signup-card-wrapper .facebook-signin-wrapper .sso-facebook {
+        margin-bottom: 0; /* in mobile devices, the facebook button will be over the google button, so it needs a margin so they don't stack'*/
+    }
+
+    .signin-signup-card-wrapper {
+        margin: 100px auto;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
