@@ -6,7 +6,7 @@ namespace Matterspace.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return this.Request.IsAuthenticated ? this.View() : this.View("Index.NotAuthenticated");
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $("#matterspace-logo")
+            .click(function(e) {
+                e.preventDefault();
+            });
+
+        $("#matterspace-logo")
+            .on("shown.bs.popover",
+                function() {
+                    $('.popover').css('top', parseInt($('.popover').css('top')) + 22 + 'px');
+                });
+
+        $("#matterspace-logo")
+            .popover({
+                html: true,
+                content: function() {
+                    return $("#popover-content").html();
+                },
+                placement: 'bottom',
+                offset: '0 50'
+            });
+    </script>
+}
+
+@Html.Partial("_NavbarPartial.NotAuthenticated")
+
+@RenderBody()
+
+
