@@ -25,31 +25,28 @@
                     <span class="navbar-profile-picture"></span>
                     <i class="fa fa-caret-down navbar-profile-picture-dropdown-button" aria-hidden="true"></i>
                 </a>
-                <div class="navbar-dropdown-menu-wrapper">
-                    <ul class="navbar-dropdown-menu">
-                        <li class="navbar-dropdown-menu-item">
-                            <a href="#">Your profile</a>
-                        </li>
-                        <li class="navbar-dropdown-menu-item">
-                            <a href="#">Sign out</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-        @*
-            This page will be displayed for non-logged users only... however, for the future, this is how to do sign-off
-            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                 {
                     @Html.AntiForgeryToken()
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                        </li>
-                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                    </ul>
+                    <div class="navbar-dropdown-menu-wrapper">
+                        <ul class="navbar-dropdown-menu">
+                            <li class="navbar-dropdown-menu-item navitem-header navbar-item-divider">
+                                Signed in as <br/>
+                                <strong>andrerpena</strong>
+                            </li>
+                            <li class="navbar-dropdown-menu-item">
+                                <a href="#">Your profile</a>
+                            </li>
+                            <li class="navbar-dropdown-menu-item">
+                                <a href="#">Settings</a>
+                            </li>
+                            <li class="navbar-dropdown-menu-item">
+                                <a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
                 }
-        *@
+            </li>
+        </ul>
     </div>
 </nav>

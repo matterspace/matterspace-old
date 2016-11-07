@@ -76,9 +76,9 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
         font-size: 0.9em;
     }
 
+
         div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
             padding: 5px 10px;
-            font-size: 0.9em;
             display: block;
             color: inherit;
             text-decoration: none;
@@ -88,4 +88,12 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
                 background-color: #0275d8;
                 color: white;
             }
+
+        div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
+            padding: 5px 10px;
+        }
+
+    div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 3px; 
     }
