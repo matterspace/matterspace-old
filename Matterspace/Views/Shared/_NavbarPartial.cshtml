@@ -6,6 +6,13 @@
             </a>
             @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
         </span>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
         @*
             This page will be displayed for non-logged users only... however, for the future, this is how to do sign-off
             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))

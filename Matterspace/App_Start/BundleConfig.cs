@@ -24,12 +24,22 @@ namespace Matterspace
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            // This is the bundle that should be added for the non-authenticated part of Matterspace
+            bundles.Add(new StyleBundle("~/Content/css-site").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css",
                       "~/Content/signin-signup.css",
                       "~/Content/home.css"
+                      ));
+
+            // This is the bundle that should be added for the authenticated part of Matterspace
+            bundles.Add(new StyleBundle("~/Content/css-app").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/site.css",
+                      "~/Content/signin-signup.css",
+                      "~/Content/App.css"
                       ));
         }
     }
