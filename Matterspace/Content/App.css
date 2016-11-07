@@ -10,6 +10,13 @@ li.nav-item.active div.navbar-dropdown-menu-wrapper {
     display: block;
 }
 
+ul.navbar-with-dropdown-menu i.fa-caret-down {
+}
+
+ul.navbar-with-dropdown-menu li.nav-item {
+    position: relative;
+}
+
 ul.navbar-with-dropdown-menu li.nav-item span.navbar-profile-picture {
     background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
     height: 32px;
@@ -36,6 +43,9 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
     border: 1px solid rgba(0,0,0,0.15);
     padding: 3px 0;
     z-index: 100;
+    right: 0;
+    left: auto;
+    margin-top: 10px;
 }
 
     div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu ::before {

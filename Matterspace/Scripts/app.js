@@ -23,6 +23,10 @@
         .click(function (e) {
             // hides the tooltip
             $('[data-toggle="tooltip"]').tooltip("hide");
+
+            // hides other dropdowns
+            $("ul.navbar-with-dropdown-menu li.nav-item").removeClass("active");
+
             // toggles the active class. This will show or display the dropdown menu
             $(this).toggleClass("active");
             e.stopPropagation();
