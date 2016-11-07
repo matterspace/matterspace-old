@@ -1,4 +1,9 @@
-﻿ul.navbar-nav {
+﻿body {
+    min-width: 1020px;
+    word-wrap: break-word;
+}
+
+ul.navbar-nav {
     position: relative;
 }
 
@@ -95,7 +100,7 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
             overflow: hidden;
         }
 
-    div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
-        border-bottom: 1px solid #e5e5e5;
-        margin-bottom: 3px; 
-    }
+        div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 3px;
+        }
