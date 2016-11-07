@@ -47,3 +47,16 @@
     top: -2px;
     right: -6px;
 }
+
+/* ASP.NET validation */
+span.field-validation-error {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    display: block;
+    margin-top: 1em;
+}
