@@ -318,7 +318,7 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Web.Secret.config">
     </Content>
-    <Content Include="Views\Shared\_LayoutContainer.cshtml" />
+    <Content Include="Views\Shared\_LayoutContainer.NotAuthenticated.cshtml" />
     <Content Include="Views\Shared\_LayoutContainerFluid.NotAuthenticated.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
