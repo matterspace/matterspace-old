@@ -7,7 +7,7 @@ div.navbar-dropdown-menu-wrapper {
 }
 
 li.nav-item.active div.navbar-dropdown-menu-wrapper {
-    display
+    display: block;
 }
 
 div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
