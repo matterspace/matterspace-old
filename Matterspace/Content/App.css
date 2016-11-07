@@ -35,7 +35,7 @@ ul.navbar-with-dropdown-menu li.nav-item {
 /* The navbar dropdown menu*/
 div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
     position: absolute;
-    width: 180px;
+    width: 190px;
     right: 0;
     list-style: none;
     background-color: white;
@@ -91,6 +91,8 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
 
         div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
             padding: 5px 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
     div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
