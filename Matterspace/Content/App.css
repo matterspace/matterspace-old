@@ -17,22 +17,22 @@ ul.navbar-with-dropdown-menu li.nav-item {
     position: relative;
 }
 
-ul.navbar-with-dropdown-menu li.nav-item span.navbar-profile-picture {
-    background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
-    height: 32px;
-    width: 32px;
-    background-size: 32px 32px;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top:2px;
+    ul.navbar-with-dropdown-menu li.nav-item span.navbar-profile-picture {
+        background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
+        height: 32px;
+        width: 32px;
+        background-size: 32px 32px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 2px;
+    }
 
-}
+    ul.navbar-with-dropdown-menu li.nav-item i.navbar-profile-picture-dropdown-button {
+        margin-left: 36px;
+    }
 
-ul.navbar-with-dropdown-menu li.nav-item i.navbar-profile-picture-dropdown-button {
-    margin-left: 36px;
-}
-
+/* The navbar dropdown menu*/
 div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
     position: absolute;
     width: 180px;
@@ -72,6 +72,8 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
     }
 
     div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item {
+        font-size: 0.9em;
+        font-size: 0.9em;
     }
 
         div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
@@ -86,3 +88,4 @@ div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
                 background-color: #0275d8;
                 color: white;
             }
+    }

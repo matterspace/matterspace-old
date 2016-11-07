@@ -3,7 +3,9 @@
     // enable tooltips everywhere
     $('[data-toggle="tooltip"]')
         .tooltip({
-            trigger: "hover"
+            trigger: "hover",
+            delay: 400,
+            hide: 100
         })
         .on("show.bs.tooltip",
             function () {
