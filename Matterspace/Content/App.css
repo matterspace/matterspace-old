@@ -1,2 +1,63 @@
-﻿body {
+﻿ul.navbar-nav {
+    position: relative;
+}
+
+div.navbar-dropdown-menu-wrapper {
+    display: none;
+}
+
+li.nav-item.active div.navbar-dropdown-menu-wrapper {
+    display
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
+    position: absolute;
+    width: 180px;
+    right: 0;
+    list-style: none;
+    background-color: white;
+    border: 1px solid #000000;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 3px 0;
+    z-index: 100;
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu ::before {
+    top: -16px;
+    right: 9px;
+    left: auto;
+    border: 8px solid transparent;
+    border-bottom-color: #000000;
+    border-bottom-color: rgba(0,0,0,0.15);
+    position: absolute;
+    display: inline-block;
+    content: "";
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu ::after {
+    top: -14px;
+    right: 10px;
+    left: auto;
+    border: 7px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    display: inline-block;
+    content: "";
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item {
+    
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+div.navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a:hover {
+    background-color: #0275d8;
+    color: white;
 }

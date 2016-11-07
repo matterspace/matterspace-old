@@ -6,11 +6,19 @@
             </a>
             @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
         </span>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="#">
+        <ul class="nav navbar-nav float-xs-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </a>
+                <div class="navbar-dropdown-menu-wrapper">
+                    <ul class="navbar-dropdown-menu">
+                        <li class="navbar-dropdown-menu-item">
+                            <a href="#">New product</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
         @*
