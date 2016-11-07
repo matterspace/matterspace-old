@@ -324,6 +324,9 @@
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavbarPartial.NotAuthenticated.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutContainer.cshtml" />
+    <Content Include="Views\Shared\_NavbarPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutNavbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

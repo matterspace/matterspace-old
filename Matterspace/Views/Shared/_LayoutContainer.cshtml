@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+@section Scripts {
+    @RenderSection("scripts", required: false)
+}
+
+<div class="container">
+    @RenderBody()
+</div>
+
+@Html.Partial("_FooterPartial")

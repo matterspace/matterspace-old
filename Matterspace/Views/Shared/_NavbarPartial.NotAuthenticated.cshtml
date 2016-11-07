@@ -10,19 +10,5 @@
             @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = " nav-link btn btn-outline-success" })
             @Html.ActionLink("Sign up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = " nav-link btn btn-success" })
         </div>
-        @* 
-            This page will be displayed for non-logged users only... however, for the future, this is how to do sign-off
-            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                        </li>
-                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                    </ul>
-                }
-        *@
     </div>
 </nav>
