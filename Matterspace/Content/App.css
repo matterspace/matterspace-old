@@ -1,6 +1,13 @@
 ﻿body {
+    /* for non-responsiveness */
     min-width: 1020px;
     word-wrap: break-word;
+}
+
+/* for non-responsiveness */
+.container{
+  max-width: none !important;
+  width: 980px;
 }
 
 ul.navbar-nav {
