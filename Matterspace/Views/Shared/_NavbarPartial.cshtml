@@ -8,6 +8,11 @@
             @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
         </span>
         <ul class="nav navbar-nav navbar-with-dropdown-menu float-xs-right">
+            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View notifications">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </a>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Create new...">
                 <a class="nav-link" href="#">
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -26,7 +31,7 @@
                     <span class="navbar-profile-picture"></span>
                     <i class="fa fa-caret-down navbar-profile-picture-dropdown-button" aria-hidden="true"></i>
                 </a>
-                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
                 {
                     @Html.AntiForgeryToken()
                     <div class="navbar-dropdown-menu-wrapper">
