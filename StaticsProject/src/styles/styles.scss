@@ -1,0 +1,8 @@
+@import "/bs-overrides";
+@import "~bootstrap/scss/bootstrap.scss";
+// bootstrap variables are available from this point on
+@import "app";
+
+.some-class-of-mine {
+  border-bottom-color: $gray-lighter;
+}
