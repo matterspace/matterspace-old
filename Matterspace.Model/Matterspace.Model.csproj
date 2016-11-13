@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\ApplicationUserFollowingProduct.cs" />
     <Compile Include="Entities\BacklogItem.cs" />
     <Compile Include="Entities\Idea.cs" />
     <Compile Include="Entities\Issue.cs" />
@@ -86,6 +87,10 @@
     <Compile Include="Migrations\201611132235011_initial-migration.Designer.cs">
       <DependentUpon>201611132235011_initial-migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132251365_adding-users-following-products.cs" />
+    <Compile Include="Migrations\201611132251365_adding-users-following-products.Designer.cs">
+      <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +102,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611132235011_initial-migration.resx">
       <DependentUpon>201611132235011_initial-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132251365_adding-users-following-products.resx">
+      <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

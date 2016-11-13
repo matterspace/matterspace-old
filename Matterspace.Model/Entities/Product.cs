@@ -8,6 +8,7 @@ namespace Matterspace.Model.Entities
         {
             this.Members = new List<ProductMember>();
             this.Releases = new List<Release>();
+            this.FollowingUsers = new List<ApplicationUserFollowingProduct>();
         }
 
         /// <summary>
@@ -40,5 +41,7 @@ namespace Matterspace.Model.Entities
         public ICollection<ProductMember> Members { get; set; }
 
         public ICollection<Release> Releases { get; set; }
+
+        public ICollection<ApplicationUserFollowingProduct> FollowingUsers { get; set; }
     }
 }
