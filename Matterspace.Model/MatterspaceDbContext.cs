@@ -31,6 +31,21 @@ namespace Matterspace.Model
             modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
             modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
             modelBuilder.Entity<IdentityRole>().ToTable("UserRole");
+
+            // Entity configuration
+
+            // Thread Reference
+            modelBuilder.Entity<ThreadReference>()
+                .HasRequired(tr => tr.ReferencedThread)
+                .WithMany(t => t.ThreadReferencesImReferenced);
+
+            modelBuilder.Entity<ThreadReference>()
+                .HasOptional(tr => tr.RefererThread)
+                .WithMany(t => t.ThreadReferencesImReferer);
+
+            modelBuilder.Entity<ThreadReference>()
+                .HasOptional(tr => tr.RefererThreadReply)
+                .WithMany(tr => tr.ThreadReferencesImReferer);
         }
 
         public DbSet<Thread> Threads { get; set; }
