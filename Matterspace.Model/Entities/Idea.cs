@@ -9,6 +9,11 @@ namespace Matterspace.Model.Entities
 {
     public class Idea: Thread
     {
-        public IdeaStatus IdeaStatus;
+        /// <summary>
+        /// </summary>
+        /// <remarks>
+        /// This has to be NULLABLE because we're using TPH
+        /// </remarks>
+        public IdeaStatus? IdeaStatus { get; set; }
     }
 }
