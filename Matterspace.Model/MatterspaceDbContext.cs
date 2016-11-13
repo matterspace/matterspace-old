@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Matterspace.Model.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -22,6 +23,7 @@ namespace Matterspace.Model
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             // Identity
             modelBuilder.Entity<ApplicationUser>().ToTable("User");

@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201611132136500_first-release.Designer.cs">
       <DependentUpon>201611132136500_first-release.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132147261_remove-pluralization.cs" />
+    <Compile Include="Migrations\201611132147261_remove-pluralization.Designer.cs">
+      <DependentUpon>201611132147261_remove-pluralization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132136500_first-release.resx">
       <DependentUpon>201611132136500_first-release.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132147261_remove-pluralization.resx">
+      <DependentUpon>201611132147261_remove-pluralization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
