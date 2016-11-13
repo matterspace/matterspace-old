@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\ApplicationUserFollowingThread.cs" />
     <Compile Include="Entities\ApplicationUserFollowingProduct.cs" />
     <Compile Include="Entities\BacklogItem.cs" />
     <Compile Include="Entities\QuestionStatusChangeEvent.cs" />
@@ -104,6 +105,10 @@
     <Compile Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.Designer.cs">
       <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132328482_adding-users-following-threads.cs" />
+    <Compile Include="Migrations\201611132328482_adding-users-following-threads.Designer.cs">
+      <DependentUpon>201611132328482_adding-users-following-threads.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.resx">
       <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132328482_adding-users-following-threads.resx">
+      <DependentUpon>201611132328482_adding-users-following-threads.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

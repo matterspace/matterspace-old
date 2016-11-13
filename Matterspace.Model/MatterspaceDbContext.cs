@@ -34,7 +34,7 @@ namespace Matterspace.Model
 
             // Entity configuration
 
-            // Thread Reference
+            // ThreadReference
             modelBuilder.Entity<ThreadReference>()
                 .HasRequired(tr => tr.ReferencedThread)
                 .WithMany(t => t.ReferencesImReferenced);
@@ -46,9 +46,28 @@ namespace Matterspace.Model
             modelBuilder.Entity<ThreadReference>()
                 .HasOptional(tr => tr.RefererThreadReply)
                 .WithMany(tr => tr.ThreadReferencesImReferer);
+
+            // ApplicationUserFollowingProduct
+            modelBuilder.Entity<ApplicationUserFollowingThread>()
+                .HasRequired(m => m.Thread)
+                .WithMany(m => m.UsersFollowing);
+
+            modelBuilder.Entity<ApplicationUserFollowingThread>()
+                .HasRequired(m => m.User)
+                .WithMany(m => m.ThreadsImFollowing);
+
+            // ApplicationUserFollowingProduct
+            modelBuilder.Entity<ApplicationUserFollowingProduct>()
+                .HasRequired(m => m.User)
+                .WithMany(m => m.ProductsImFollowing);
+
+            modelBuilder.Entity<ApplicationUserFollowingProduct>()
+                .HasRequired(m => m.Product)
+                .WithMany(m => m.UsersFollowing);
         }
 
-        public DbSet<ApplicationUserFollowingProduct> ApplicationUserFolloingProducs { get; set; }
+        public DbSet<ApplicationUserFollowingProduct> ApplicationUserFollowingProducts { get; set; }
+        public DbSet<ApplicationUserFollowingThread> ApplicationUserFolloingThreads { get; set; }
         public DbSet<Thread> Threads { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductMember> ProductMembers { get; set; }

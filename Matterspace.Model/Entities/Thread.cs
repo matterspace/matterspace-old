@@ -15,6 +15,7 @@ namespace Matterspace.Model.Entities
             this.ReferencesImReferenced = new List<ThreadReference>();
             this.ReferencesImReferer = new List<ThreadReference>();
             this.StatusChangeEvents = new List<ThreadStatusChangeEvent>();
+            this.UsersFollowing = new List<ApplicationUserFollowingThread>();
         }
 
         public int Id { get; set; }
@@ -64,5 +65,7 @@ namespace Matterspace.Model.Entities
         public ICollection<ThreadReference> ReferencesImReferer { get; set; }
 
         public ICollection<ThreadStatusChangeEvent> StatusChangeEvents { get; set; }
+
+        public ICollection<ApplicationUserFollowingThread> UsersFollowing { get; set; }
     }
 }
