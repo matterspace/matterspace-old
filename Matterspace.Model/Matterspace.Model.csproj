@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201611132150090_remove-ownerid-from-product.Designer.cs">
       <DependentUpon>201611132150090_remove-ownerid-from-product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132208524_fixing-references-to-users.cs" />
+    <Compile Include="Migrations\201611132208524_fixing-references-to-users.Designer.cs">
+      <DependentUpon>201611132208524_fixing-references-to-users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132150090_remove-ownerid-from-product.resx">
       <DependentUpon>201611132150090_remove-ownerid-from-product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132208524_fixing-references-to-users.resx">
+      <DependentUpon>201611132208524_fixing-references-to-users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

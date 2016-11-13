@@ -6,7 +6,7 @@ namespace Matterspace.Model.Entities
     {
         public int Id { get; set; }
 
-        public int MemberId { get; set; }
+        public string MemberId { get; set; }
 
         public ApplicationUser Member { get; set; }
 

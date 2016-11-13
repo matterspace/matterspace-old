@@ -18,7 +18,7 @@ namespace Matterspace.Model.Entities
         /// <summary>
         /// User that created this thread
         /// </summary>
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
 
         /// <summary>
         /// User that created this thread

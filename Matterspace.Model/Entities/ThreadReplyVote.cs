@@ -9,7 +9,7 @@ namespace Matterspace.Model.Entities
         /// <summary>
         /// User that voted
         /// </summary>
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
         /// User that voted

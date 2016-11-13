@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Matterspace.Model.Enums;
 
 namespace Matterspace.Model.Entities
@@ -22,7 +23,7 @@ namespace Matterspace.Model.Entities
         /// <summary>
         /// User that created this thread
         /// </summary>
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
 
         /// <summary>
         /// User that created this thread
