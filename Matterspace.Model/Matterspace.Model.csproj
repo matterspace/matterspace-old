@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201611132147261_remove-pluralization.Designer.cs">
       <DependentUpon>201611132147261_remove-pluralization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132150090_remove-ownerid-from-product.cs" />
+    <Compile Include="Migrations\201611132150090_remove-ownerid-from-product.Designer.cs">
+      <DependentUpon>201611132150090_remove-ownerid-from-product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132147261_remove-pluralization.resx">
       <DependentUpon>201611132147261_remove-pluralization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132150090_remove-ownerid-from-product.resx">
+      <DependentUpon>201611132150090_remove-ownerid-from-product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

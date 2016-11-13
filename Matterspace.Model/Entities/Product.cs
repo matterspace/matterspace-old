@@ -35,11 +35,6 @@ namespace Matterspace.Model.Entities
         /// </summary>
         public string LongDescriptionMarkdown { get; set; }
 
-        /// <summary>
-        /// User that created this product
-        /// </summary>
-        public int OwnerId { get; set; }
-
         public byte[] Avatar { get; set; }
         
         public ICollection<ProductMember> Members { get; set; }
