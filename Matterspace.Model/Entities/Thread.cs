@@ -11,9 +11,10 @@ namespace Matterspace.Model.Entities
         {
             this.Replies = new List<ThreadReply>();
             this.Descendents = new List<Thread>();
-            this.ThreadReleases = new List<ThreadRelease>();
-            this.ThreadReferencesImReferenced = new List<ThreadReference>();
-            this.ThreadReferencesImReferer = new List<ThreadReference>();
+            this.Releases = new List<ThreadRelease>();
+            this.ReferencesImReferenced = new List<ThreadReference>();
+            this.ReferencesImReferer = new List<ThreadReference>();
+            this.StatusChangeEvents = new List<ThreadStatusChangeEvent>();
         }
 
         public int Id { get; set; }
@@ -56,10 +57,12 @@ namespace Matterspace.Model.Entities
         /// </summary>
         public ICollection<Thread> Descendents;
 
-        public ICollection<ThreadRelease> ThreadReleases { get; set; }
+        public ICollection<ThreadRelease> Releases { get; set; }
 
-        public ICollection<ThreadReference> ThreadReferencesImReferenced { get; set; }
+        public ICollection<ThreadReference> ReferencesImReferenced { get; set; }
 
-        public ICollection<ThreadReference> ThreadReferencesImReferer { get; set; }
+        public ICollection<ThreadReference> ReferencesImReferer { get; set; }
+
+        public ICollection<ThreadStatusChangeEvent> StatusChangeEvents { get; set; }
     }
 }

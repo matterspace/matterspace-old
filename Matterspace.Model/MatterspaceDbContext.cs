@@ -37,17 +37,18 @@ namespace Matterspace.Model
             // Thread Reference
             modelBuilder.Entity<ThreadReference>()
                 .HasRequired(tr => tr.ReferencedThread)
-                .WithMany(t => t.ThreadReferencesImReferenced);
+                .WithMany(t => t.ReferencesImReferenced);
 
             modelBuilder.Entity<ThreadReference>()
                 .HasOptional(tr => tr.RefererThread)
-                .WithMany(t => t.ThreadReferencesImReferer);
+                .WithMany(t => t.ReferencesImReferer);
 
             modelBuilder.Entity<ThreadReference>()
                 .HasOptional(tr => tr.RefererThreadReply)
                 .WithMany(tr => tr.ThreadReferencesImReferer);
         }
 
+        public DbSet<ApplicationUserFollowingProduct> ApplicationUserFolloingProducs { get; set; }
         public DbSet<Thread> Threads { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductMember> ProductMembers { get; set; }
@@ -57,5 +58,6 @@ namespace Matterspace.Model
         public DbSet<ThreadReply> ThreadReplies { get; set; }
         public DbSet<ThreadReplyVote> ThreadReplyVotes { get; set; }
         public DbSet<ThreadVote> ThreadVotes { get; set; }
+        public DbSet<ThreadStatusChangeEvent> ThreadStatusChangeEvents { get; set; }
     }
 }

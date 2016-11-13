@@ -63,12 +63,17 @@
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ApplicationUserFollowingProduct.cs" />
     <Compile Include="Entities\BacklogItem.cs" />
+    <Compile Include="Entities\QuestionStatusChangeEvent.cs" />
     <Compile Include="Entities\Idea.cs" />
+    <Compile Include="Entities\BacklogItemStatusChangeEvent.cs" />
+    <Compile Include="Entities\IssueStatusChangeEvent.cs" />
+    <Compile Include="Entities\IdeaStatusChangeEvent.cs" />
     <Compile Include="Entities\Issue.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductMember.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Release.cs" />
+    <Compile Include="Entities\ThreadStatusChangeEvent.cs" />
     <Compile Include="Entities\Thread.cs" />
     <Compile Include="Entities\ThreadReference.cs" />
     <Compile Include="Entities\ThreadRelease.cs" />
@@ -91,6 +96,14 @@
     <Compile Include="Migrations\201611132251365_adding-users-following-products.Designer.cs">
       <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611132317257_adding-thread-status-change-events.cs" />
+    <Compile Include="Migrations\201611132317257_adding-thread-status-change-events.Designer.cs">
+      <DependentUpon>201611132317257_adding-thread-status-change-events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.cs" />
+    <Compile Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.Designer.cs">
+      <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611132251365_adding-users-following-products.resx">
       <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132317257_adding-thread-status-change-events.resx">
+      <DependentUpon>201611132317257_adding-thread-status-change-events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.resx">
+      <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

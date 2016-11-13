@@ -15,6 +15,7 @@ namespace Matterspace.Model.Entities
             this.ThreadReplies = new List<ThreadReply>();
             this.ThreadVotes = new List<ThreadVote>();
             this.ThreadReplyVotes = new List<ThreadReplyVote>();
+            this.ThreadStatusChangeEventsImAuthor = new List<ThreadStatusChangeEvent>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -49,5 +50,10 @@ namespace Matterspace.Model.Entities
         /// ThreadReplyVotes this user has casted
         /// </summary>
         public ICollection<ThreadReplyVote> ThreadReplyVotes { get; set; }
+
+        /// <summary>
+        /// ThreadStatusChangeEvent this user is author
+        /// </summary>
+        public ICollection<ThreadStatusChangeEvent> ThreadStatusChangeEventsImAuthor { get; set; }
     }
 }
