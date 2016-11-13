@@ -60,11 +60,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\BacklogItem.cs" />
+    <Compile Include="Entities\Idea.cs" />
+    <Compile Include="Entities\Issue.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductMember.cs" />
+    <Compile Include="Entities\Release.cs" />
+    <Compile Include="Entities\Thread.cs" />
+    <Compile Include="Entities\ThreadReference.cs" />
+    <Compile Include="Entities\ThreadRelease.cs" />
+    <Compile Include="Entities\ThreadReply.cs" />
+    <Compile Include="Entities\ThreadReplyVote.cs" />
+    <Compile Include="Entities\ThreadVote.cs" />
+    <Compile Include="Enums\BacklogItemStatus.cs" />
+    <Compile Include="Enums\IdeaStatus.cs" />
+    <Compile Include="Enums\IssueStatus.cs" />
+    <Compile Include="Enums\ProductMembershipType.cs" />
+    <Compile Include="Enums\QuestionStatus.cs" />
+    <Compile Include="Enums\ReleaseStatus.cs" />
+    <Compile Include="Enums\ThreadType.cs" />
     <Compile Include="MatterspaceDbContext.cs" />
     <Compile Include="Migrations\201610301819057_Initial.cs" />
     <Compile Include="Migrations\201610301819057_Initial.Designer.cs">
       <DependentUpon>201610301819057_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611132136500_first-release.cs" />
+    <Compile Include="Migrations\201611132136500_first-release.Designer.cs">
+      <DependentUpon>201611132136500_first-release.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -78,7 +101,11 @@
     <EmbeddedResource Include="Migrations\201610301819057_Initial.resx">
       <DependentUpon>201610301819057_Initial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611132136500_first-release.resx">
+      <DependentUpon>201611132136500_first-release.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

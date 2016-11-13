@@ -13,6 +13,7 @@ using Owin;
 using Matterspace.Models;
 using Microsoft.Owin.Security.Facebook;
 using Matterspace.Lib.OAuth;
+using Matterspace.Model.Entities;
 
 namespace Matterspace
 {
