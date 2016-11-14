@@ -34,6 +34,11 @@ namespace Matterspace.Model
 
             // Entity configuration
 
+            // ApplicationUserNotification
+            modelBuilder.Entity<ApplicationUserNotification>()
+                .HasRequired(m => m.TargetUser)
+                .WithMany(m => m.Notifications);
+
             // ThreadReference
             modelBuilder.Entity<ThreadReference>()
                 .HasRequired(tr => tr.ReferencedThread)
@@ -64,10 +69,13 @@ namespace Matterspace.Model
             modelBuilder.Entity<ApplicationUserFollowingProduct>()
                 .HasRequired(m => m.Product)
                 .WithMany(m => m.UsersFollowing);
+
+            
         }
 
         public DbSet<ApplicationUserFollowingProduct> ApplicationUserFollowingProducts { get; set; }
         public DbSet<ApplicationUserFollowingThread> ApplicationUserFolloingThreads { get; set; }
+        public DbSet<ApplicationUserNotification> ApplicationUserNotifications { get; set; }
         public DbSet<Thread> Threads { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductMember> ProductMembers { get; set; }

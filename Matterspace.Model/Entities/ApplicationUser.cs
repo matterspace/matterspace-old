@@ -18,6 +18,7 @@ namespace Matterspace.Model.Entities
             this.ThreadStatusChangeEventsImAuthor = new List<ThreadStatusChangeEvent>();
             this.ProductsImFollowing = new List<ApplicationUserFollowingProduct>();
             this.ThreadsImFollowing = new List<ApplicationUserFollowingThread>();
+            this.Notifications = new List<ApplicationUserNotification>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -61,5 +62,7 @@ namespace Matterspace.Model.Entities
         public ICollection<ApplicationUserFollowingProduct> ProductsImFollowing { get; set; }
 
         public ICollection<ApplicationUserFollowingThread> ThreadsImFollowing { get; set; }
+
+        public ICollection<ApplicationUserNotification> Notifications { get; set; }
     }
 }

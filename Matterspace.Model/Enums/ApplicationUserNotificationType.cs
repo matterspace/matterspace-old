@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Matterspace.Model.Enums
 {
-    public enum ProductMembershipType
+    public enum ApplicationUserNotificationType
     {
-        Owner = 1,
-        Admin = 2,
-        Member = 3
+        UserThreadHasBeenReplied = 1,
+        UserThreadHadItsStatusChanged = 2,
+        UserHasBeenMentioned = 3,
     }
 }
