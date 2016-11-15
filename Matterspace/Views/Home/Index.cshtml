@@ -1,10 +1,30 @@
-﻿@{
+﻿@model Matterspace.Models.IndexViewModel
+@{
     ViewBag.Title = "Matterspace";
     Layout = "../Shared/_LayoutContainer.cshtml";
 }
 
 <div class="col-md-8" >
-    
+    @if (this.Model.Updates.Count == 0)
+    {
+        // this is a blank slate
+        <div class="timeline-blankslate">
+            <div class="timeline-blankslate-icon">
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-blankslate-primary-message">
+                It seems you have no updates.
+            </div>
+            <div class="timeline-blankslate-secondary-message">
+                This is your timeline. Here you can see updates from the products you're watching and 
+                posts you are subscribed to.
+            </div>
+
+        </div>
+    }
+    else {
+        // display updates here
+    }
 </div>
 <div class="col-md-4">
     

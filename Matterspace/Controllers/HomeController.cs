@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Matterspace.Models;
 
 namespace Matterspace.Controllers
 {
@@ -6,7 +7,12 @@ namespace Matterspace.Controllers
     {
         public ActionResult Index()
         {
-            return this.Request.IsAuthenticated ? this.View() : this.View("Index.NotAuthenticated");
+            if (!this.Request.IsAuthenticated)
+                return this.View("Index.NotAuthenticated");
+
+            // the user is authenticated
+            var indexViewModel = new IndexViewModel();
+            return this.View("Index", indexViewModel);
         }
     }
 }
