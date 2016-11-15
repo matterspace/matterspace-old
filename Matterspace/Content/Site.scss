@@ -26,22 +26,23 @@ body {
     line-height: 1.5;
     color: #767676;
     border-top: 1px solid #eee;
-}
 
-    .site-footer .site-footer-links {
+    .site-footer-links {
         margin: 0;
         list-style: none;
         padding: 0;
-    }
 
-        .site-footer .site-footer-links li {
+        li {
             display: inline-block;
             line-height: 16px;
-        }
 
-            .site-footer .site-footer-links li + li {
+            // for other lis that are not the first
+            + li {
                 margin-left: 10px;
             }
+        }
+    }
+}
 
 .navbar .navbar-logo {
     width: 20px;
