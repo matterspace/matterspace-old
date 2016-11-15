@@ -12,7 +12,8 @@ div.app-container {
   margin-top: 15px; }
 
 nav.navbar {
-  border-bottom: 1px solid #e5e5e5; }
+  border-bottom: 1px solid #eceeef;
+  border-radius: 0; }
   nav.navbar ul.navbar-nav {
     position: relative; }
     nav.navbar ul.navbar-nav li.nav-item.active div.navbar-dropdown-menu-wrapper {
@@ -38,8 +39,7 @@ nav.navbar {
       right: 0;
       list-style: none;
       background-color: white;
-      border: 1px solid #000000;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      border: 1px solid #eceeef;
       padding: 3px 0;
       z-index: 100;
       right: 0;
@@ -50,8 +50,7 @@ nav.navbar {
         right: 9px;
         left: auto;
         border: 8px solid transparent;
-        border-bottom-color: #000000;
-        border-bottom-color: rgba(0, 0, 0, 0.15);
+        border-bottom-color: #eceeef;
         position: absolute;
         display: inline-block;
         content: ""; }
@@ -80,22 +79,17 @@ nav.navbar {
         text-overflow: ellipsis;
         overflow: hidden; }
       nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid #eceeef;
         margin-bottom: 3px; }
 
 .timeline-blankslate {
   position: relative;
   padding: 30px;
   text-align: center;
-  background-color: #fafafa;
-  border: 1px solid #e5e5e5;
-  border-radius: 3px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05); }
+  background-color: #f7f7f9;
+  border: 1px solid #eceeef;
+  border-radius: 0.2rem;
+  color: #818a91; }
   .timeline-blankslate .timeline-blankslate-icon {
-    font-size: 2em;
-    color: #55595c; }
-  .timeline-blankslate .timeline-blankslate-primary-message {
-    color: #818a91; }
-  .timeline-blankslate .timeline-blankslate-secondary-message {
-    color: #818a91; }
+    font-size: 2em; }
 
