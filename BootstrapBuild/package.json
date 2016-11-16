@@ -1,16 +1,25 @@
 {
   "name": "bootstrap-build",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp build",
+    "build-app": "gulp build-app",
+    "build-site": "gulp build-site",
+    "build-publish": "gulp build-publish"
+  },
   "author": "Andre Pena",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5"
+    "bootstrap": "^4.0.0-alpha.5",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
+    "clone": "^2.0.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
     "gulp-cli": "^1.2.2",
+    "gulp-webpack": "^1.5.0",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
     "webpack": "^1.13.3"

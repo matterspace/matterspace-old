@@ -29,7 +29,7 @@ namespace Matterspace
 
             // This is the bundle that should be added for the non-authenticated part of Matterspace
             bundles.Add(new StyleBundle("~/Content/css-site").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.site.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css",
                       "~/Content/signin-signup.css",
@@ -38,7 +38,7 @@ namespace Matterspace
 
             // This is the bundle that should be added for the authenticated part of Matterspace
             bundles.Add(new StyleBundle("~/Content/css-app").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.app.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css",
                       "~/Content/App.css"
