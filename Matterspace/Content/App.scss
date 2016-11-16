@@ -4,7 +4,6 @@ body {
     /* for non-responsiveness */
     min-width: 1020px;
     word-wrap: break-word;
-    font-size: $font-size-xs;
 }
 
 /* for non-responsiveness */
@@ -54,8 +53,6 @@ nav.navbar {
     }
 
     ul.navbar-with-dropdown-menu {
-
-        font-size: $font-size-base;
 
         li.nav-item {
         position: relative;
@@ -121,8 +118,6 @@ nav.navbar {
         ul.navbar-dropdown-menu {
 
             li.navbar-dropdown-menu-item {
-                font-size: 0.9em;
-                font-size: 0.9em;
 
                 a {
                     padding: 5px 10px;
@@ -159,8 +154,6 @@ nav.navbar {
     border: 1px solid $default-border-color;
     border-radius: $border-radius-sm;
     color: $gray-light;
-    font-size: $font-size-sm;
-
 
     .timeline-blankslate-icon {
         font-size: 2rem;
