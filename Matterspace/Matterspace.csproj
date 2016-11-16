@@ -265,6 +265,9 @@
     <Content Include="Content\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
+    <Content Include="Content\Variables.css">
+      <DependentUpon>Variables.scss</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />

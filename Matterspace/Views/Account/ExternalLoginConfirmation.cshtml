@@ -1,7 +1,7 @@
 ﻿@model Matterspace.Models.ExternalLoginConfirmationViewModel
 @{
     ViewBag.Title = "Register · Matterspace";
-    Layout = "../Shared/_Layout.cshtml";
+    Layout = "../Shared/_Layout.NotAuthenticated.cshtml";
 }
 @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
 {

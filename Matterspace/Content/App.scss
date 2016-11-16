@@ -4,6 +4,7 @@ body {
     /* for non-responsiveness */
     min-width: 1020px;
     word-wrap: break-word;
+    font-size: $font-size-xs;
 }
 
 /* for non-responsiveness */
@@ -12,12 +13,34 @@ body {
     width: 980px;
 }
 
+.main-content-column {
+    padding-left: 0;
+    padding-right: $default-gutter / 2;
+}
+
+.side-bar-column {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ms-card-header {
+    padding: 0.4rem 0.6rem;
+    background-color: $gray-lightest;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: bold;
+
+    &:first-child {
+        border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+}
+
 div.app-container {
-    margin-top: 15px;
+    margin-top: $default-gutter / 2;
 }
 
 nav.navbar {
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $default-border-color;
     border-radius: 0;
 
     ul.navbar-nav {
@@ -30,7 +53,11 @@ nav.navbar {
         }
     }
 
-    ul.navbar-with-dropdown-menu li.nav-item {
+    ul.navbar-with-dropdown-menu {
+
+        font-size: $font-size-base;
+
+        li.nav-item {
         position: relative;
 
         span.navbar-profile-picture {
@@ -49,6 +76,9 @@ nav.navbar {
         }
     }
 
+    }
+
+
     .navbar-dropdown-menu-wrapper {
         display: none;
 
@@ -58,7 +88,7 @@ nav.navbar {
             right: 0;
             list-style: none;
             background-color: white;
-            border: 1px solid $gray-lighter;
+            border: 1px solid $default-border-color;
             padding: 3px 0;
             z-index: 100;
             right: 0;
@@ -70,7 +100,7 @@ nav.navbar {
                 right: 9px;
                 left: auto;
                 border: 8px solid transparent;
-                border-bottom-color: $gray-lighter;
+                border-bottom-color: $default-border-color;
                 position: absolute;
                 display: inline-block;
                 content: "";
@@ -113,7 +143,7 @@ nav.navbar {
                 }
 
                 &.navbar-item-divider {
-                    border-bottom: 1px solid $gray-lighter;
+                    border-bottom: 1px solid $default-border-color;
                     margin-bottom: 3px;
                 }
             }
@@ -126,13 +156,14 @@ nav.navbar {
     padding: 30px;
     text-align: center;
     background-color: $gray-lightest;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $default-border-color;
     border-radius: $border-radius-sm;
     color: $gray-light;
+    font-size: $font-size-sm;
 
 
     .timeline-blankslate-icon {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .timeline-blankslate-primary-message {

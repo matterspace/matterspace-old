@@ -1,6 +1,8 @@
 ﻿// These variables have the same name and value as their BS4 counter-parts.
 // In the future, when the BS 4 theme is created, these values will be changed
 
+// BOOTSTRAP VARIABLES
+
 // colors
 
 $gray-dark:                 #373a3c !default;
@@ -18,6 +20,22 @@ $brand-inverse:             $gray-dark !default;
 
 // radius
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius:             .25rem !default;
+$border-radius-lg:          .3rem !default;
+$border-radius-sm:          .2rem !default;
+
+// Typography
+
+$font-size-root: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+// MATTERSPACE VARIABLES
+
+// BS4 does not use any of the $gray palette for some borders, like the card border.
+// The card border, for instance, is set to rgba(0,0,0,.125), so here is a variable for this
+$default-border-color:      rgba(0,0,0,.125) !default;
+$default-gutter:            1.5rem;

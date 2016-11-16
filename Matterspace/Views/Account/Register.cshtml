@@ -2,7 +2,7 @@
 @model RegisterViewModel
 @{
     ViewBag.Title = "Sign up to Matterspace · Matterspace";
-    Layout = "../Shared/_Layout.cshtml";
+    Layout = "../Shared/_Layout.NotAuthenticated.cshtml";
 }
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {

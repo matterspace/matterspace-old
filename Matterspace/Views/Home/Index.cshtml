@@ -4,7 +4,7 @@
     Layout = "../Shared/_LayoutContainer.cshtml";
 }
 
-<div class="col-md-8" >
+<div class="col-md-8 main-content-column">
     @if (this.Model.Updates.Count == 0)
     {
         // this is a blank slate
@@ -16,16 +16,40 @@
                 It seems you have no updates.
             </div>
             <div class="timeline-blankslate-secondary-message">
-                This is your timeline. Here you can see updates from the products you're watching and 
+                This is your timeline. Here you can see updates from the products you're watching and
                 posts you are subscribed to.
             </div>
 
         </div>
     }
-    else {
-        // display updates here
+    else
+    {
+        // Display the user timeline here
     }
 </div>
-<div class="col-md-4">
-    
+<div class="col-md-4 side-bar-column">
+    <div class="card ">
+        <p class="ms-card-header">
+            Posts you subscribed to
+        </p>
+        <div class="card-block">
+
+        </div>
+    </div>
+    <div class="card">
+        <p class="ms-card-header">
+            Products you're watching
+        </p>
+        <div class="card-block">
+
+        </div>
+    </div>
+    <div class="card">
+        <p class="ms-card-header">
+            Your products
+        </p>
+        <div class="card-block">
+
+        </div>
+    </div>
 </div>
