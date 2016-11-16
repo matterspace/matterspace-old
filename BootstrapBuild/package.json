@@ -1,0 +1,18 @@
+{
+  "name": "bootstrap-build",
+  "version": "1.0.0",
+  "scripts": {},
+  "author": "Andre Pena",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp-cli": "^1.2.2",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.13.3"
+  }
+}
