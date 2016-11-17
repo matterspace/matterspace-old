@@ -16,14 +16,21 @@
   padding-left: 0;
   padding-right: 0; }
 
-.ms-card-header {
+.ms-card .ms-card-header {
   padding: 0.4rem 0.6rem;
   background-color: #f7f7f9;
   margin-bottom: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   font-weight: bold; }
-  .ms-card-header:first-child {
+  .ms-card .ms-card-header:first-child {
     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
+
+.ms-card .ms-card-subheader {
+  padding: 0.75rem;
+  background-color: #f7f7f9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+  .ms-card .ms-card-subheader .fa {
+    margin-right: 0.25rem; }
 
 div.app-container {
   margin-top: 0.75rem; }

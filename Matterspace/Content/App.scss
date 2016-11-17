@@ -22,15 +22,27 @@ body {
     padding-right: 0;
 }
 
-.ms-card-header {
-    padding: 0.4rem 0.6rem;
-    background-color: $gray-lightest;
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    font-weight: bold;
+.ms-card {
+    .ms-card-header {
+        padding: 0.4rem 0.6rem;
+        background-color: $gray-lightest;
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        font-weight: bold;
 
-    &:first-child {
-        border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+        &:first-child {
+            border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+        }
+    }
+
+    .ms-card-subheader {
+        padding: $default-gutter / 2;
+        background-color: $gray-lightest;
+        border-bottom: 1px solid $default-border-color;
+
+        .fa {
+            margin-right: 0.25rem;
+        }
     }
 }
 
@@ -55,24 +67,23 @@ nav.navbar {
     ul.navbar-with-dropdown-menu {
 
         li.nav-item {
-        position: relative;
+            position: relative;
 
-        span.navbar-profile-picture {
-            background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
-            height: 32px;
-            width: 32px;
-            background-size: 32px 32px;
-            border-radius: 50%;
-            display: block;
-            position: absolute;
-            top: 2px;
+            span.navbar-profile-picture {
+                background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
+                height: 32px;
+                width: 32px;
+                background-size: 32px 32px;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                top: 2px;
+            }
+
+            i.navbar-profile-picture-dropdown-button {
+                margin-left: 36px;
+            }
         }
-
-        i.navbar-profile-picture-dropdown-button {
-            margin-left: 36px;
-        }
-    }
-
     }
 
 
