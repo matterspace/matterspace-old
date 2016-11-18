@@ -7,6 +7,7 @@ Web.Secret.config
 # User-specific files
 .suo
 .user
+*.csproj.user
 .userosscache
 .sln.docstates
 
@@ -273,3 +274,4 @@ __pycache__
 
 # Cake - Uncomment if you are using it
 # tools
+*.user

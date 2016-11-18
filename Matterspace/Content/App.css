@@ -31,6 +31,11 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .ms-card .ms-card-subheader .fa {
     margin-right: 0.25rem; }
+  .ms-card .ms-card-subheader button.btn a {
+    text-decoration: none;
+    color: white; }
+    .ms-card .ms-card-subheader button.btn a:visited {
+      color: white; }
 
 div.app-container {
   margin-top: 0.75rem; }
