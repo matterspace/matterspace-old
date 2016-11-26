@@ -1,4 +1,8 @@
-﻿body {
+﻿.new-product-wrapper {
+  margin: 3rem auto;
+  width: 700px; }
+
+body {
   /* for non-responsiveness */
   min-width: 1020px;
   word-wrap: break-word; }

@@ -14,5 +14,9 @@
   {
     "outputFile": "Content/Variables.css",
     "inputFile": "Content/Variables.scss"
+  },
+  {
+    "outputFile": "Content/App.NewProduct.css",
+    "inputFile": "Content/App.NewProduct.scss"
   }
 ]

@@ -245,6 +245,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\App.NewProduct.css">
+      <DependentUpon>App.NewProduct.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\App.NewProduct.scss" />
     <None Include="Content\App.scss" />
     <Content Include="Content\App.css">
       <DependentUpon>App.scss</DependentUpon>
@@ -314,6 +318,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\no-np\tether.min.js" />
+    <Content Include="Scripts\no-np\vue.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
