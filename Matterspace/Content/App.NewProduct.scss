@@ -4,11 +4,32 @@
     margin: $default-gutter * 2 auto;
     width: $page-width-sm;
 
-    .new-product-header {
+    .new-product-header-wrapper {
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid $default-border-color;
 
+        .new-product-header {
+        }
+
+        .new-product-subheader {
+            margin-bottom: 0.5rem;
+        }
     }
 
-    .new-product-subheader {
+    .new-product-form {
+        margin-top: 1rem;
 
+        .agreement-checkbox {
+
+        }
+        
+        .agreement-label {
+            position: relative;
+            top: -6px;
+        }
+
+        .submit-button-wrapper {
+            margin-top: 2rem;
+        }
     }
 }

@@ -1,4 +1,16 @@
 ﻿.new-product-wrapper {
   margin: 3rem auto;
   width: 700px; }
+  .new-product-wrapper .new-product-header-wrapper {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+    .new-product-wrapper .new-product-header-wrapper .new-product-subheader {
+      margin-bottom: 0.5rem; }
+  .new-product-wrapper .new-product-form {
+    margin-top: 1rem; }
+    .new-product-wrapper .new-product-form .agreement-label {
+      position: relative;
+      top: -6px; }
+    .new-product-wrapper .new-product-form .submit-button-wrapper {
+      margin-top: 2rem; }
 

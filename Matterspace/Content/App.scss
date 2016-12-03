@@ -25,6 +25,7 @@ body {
 }
 
 .ms-card {
+    
     .ms-card-header {
         padding: 0.4rem 0.6rem;
         background-color: $gray-lightest;
@@ -187,4 +188,8 @@ nav.navbar {
 
     .timeline-blankslate-secondary-message {
     }
+}
+
+.validation-summary-errors {
+    color: $brand-danger;
 }

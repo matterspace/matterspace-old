@@ -6,7 +6,7 @@ namespace Matterspace.Models
     {
         [Required]
         [Display(Name = "User name")]
-        [RegularExpression("^([a-z0-9](?:-?[a-z0-9]){0,37})$", ErrorMessage = "Invalid user name. User names can only contain alphanumeric characters and hyphens; They cannot start with, end with, or have consecutive hyphens. The maximum size is 38 characters")]
+        [RegularExpression("^([a-z0-9](?:-?[a-z0-9]){0,39})$", ErrorMessage = "Invalid user name. User names can only contain alphanumeric characters and hyphens; They cannot start with, end with, or have consecutive hyphens. The maximum size is 40 characters")]
         public string UserName { get; set; }
 
         [Required]
