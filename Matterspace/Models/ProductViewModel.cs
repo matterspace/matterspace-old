@@ -1,9 +1,13 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
 namespace Matterspace.Models
 {
-    public class CreateProductViewModel
+    public class ProductViewModel
     {
         /// <summary>
         /// This is not an actual URL, but the URL part like matterspace.io/[this].
@@ -26,7 +30,7 @@ namespace Matterspace.Models
 
         [DisplayName("Website URL")]
         [StringLength(512, ErrorMessage = "The website URL can be no longer than 512 characters.")]
-        [Url( ErrorMessage = "The website URL must be valid")]
+        [Url(ErrorMessage = "The website URL must be valid")]
         [Required(ErrorMessage = "The website URL is required. Make sure it starts with http:// or https://")] // todo: Fix this. http shouldn't be required
         public string WebsiteUrl { get; set; }
     }

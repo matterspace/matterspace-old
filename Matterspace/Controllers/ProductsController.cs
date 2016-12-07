@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Matterspace.Model;
@@ -33,8 +35,8 @@ namespace Matterspace.Controllers
             {
                 var product = new Product()
                 {
-                    DisplayName = formModel.DisplayName,
                     Name = formModel.Name.ToLower(),
+                    DisplayName = formModel.DisplayName,
                     ShortDescription = formModel.ShortDescription,
                     WebsiteUrl = formModel.WebsiteUrl
                 };
@@ -49,9 +51,19 @@ namespace Matterspace.Controllers
         }
 
         [HttpGet]
-        public ActionResult Details(string name)
+        public async Task<ActionResult> Details(string name)
         {
-            return null;
+            var product = await this.Db.Products.FirstAsync(m => m.Name == name);
+
+            var viewModel = new ProductViewModel()
+            {
+                Name = product.Name,
+                DisplayName = product.DisplayName,
+                ShortDescription = product.ShortDescription,
+                WebsiteUrl = product.WebsiteUrl
+            };
+
+            return this.View(viewModel);
         }
 
         protected override void Dispose(bool disposing)
