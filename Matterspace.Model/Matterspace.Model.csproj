@@ -115,6 +115,10 @@
     <Compile Include="Migrations\201611140132046_adding-users-notifications.Designer.cs">
       <DependentUpon>201611140132046_adding-users-notifications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612062355298_Updating constraints for the Product table.cs" />
+    <Compile Include="Migrations\201612062355298_Updating constraints for the Product table.Designer.cs">
+      <DependentUpon>201612062355298_Updating constraints for the Product table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611140132046_adding-users-notifications.resx">
       <DependentUpon>201611140132046_adding-users-notifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612062355298_Updating constraints for the Product table.resx">
+      <DependentUpon>201612062355298_Updating constraints for the Product table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

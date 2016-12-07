@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Matterspace.Model.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -33,6 +35,25 @@ namespace Matterspace.Model
             modelBuilder.Entity<IdentityRole>().ToTable("UserRole");
 
             // Entity configuration
+
+            // Product
+            modelBuilder.Entity<Product>().Property(m => m.Name)
+                .IsRequired()
+                .HasMaxLength(40).HasColumnAnnotation(
+                    IndexAnnotation.AnnotationName,
+                    new IndexAnnotation(new IndexAttribute("UQ_Name", 1) { IsUnique = true })
+                    );
+
+            modelBuilder.Entity<Product>().Property(m => m.DisplayName)
+                .IsRequired()
+                .HasMaxLength(40);
+
+            modelBuilder.Entity<Product>().Property(m => m.ShortDescription).HasMaxLength(120);
+
+
+            modelBuilder.Entity<Product>().Property(m => m.WebsiteUrl)
+                .IsRequired()
+                .HasMaxLength(512);
 
             // ApplicationUserNotification
             modelBuilder.Entity<ApplicationUserNotification>()
@@ -70,7 +91,7 @@ namespace Matterspace.Model
                 .HasRequired(m => m.Product)
                 .WithMany(m => m.UsersFollowing);
 
-            
+
         }
 
         public DbSet<ApplicationUserFollowingProduct> ApplicationUserFollowingProducts { get; set; }

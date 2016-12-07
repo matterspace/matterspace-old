@@ -14,10 +14,10 @@
         @using (Html.BeginForm("Create", "Products"))
         {
             <div class="form-group">
-                @Html.LabelFor(m => m.ProductUrlName)
+                @Html.LabelFor(m => m.Name)
                 <div class="input-group">
                     <div class="input-group-addon">http://matterspace.io/</div>
-                    @Html.TextBoxFor(m => m.ProductUrlName, new { placeholder = "your-product-name", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Name, new { placeholder = "your-product-name", @class = "form-control" })
                     <div class="input-group-addon">
                         <i class="fa fa-question-circle"
                            aria-hidden="true"
@@ -27,21 +27,24 @@
                            data-offset="-10 0"></i>
                     </div>
                 </div>
-                @*@Html.ValidationMessageFor(m => m.ProductUrlName, "", new { @class = "text-danger" })*@
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.ProductDisplayName)
+                @Html.LabelFor(m => m.DisplayName)
                 <div class="input-group">
-                    @Html.TextBoxFor(m => m.ProductDisplayName, new { placeholder = "Your product name", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.DisplayName, new { placeholder = "Your product name", @class = "form-control" })
                 </div>
-                @*@Html.ValidationMessageFor(m => m.ProductDisplayName, "", new { @class = "text-danger" })*@
             </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.ShortDescription)
                 <div class="input-group">
                     @Html.TextAreaFor(m => m.ShortDescription, new { placeholder = "A short description of your product, no more than 120 characters", @class = "form-control" })
                 </div>
-                @*@Html.ValidationMessageFor(m => m.ShortDescription, "", new { @class = "text-danger" })*@
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.WebsiteUrl)
+                <div class="input-group">
+                    @Html.TextBoxFor(m => m.WebsiteUrl, new { placeholder = "http://www.yourproduct.com", @class = "form-control" })
+                </div>
             </div>
             <div class="validation-wrapper">
                 @Html.ValidationSummary(false)

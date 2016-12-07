@@ -36,6 +36,8 @@ namespace Matterspace.Model.Entities
         /// </summary>
         public string LongDescriptionMarkdown { get; set; }
 
+        public string WebsiteUrl { get; set; }
+
         public byte[] Avatar { get; set; }
         
         public ICollection<ProductMember> Members { get; set; }
@@ -43,5 +45,7 @@ namespace Matterspace.Model.Entities
         public ICollection<Release> Releases { get; set; }
 
         public ICollection<ApplicationUserFollowingProduct> UsersFollowing { get; set; }
+
+        
     }
 }
