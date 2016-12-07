@@ -246,10 +246,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\App.NewProduct.css">
-      <DependentUpon>App.NewProduct.scss</DependentUpon>
+    <Content Include="Content\App.Products.Create.css">
+      <DependentUpon>App.Products.Create.scss</DependentUpon>
     </Content>
-    <Content Include="Content\App.NewProduct.scss" />
+    <Content Include="Content\App.Products.Create.scss" />
+    <Content Include="Content\App.Products.Home.css">
+      <DependentUpon>App.Products.Home.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\App.Products.Home.scss" />
     <None Include="Content\App.scss" />
     <Content Include="Content\App.css">
       <DependentUpon>App.scss</DependentUpon>

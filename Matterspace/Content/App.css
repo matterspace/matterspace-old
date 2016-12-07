@@ -14,6 +14,22 @@
     .new-product-wrapper .new-product-form .submit-button-wrapper {
       margin-top: 2rem; }
 
+.product-home-wrapper .product-header {
+  min-height: 150px;
+  background-color: gray;
+  position: relative; }
+  .product-home-wrapper .product-header .avatar-wrapper {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    top: 20px; }
+    .product-home-wrapper .product-header .avatar-wrapper .avatar {
+      margin: 5px;
+      width: 150px;
+      height: 150px;
+      background-color: lightblue; }
+
 body {
   /* for non-responsiveness */
   min-width: 1020px;

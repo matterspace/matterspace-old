@@ -1,10 +1,21 @@
 ﻿@model Matterspace.Models.ProductViewModel
 
 @{
-    ViewBag.Title = this.Model.DisplayName + " · Matterspace";
-    Layout = "../Shared/_LayoutContainer.cshtml";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
 }
 
-<div class="new-product-wrapper">
+<div class="product-home-wrapper">
+    <div class="product-header">
+        <div class="container">
+            <div class="avatar-wrapper">
+                <div class="avatar">
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container app-container">
     
 </div>
+
+@Html.Partial("_FooterPartial")
