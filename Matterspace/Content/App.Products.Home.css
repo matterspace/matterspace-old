@@ -1,16 +1,45 @@
 ﻿.product-home-wrapper .product-header {
-  min-height: 150px;
-  background-color: gray;
-  position: relative; }
-  .product-home-wrapper .product-header .avatar-wrapper {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    background-color: white;
-    top: 20px; }
-    .product-home-wrapper .product-header .avatar-wrapper .avatar {
-      margin: 5px;
-      width: 150px;
-      height: 150px;
-      background-color: lightblue; }
+  display: flex; }
+  .product-home-wrapper .product-header .header-side {
+    width: 120px; }
+    .product-home-wrapper .product-header .header-side .header-avatar {
+      width: 100px;
+      height: 100px;
+      background-image: url("/Content/Images/MSLogo.png");
+      background-size: 100px 100px; }
+  .product-home-wrapper .product-header .header-main {
+    flex: 1; }
+    .product-home-wrapper .product-header .header-main h3.header-title {
+      margin-top: 5px;
+      margin-bottom: 0; }
+    .product-home-wrapper .product-header .header-main .header-subtitle {
+      color: #818a91;
+      margin-bottom: 15px; }
+    .product-home-wrapper .product-header .header-main .header-actions .like-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .watch-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .facebook-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #305cbb; }
+    .product-home-wrapper .product-header .header-main .header-actions .twitter-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #00aced; }
+
+.product-home-wrapper .product-body {
+  margin-top: 20px; }
+  .product-home-wrapper .product-body nav.navbar-product {
+    border: 1px solid rgba(0, 0, 0, 0.125); }
 

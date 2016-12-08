@@ -61,10 +61,10 @@ body {
 }
 
 div.app-container {
-    margin-top: $default-gutter / 2;
+    margin-top: 20px;
 }
 
-nav.navbar {
+nav.navbar-top {
     border-bottom: 1px solid $default-border-color;
     border-radius: 0;
 

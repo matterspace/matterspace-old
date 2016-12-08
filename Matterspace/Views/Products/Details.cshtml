@@ -1,21 +1,64 @@
 ﻿@model Matterspace.Models.ProductViewModel
 
 @{
-    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
 }
 
 <div class="product-home-wrapper">
     <div class="product-header">
-        <div class="container">
-            <div class="avatar-wrapper">
-                <div class="avatar">
+        <div class="header-side">
+            <div class="header-side">
+                <div class="header-avatar">
                 </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <h3 class="header-title">
+                @this.Model.DisplayName
+            </h3>
+            <p class="header-subtitle">
+                @this.Model.ShortDescription
+            </p>
+            <div class="header-actions">
+                <a href="#" class="btn btn-danger" >Get it</a>
+                <a href="#" class="btn btn-secondary like-button">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>293</span>
+                </a>
+                <a href="#" class="btn btn-secondary watch-button">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <span>Watching</span>
+                </a>
+                <div class="pull-right">
+                    <a href="#" class="btn twitter-button">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="btn facebook-button">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="product-body">
+        <nav class="navbar navbar-product navbar-light bg-faded">
+            <div class="nav navbar-nav">
+                <a class="nav-item nav-link active" href="#">
+                    Home <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link" href="#">
+                    Ideas
+                    <span class="tag tag-default">28</span>
+                </a>
+                <a class="nav-item nav-link" href="#">
+                    Issues
+                    <span class="tag tag-default">6</span>
+                </a>
+                <a class="nav-item nav-link" href="#">Backlog</a>
+                <a class="nav-item nav-link" href="#">Q&A</a>
+                <a class="nav-item nav-link" href="#">Docs</a>
+                <a class="nav-item nav-link" href="#">Releases</a>
+            </div>
+        </nav>
+    </div>
 </div>
-
-<div class="container app-container">
-    
-</div>
-
-@Html.Partial("_FooterPartial")

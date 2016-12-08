@@ -15,20 +15,49 @@
       margin-top: 2rem; }
 
 .product-home-wrapper .product-header {
-  min-height: 150px;
-  background-color: gray;
-  position: relative; }
-  .product-home-wrapper .product-header .avatar-wrapper {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    background-color: white;
-    top: 20px; }
-    .product-home-wrapper .product-header .avatar-wrapper .avatar {
-      margin: 5px;
-      width: 150px;
-      height: 150px;
-      background-color: lightblue; }
+  display: flex; }
+  .product-home-wrapper .product-header .header-side {
+    width: 120px; }
+    .product-home-wrapper .product-header .header-side .header-avatar {
+      width: 100px;
+      height: 100px;
+      background-image: url("/Content/Images/MSLogo.png");
+      background-size: 100px 100px; }
+  .product-home-wrapper .product-header .header-main {
+    flex: 1; }
+    .product-home-wrapper .product-header .header-main h3.header-title {
+      margin-top: 5px;
+      margin-bottom: 0; }
+    .product-home-wrapper .product-header .header-main .header-subtitle {
+      color: #818a91;
+      margin-bottom: 15px; }
+    .product-home-wrapper .product-header .header-main .header-actions .like-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .watch-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .facebook-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #305cbb; }
+    .product-home-wrapper .product-header .header-main .header-actions .twitter-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #00aced; }
+
+.product-home-wrapper .product-body {
+  margin-top: 20px; }
+  .product-home-wrapper .product-body nav.navbar-product {
+    border: 1px solid rgba(0, 0, 0, 0.125); }
 
 body {
   /* for non-responsiveness */
@@ -70,18 +99,18 @@ body {
       color: white; }
 
 div.app-container {
-  margin-top: 0.75rem; }
+  margin-top: 20px; }
 
-nav.navbar {
+nav.navbar-top {
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0; }
-  nav.navbar ul.navbar-nav {
+  nav.navbar-top ul.navbar-nav {
     position: relative; }
-    nav.navbar ul.navbar-nav li.nav-item.active div.navbar-dropdown-menu-wrapper {
+    nav.navbar-top ul.navbar-nav li.nav-item.active div.navbar-dropdown-menu-wrapper {
       display: block; }
-  nav.navbar ul.navbar-with-dropdown-menu li.nav-item {
+  nav.navbar-top ul.navbar-with-dropdown-menu li.nav-item {
     position: relative; }
-    nav.navbar ul.navbar-with-dropdown-menu li.nav-item span.navbar-profile-picture {
+    nav.navbar-top ul.navbar-with-dropdown-menu li.nav-item span.navbar-profile-picture {
       background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
       height: 32px;
       width: 32px;
@@ -90,11 +119,11 @@ nav.navbar {
       display: block;
       position: absolute;
       top: 2px; }
-    nav.navbar ul.navbar-with-dropdown-menu li.nav-item i.navbar-profile-picture-dropdown-button {
+    nav.navbar-top ul.navbar-with-dropdown-menu li.nav-item i.navbar-profile-picture-dropdown-button {
       margin-left: 36px; }
-  nav.navbar .navbar-dropdown-menu-wrapper {
+  nav.navbar-top .navbar-dropdown-menu-wrapper {
     display: none; }
-    nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
+    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu {
       position: absolute;
       width: 190px;
       right: 0;
@@ -106,7 +135,7 @@ nav.navbar {
       right: 0;
       left: auto;
       margin-top: 10px; }
-      nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu::before {
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu::before {
         top: -16px;
         right: 9px;
         left: auto;
@@ -115,7 +144,7 @@ nav.navbar {
         position: absolute;
         display: inline-block;
         content: ""; }
-      nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu::after {
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu::after {
         top: -14px;
         right: 10px;
         left: auto;
@@ -124,19 +153,19 @@ nav.navbar {
         position: absolute;
         display: inline-block;
         content: ""; }
-    nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
+    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
       padding: 5px 10px;
       display: block;
       color: inherit;
       text-decoration: none; }
-      nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a:hover {
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a:hover {
         background-color: #0275d8;
         color: white; }
-    nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
+    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
       padding: 5px 10px;
       text-overflow: ellipsis;
       overflow: hidden; }
-    nav.navbar .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
+    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
       border-bottom: 1px solid rgba(0, 0, 0, 0.125);
       margin-bottom: 3px; }
 
