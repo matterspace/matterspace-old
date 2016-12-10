@@ -91,63 +91,23 @@
     <Compile Include="Enums\ReleaseStatus.cs" />
     <Compile Include="Enums\ThreadType.cs" />
     <Compile Include="MatterspaceDbContext.cs" />
-    <Compile Include="Migrations\201611132235011_initial-migration.cs" />
-    <Compile Include="Migrations\201611132235011_initial-migration.Designer.cs">
-      <DependentUpon>201611132235011_initial-migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611132251365_adding-users-following-products.cs" />
-    <Compile Include="Migrations\201611132251365_adding-users-following-products.Designer.cs">
-      <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611132317257_adding-thread-status-change-events.cs" />
-    <Compile Include="Migrations\201611132317257_adding-thread-status-change-events.Designer.cs">
-      <DependentUpon>201611132317257_adding-thread-status-change-events.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.cs" />
-    <Compile Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.Designer.cs">
-      <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611132328482_adding-users-following-threads.cs" />
-    <Compile Include="Migrations\201611132328482_adding-users-following-threads.Designer.cs">
-      <DependentUpon>201611132328482_adding-users-following-threads.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611140132046_adding-users-notifications.cs" />
-    <Compile Include="Migrations\201611140132046_adding-users-notifications.Designer.cs">
-      <DependentUpon>201611140132046_adding-users-notifications.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612062355298_Updating constraints for the Product table.cs" />
-    <Compile Include="Migrations\201612062355298_Updating constraints for the Product table.Designer.cs">
-      <DependentUpon>201612062355298_Updating constraints for the Product table.cs</DependentUpon>
+    <Compile Include="Migrations\201612101939368_initial.cs" />
+    <Compile Include="Migrations\201612101939368_initial.Designer.cs">
+      <DependentUpon>201612101939368_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611132235011_initial-migration.resx">
-      <DependentUpon>201611132235011_initial-migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611132251365_adding-users-following-products.resx">
-      <DependentUpon>201611132251365_adding-users-following-products.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611132317257_adding-thread-status-change-events.resx">
-      <DependentUpon>201611132317257_adding-thread-status-change-events.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611132319102_fixing-user-type-on-status-change-event.resx">
-      <DependentUpon>201611132319102_fixing-user-type-on-status-change-event.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611132328482_adding-users-following-threads.resx">
-      <DependentUpon>201611132328482_adding-users-following-threads.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611140132046_adding-users-notifications.resx">
-      <DependentUpon>201611140132046_adding-users-notifications.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612062355298_Updating constraints for the Product table.resx">
-      <DependentUpon>201612062355298_Updating constraints for the Product table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612101939368_initial.resx">
+      <DependentUpon>201612101939368_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

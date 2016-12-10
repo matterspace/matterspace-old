@@ -7,13 +7,13 @@ namespace Matterspace.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addingusersfollowingproducts : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingusersfollowingproducts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611132251365_adding-users-following-products"; }
+            get { return "201612101939368_initial"; }
         }
         
         string IMigrationMetadata.Source
