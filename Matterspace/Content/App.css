@@ -1,20 +1,4 @@
-﻿.new-product-wrapper {
-  margin: 3rem auto;
-  width: 700px; }
-  .new-product-wrapper .new-product-header-wrapper {
-    margin-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-    .new-product-wrapper .new-product-header-wrapper .new-product-subheader {
-      margin-bottom: 0.5rem; }
-  .new-product-wrapper .new-product-form {
-    margin-top: 1rem; }
-    .new-product-wrapper .new-product-form .agreement-label {
-      position: relative;
-      top: -6px; }
-    .new-product-wrapper .new-product-form .submit-button-wrapper {
-      margin-top: 2rem; }
-
-.product-home-wrapper .product-header {
+﻿.product-home-wrapper .product-header {
   display: flex; }
   .product-home-wrapper .product-header .header-side {
     width: 120px; }
@@ -69,12 +53,29 @@
       .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item .navbar-product-item-text {
         margin-left: 3px; }
       .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item:hover {
-        text-decoration: none; }
+        text-decoration: none;
+        color: black; }
       .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item.active {
         border-top: 1px solid #d9534f;
         background-color: #eceeef; }
         .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item.active .fa {
           color: #b5bcc0; }
+
+.new-product-wrapper {
+  margin: 3rem auto;
+  width: 700px; }
+  .new-product-wrapper .new-product-header-wrapper {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+    .new-product-wrapper .new-product-header-wrapper .new-product-subheader {
+      margin-bottom: 0.5rem; }
+  .new-product-wrapper .new-product-form {
+    margin-top: 1rem; }
+    .new-product-wrapper .new-product-form .agreement-label {
+      position: relative;
+      top: -6px; }
+    .new-product-wrapper .new-product-form .submit-button-wrapper {
+      margin-top: 2rem; }
 
 body {
   /* for non-responsiveness */

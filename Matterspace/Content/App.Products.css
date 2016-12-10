@@ -1,0 +1,63 @@
+﻿.product-home-wrapper .product-header {
+  display: flex; }
+  .product-home-wrapper .product-header .header-side {
+    width: 120px; }
+    .product-home-wrapper .product-header .header-side .header-avatar {
+      width: 100px;
+      height: 100px;
+      background-image: url("/Content/Images/MSLogo.png");
+      background-size: 100px 100px; }
+  .product-home-wrapper .product-header .header-main {
+    flex: 1; }
+    .product-home-wrapper .product-header .header-main h3.header-title {
+      margin-top: 5px;
+      margin-bottom: 0; }
+    .product-home-wrapper .product-header .header-main .header-subtitle {
+      color: #818a91;
+      margin-bottom: 15px; }
+    .product-home-wrapper .product-header .header-main .header-actions .like-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .like-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .watch-button {
+      margin-left: 7px; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button .fa {
+        color: #55595c; }
+      .product-home-wrapper .product-header .header-main .header-actions .watch-button span {
+        margin-left: 5px; }
+    .product-home-wrapper .product-header .header-main .header-actions .facebook-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #305cbb; }
+    .product-home-wrapper .product-header .header-main .header-actions .twitter-button {
+      margin-left: 7px;
+      color: white;
+      width: 50px;
+      background-color: #00aced; }
+
+.product-home-wrapper .product-body {
+  margin-top: 20px; }
+  .product-home-wrapper .product-body nav.navbar-product {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #f7f7f9;
+    border-radius: 0.25rem; }
+    .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item {
+      color: #373a3c;
+      display: inline-block;
+      padding: 10px 15px; }
+      .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item .fa {
+        color: #d0d5d8; }
+      .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item .navbar-product-item-text {
+        margin-left: 3px; }
+      .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item:hover {
+        text-decoration: none;
+        color: black; }
+      .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item.active {
+        border-top: 1px solid #d9534f;
+        background-color: #eceeef; }
+        .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item.active .fa {
+          color: #b5bcc0; }
+

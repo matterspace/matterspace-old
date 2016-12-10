@@ -1,0 +1,112 @@
+﻿@import "Variables.scss";
+
+// header
+$header-button-margin-left: 7px;
+
+@mixin header-action() {
+    margin-left: $header-button-margin-left;
+
+    .fa {
+        color: $gray;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+}
+
+@mixin social-media-action() {
+    margin-left: $header-button-margin-left;
+    color: white;
+    width: 50px;
+}
+
+.product-home-wrapper {
+    .product-header {
+        display: flex;
+
+        .header-side {
+            width: 120px;
+
+            .header-avatar {
+                width: 100px;
+                height: 100px;
+                background-image: url('/Content/Images/MSLogo.png');
+                background-size: 100px 100px;
+            }
+        }
+
+        .header-main {
+            flex: 1;
+
+            h3.header-title {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+            .header-subtitle {
+                color: $gray-light;
+                margin-bottom: 15px;
+            }
+
+            .header-actions {
+
+                .like-button {
+                    @include header-action();
+                }
+
+                .watch-button {
+                    @include header-action();
+                }
+
+                .facebook-button {
+                    @include social-media-action();
+                    background-color: $facebook-bg-color;
+                }
+
+                .twitter-button {
+                    @include social-media-action();
+                    background-color: $twitter-bg-color;
+                }
+            }
+        }
+    }
+
+    .product-body {
+        margin-top: 20px;
+
+        nav.navbar-product {
+            border: 1px solid $default-border-color;
+            background-color: $gray-lightest;
+            border-radius: $border-radius;
+
+            a.navbar-product-item {
+                color: $gray-dark;
+                display: inline-block;
+                padding: 10px 15px;
+
+                .fa {
+                    color: darken($gray-lighter, 10%);
+                }
+
+                .navbar-product-item-text {
+                    margin-left: 3px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                &.active {
+                    border-top: 1px solid $brand-danger;
+                    background-color: $gray-lighter;
+
+                    .fa {
+                        color: darken($gray-lighter, 20%);
+                    }
+                }
+            }
+        }
+    }
+}

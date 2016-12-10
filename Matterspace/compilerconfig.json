@@ -22,5 +22,9 @@
   {
     "outputFile": "Content/App.Products.Home.css",
     "inputFile": "Content/App.Products.Home.scss"
+  },
+  {
+    "outputFile": "Content/App.Products.css",
+    "inputFile": "Content/App.Products.scss"
   }
 ]
