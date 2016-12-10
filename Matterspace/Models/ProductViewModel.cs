@@ -7,6 +7,20 @@ using System.Web;
 
 namespace Matterspace.Models
 {
+    /// <summary>
+    /// Indicates the selected tab
+    /// </summary>
+    public enum ProductActiveTab
+    {
+        Home,
+        Ideas,
+        Issues,
+        Backlog,
+        QA,
+        Docs,
+        Releases
+    }
+
     public class ProductViewModel
     {
         /// <summary>
@@ -33,5 +47,9 @@ namespace Matterspace.Models
         [Url(ErrorMessage = "The website URL must be valid")]
         [Required(ErrorMessage = "The website URL is required. Make sure it starts with http:// or https://")] // todo: Fix this. http shouldn't be required
         public string WebsiteUrl { get; set; }
+
+        public ProductActiveTab ActiveTab { get; set; }
+
+
     }
 }
