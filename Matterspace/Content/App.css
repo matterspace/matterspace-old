@@ -60,6 +60,8 @@
         background-color: #eceeef; }
         .product-home-wrapper .product-body nav.navbar-product a.navbar-product-item.active .fa {
           color: #b5bcc0; }
+  .product-home-wrapper .product-body .product-nav-content {
+    margin-top: 20px; }
 
 .new-product-wrapper {
   margin: 3rem auto;

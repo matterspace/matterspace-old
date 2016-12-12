@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Matterspace.Lib.Helpers;
 using Matterspace.Model;
@@ -52,7 +49,7 @@ namespace Matterspace.Controllers
         }
 
         [HttpPost]
-        public async System.Threading.Tasks.Task<ActionResult> Create(CreateProductViewModel formModel)
+        public async Task<ActionResult> Create(CreateProductViewModel formModel)
         {
             if (ModelState.IsValid)
             {
