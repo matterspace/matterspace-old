@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Matterspace.Lib.Helpers;
 using Matterspace.Model;
 using Matterspace.Model.Entities;
 using Matterspace.Models;
@@ -76,6 +77,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Index(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Home);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Home", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -83,6 +85,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Ideas(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Ideas);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Ideas", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -90,6 +93,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Issues(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Issues);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Issues", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -97,6 +101,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Backlog(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Backlog);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Backlog", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -104,6 +109,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> QA(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.QA);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Questions & Answers", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -111,6 +117,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Docs(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Docs);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Documentation", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
@@ -118,6 +125,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Releases(string name)
         {
             var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Releases);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Releases", viewModel.DisplayName);
             return this.View(viewModel);
         }
 
