@@ -15,8 +15,14 @@ namespace Matterspace
 
             routes.MapRoute(
                 name: "Product home",
-                url: "{name}",
-                defaults: new { controller = "Products", action = "Details" }
+                url: "p/{name}",
+                defaults: new { controller = "Products", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "Product",
+                url: "p/{name}/{action}",
+                defaults: new { controller = "Products" }
             );
 
             routes.MapRoute(

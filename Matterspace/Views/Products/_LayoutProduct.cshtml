@@ -46,11 +46,11 @@
     </div>
     <div class="product-body">
         <nav class="navbar-product">
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Home)" href="#">
+            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Home)" href="@Url.Action("Index")">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <span class="navbar-product-item-text">Home</span>
             </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Ideas)" href="#">
+            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Ideas)" href="@Url.Action("Ideas")">
                 <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                 <span class="navbar-product-item-text">Ideas</span>
                 <span class="tag tag-default">28</span>

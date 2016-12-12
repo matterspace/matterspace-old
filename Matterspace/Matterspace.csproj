@@ -380,8 +380,9 @@
     <Content Include="Views\Shared\_AppInsightsPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\_LayoutProduct.cshtml" />
+    <Content Include="Views\Products\Ideas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

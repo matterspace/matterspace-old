@@ -20,6 +20,28 @@ namespace Matterspace.Controllers
 
         public MatterspaceDbContext Db { get; }
 
+        /// <summary>
+        /// Returns the base ViewModel for the given tab
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="activeTab"></param>
+        /// <returns></returns>
+        private async Task<ProductViewModel> GetBaseViewModel(string name, ProductActiveTab activeTab)
+        {
+            if (name == null) throw new ArgumentNullException(nameof(name));
+
+            var product = await this.Db.Products.FirstAsync(m => m.Name == name);
+
+            return new ProductViewModel()
+            {
+                Name = product.Name,
+                DisplayName = product.DisplayName,
+                ShortDescription = product.ShortDescription,
+                WebsiteUrl = product.WebsiteUrl,
+                ActiveTab = activeTab
+            };
+        }
+
         // GET: Products
         [HttpGet]
         public ActionResult Create()
@@ -44,25 +66,23 @@ namespace Matterspace.Controllers
                 this.Db.Products.Add(product);
                 await this.Db.SaveChangesAsync();
 
-                return this.RedirectToAction("Details", new {name = product.Name});
+                return this.RedirectToAction("Index", new {name = product.Name});
             }
 
             return View(formModel);
         }
 
         [HttpGet]
-        public async Task<ActionResult> Details(string name)
+        public async Task<ActionResult> Index(string name)
         {
-            var product = await this.Db.Products.FirstAsync(m => m.Name == name);
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Home);
+            return this.View(viewModel);
+        }
 
-            var viewModel = new ProductViewModel()
-            {
-                Name = product.Name,
-                DisplayName = product.DisplayName,
-                ShortDescription = product.ShortDescription,
-                WebsiteUrl = product.WebsiteUrl
-            };
-
+        [HttpGet]
+        public async Task<ActionResult> Ideas(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Ideas);
             return this.View(viewModel);
         }
 
