@@ -86,6 +86,41 @@ namespace Matterspace.Controllers
             return this.View(viewModel);
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Issues(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Issues);
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Backlog(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Backlog);
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> QA(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.QA);
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Docs(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Docs);
+            return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Releases(string name)
+        {
+            var viewModel = await this.GetBaseViewModel(name, ProductActiveTab.Releases);
+            return this.View(viewModel);
+        }
+
         protected override void Dispose(bool disposing)
         {
             this.Db.Dispose();
