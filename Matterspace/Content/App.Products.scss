@@ -25,12 +25,14 @@
     .product-header {
         display: flex;
 
+        $avatar-size: 100px;
+
         .header-side {
-            width: 120px;
+            width: $avatar-size + $gutter-md / 2;
 
             .header-avatar {
-                width: 100px;
-                height: 100px;
+                width: $avatar-size;
+                height: $avatar-size;
                 background-image: url('/Content/Images/MSLogo.png');
                 background-size: 100px 100px;
             }
