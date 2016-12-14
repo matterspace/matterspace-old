@@ -1,10 +1,10 @@
 ﻿@import "Variables.scss";
+@import "Mixins.scss";
 
 // header
-$header-button-margin-left: 7px;
-
 @mixin header-action() {
-    margin-left: $header-button-margin-left;
+    margin-left: $gutter-md / 2;
+    box-sizing: border-box;
 
     .fa {
         color: $gray;
@@ -16,7 +16,7 @@ $header-button-margin-left: 7px;
 }
 
 @mixin social-media-action() {
-    margin-left: $header-button-margin-left;
+    margin-left: $gutter-md / 2;
     color: white;
     width: 50px;
 }
@@ -73,7 +73,7 @@ $header-button-margin-left: 7px;
     }
 
     .product-body {
-        margin-top: 20px;
+        margin-top: $gutter-md / 2;
 
         nav.navbar-product {
             border: 1px solid $default-border-color;
@@ -110,7 +110,16 @@ $header-button-margin-left: 7px;
         }
 
         .product-nav-content {
-            margin-top: 20px;
+            margin-top: $gutter-md / 2;
+
+            $col-side-width: 128px; // this is so the + New button will align with the social buttons
+            .col-main {
+                @include col-right-offset($col-side-width);
+            }
+
+            .col-side {
+                @include col-fixed($col-side-width, 0);
+            }
         }
     }
 }

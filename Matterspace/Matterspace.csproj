@@ -279,6 +279,9 @@
     <Content Include="Content\Images\hero.png" />
     <Content Include="Content\Images\MSLogo-xs.png" />
     <Content Include="Content\Images\MSLogo.png" />
+    <Content Include="Content\Mixins.css">
+      <DependentUpon>Mixins.scss</DependentUpon>
+    </Content>
     <Content Include="Content\Signin-signup.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
@@ -289,6 +292,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Mixins.scss" />
     <None Include="Content\Site.scss" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />

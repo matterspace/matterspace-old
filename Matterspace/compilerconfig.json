@@ -26,5 +26,9 @@
   {
     "outputFile": "Content/App.Products.css",
     "inputFile": "Content/App.Products.scss"
+  },
+  {
+    "outputFile": "Content/Mixins.css",
+    "inputFile": "Content/Mixins.scss"
   }
 ]
