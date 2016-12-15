@@ -107,4 +107,33 @@
       border-color: rgba(0, 0, 0, 0.125);
       border-bottom-left-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem; }
+      .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+        .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row .col-1 {
+          padding-left: 1.5rem;
+          padding-right: 0.75rem;
+          float: left;
+          box-sizing: border-box;
+          width: 40px; }
+        .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row .col-2 {
+          padding-left: 0.375rem;
+          padding-right: 0.375rem;
+          float: left;
+          box-sizing: border-box;
+          width: 25px;
+          color: #5cb85c; }
+        .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row .col-3 {
+          padding-left: 0;
+          padding-right: 0;
+          float: left;
+          box-sizing: border-box;
+          width: 500px; }
+          .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row .col-3 .title {
+            font-weight: 500; }
+          .product-home-wrapper .product-body .product-thread-table .product-thread-table-body .product-thread-table-row .col-3 .subtitle {
+            font-size: 0.875rem;
+            color: #55595c; }
 

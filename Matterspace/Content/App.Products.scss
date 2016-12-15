@@ -169,6 +169,33 @@
                 border-color: $default-border-color;
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
+
+                .product-thread-table-row {
+                    padding-top: $default-gutter / 2;
+                    padding-bottom: $default-gutter / 2;
+                    overflow: hidden;
+                    border-bottom: 1px solid $default-border-color;
+
+                    .col-1 {
+                        @include col(40px, $default-gutter, $default-gutter / 2)
+                    }
+
+                    .col-2 {
+                        @include col(25px, $default-gutter / 4, $default-gutter / 4)
+                        color: $brand-success
+                    }
+
+                    .col-3 {
+                        @include col(500px, 0, 0) .title {
+                            font-weight: 500;
+                        }
+
+                        .subtitle {
+                            font-size: $font-size-sm;
+                            color: $gray;
+                        }
+                    }
+                }
             }
         }
     }
