@@ -65,15 +65,46 @@
   .product-home-wrapper .product-body .product-nav-content {
     margin-top: 13px; }
     .product-home-wrapper .product-body .product-nav-content .col-main {
-      padding-left: 13px;
+      padding-left: 15px;
       padding-right: 13px;
       float: left;
       box-sizing: border-box;
       width: calc(100% - 128px); }
     .product-home-wrapper .product-body .product-nav-content .col-side {
       padding-left: 0;
-      padding-right: 13px;
+      padding-right: 15px;
       float: left;
       box-sizing: border-box;
       width: 128px; }
+  .product-home-wrapper .product-body .product-thread-table {
+    margin-top: 0.75rem; }
+    .product-home-wrapper .product-body .product-thread-table .product-thread-table-header {
+      background-color: #f7f7f9;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; }
+      .product-home-wrapper .product-body .product-thread-table .product-thread-table-header a {
+        display: inline-block;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        text-decoration: none;
+        color: #373a3c; }
+        .product-home-wrapper .product-body .product-thread-table .product-thread-table-header a.open {
+          font-weight: 500; }
+          .product-home-wrapper .product-body .product-thread-table .product-thread-table-header a.open span {
+            padding-left: 3px; }
+        .product-home-wrapper .product-body .product-thread-table .product-thread-table-header a.closed {
+          color: #818a91;
+          margin-left: 0.75rem; }
+          .product-home-wrapper .product-body .product-thread-table .product-thread-table-header a.closed span {
+            padding-left: 2px; }
+    .product-home-wrapper .product-body .product-thread-table .product-thread-table-body {
+      min-height: 300px;
+      border-width: 0 1px 1px 1px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.125);
+      border-bottom-left-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem; }
 

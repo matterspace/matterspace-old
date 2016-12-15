@@ -116,11 +116,59 @@
 
             $col-side-width: 128px; // this is so the + New button will align with the social buttons
             .col-main {
-                @include col-right-offset($col-side-width);
+                @include col-right-offset($col-side-width, $grid-gutter-width-base / 2);
             }
 
             .col-side {
-                @include col-fixed($col-side-width, 0);
+                @include col-fixed($col-side-width, 0, $grid-gutter-width-base / 2);
+            }
+        }
+
+        .product-thread-table {
+            margin-top: $default-gutter /2;
+
+            .product-thread-table-header {
+                background-color: $gray-lightest;
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+                border: 1px solid $default-border-color;
+                padding-left: $default-gutter;
+                padding-right: $default-gutter;
+
+                a {
+                    display: inline-block;
+                    padding-top: $default-gutter /2;
+                    padding-bottom: $default-gutter /2;
+                    text-decoration: none;
+                    color: $gray-dark;
+
+
+                    &.open {
+                        font-weight: 500;
+
+                        span {
+                            padding-left: 3px;
+                        }
+                    }
+
+                    &.closed {
+                        color: $gray-light;
+                        margin-left: $default-gutter /2;
+
+                        span {
+                            padding-left: 2px;
+                        }
+                    }
+                }
+            }
+
+            .product-thread-table-body {
+                min-height: 300px;
+                border-width: 0 1px 1px 1px;
+                border-style: solid;
+                border-color: $default-border-color;
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
             }
         }
     }
