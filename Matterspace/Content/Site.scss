@@ -19,9 +19,9 @@ body {
 
 .site-footer {
     position: relative;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 40px;
+    padding-top: $gutter-md;
+    padding-bottom: $gutter-md;
+    margin-top: $gutter-md;
     font-size: 12px;
     line-height: 1.5;
     color: #767676;
