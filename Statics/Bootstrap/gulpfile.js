@@ -23,7 +23,7 @@ gulp.task('build-site', function () {
 gulp.task('publish', function () {
     // place code for your default task here
     return gulp.src('./dist/*.css')
-        .pipe(gulp.dest('../Matterspace/Content'));
+        .pipe(gulp.dest('../../Matterspace/Content'));
 });
 
 
