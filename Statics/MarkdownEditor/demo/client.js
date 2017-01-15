@@ -9,6 +9,7 @@ import App from './App';
     import 'react-mde/lib/styles/react-mde.scss';
     import 'react-mde/lib/styles/react-mde-command-styles.scss';
     import 'react-mde/lib/styles/markdown-default-theme.scss';
+    import '../src/styles/markdown-editor.scss';
     import './styles/demo.scss';
 
 render(
