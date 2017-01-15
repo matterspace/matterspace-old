@@ -9,7 +9,7 @@ using System.Web;
 
 namespace Matterspace.Lib.Providers.Product
 {
-    public class ProductProvider
+    public class ProductProvider : IDisposable
     {
         public ProductProvider()
         {
@@ -40,10 +40,9 @@ namespace Matterspace.Lib.Providers.Product
             };
         }
 
-        protected override void Dispose(bool disposing)
+        public void Dispose()
         {
             this.Db.Dispose();
-            base.Dispose(disposing);
         }
     }
 }
