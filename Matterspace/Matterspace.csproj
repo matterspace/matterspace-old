@@ -212,9 +212,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BacklogController.cs" />
+    <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IdeasController.cs" />
+    <Compile Include="Controllers\IssuesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\QAController.cs" />
+    <Compile Include="Controllers\ReleasesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +229,7 @@
     <Compile Include="Lib\Email\EmailMessage.cs" />
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
+    <Compile Include="Lib\Providers\Product\ProductProvider.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ChangePasswordViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
@@ -389,12 +396,8 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\_LayoutProduct.cshtml" />
-    <Content Include="Views\Products\Ideas.cshtml" />
-    <Content Include="Views\Products\Backlog.cshtml" />
-    <Content Include="Views\Products\QA.cshtml" />
     <Content Include="Views\Products\Docs.cshtml" />
     <Content Include="Views\Products\Releases.cshtml" />
-    <Content Include="Views\Products\Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
