@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development babel-node ./demo/server.js"
+    "start": "cross-env NODE_ENV=development babel-node ./demo/server.js",
+    "build": "cross-env NOVE_ENV=production gulp build"
   },
   "author": "",
   "license": "MIT",
@@ -35,9 +36,10 @@
     "gulp-babel": "^6.1.2",
     "gulp-cli": "^1.2.2",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "gulp-webpack": "^1.5.0",
-    "normalize.css": "^5.0.0",
     "node-sass": "^4.1.1",
+    "normalize.css": "^5.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
