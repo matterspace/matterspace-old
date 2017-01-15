@@ -13,3 +13,17 @@ gulp.task('build', function () {
         .pipe(webpack(webpackConfig))
         .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('publish-css', function () {
+    return gulp.src('./dist/*.css')
+        .pipe(gulp.dest('../../Matterspace/Content'));
+});
+
+gulp.task('publish-js', function () {
+    return gulp.src('./dist/*.js')
+        .pipe(gulp.dest('../../Matterspace/Scripts/no-np'));
+});
+
+gulp.task('build-publish', ['build', 'publish-css', 'publish-js'], function() {
+
+});
