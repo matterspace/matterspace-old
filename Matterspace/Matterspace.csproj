@@ -396,8 +396,12 @@
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\_LayoutProduct.cshtml" />
-    <Content Include="Views\Products\Docs.cshtml" />
-    <Content Include="Views\Products\Releases.cshtml" />
+    <Content Include="Views\Backlog\Index.cshtml" />
+    <Content Include="Views\Ideas\Index.cshtml" />
+    <Content Include="Views\Issues\Index.cshtml" />
+    <Content Include="Views\QA\Index.cshtml" />
+    <Content Include="Views\Docs\Index.cshtml" />
+    <Content Include="Views\Releases\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
