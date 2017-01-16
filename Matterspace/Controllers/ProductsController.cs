@@ -50,9 +50,9 @@ namespace Matterspace.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.Home);
+            var viewModel = await new ProductProvider().GetProductViewModel(productName, ProductActiveTab.Home);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Home", viewModel.DisplayName);
             return this.View(viewModel);
         }        

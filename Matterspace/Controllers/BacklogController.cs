@@ -13,9 +13,9 @@ namespace Matterspace.Controllers
     public class BacklogController : Controller
     {
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.Backlog);
+            var viewModel = await new ProductProvider().GetProductViewModel(productName, ProductActiveTab.Backlog);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Backlog", viewModel.DisplayName);
             return this.View(viewModel);
         }

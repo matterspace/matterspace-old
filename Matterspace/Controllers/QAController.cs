@@ -13,9 +13,9 @@ namespace Matterspace.Controllers
     public class QAController : Controller
     {
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.QA);
+            var viewModel = await new ProductProvider().GetProductViewModel(productName, ProductActiveTab.QA);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Questions & Answers", viewModel.DisplayName);
             return this.View(viewModel);
         }

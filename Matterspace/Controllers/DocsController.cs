@@ -13,9 +13,9 @@ namespace Matterspace.Controllers
     public class DocsController : Controller
     {
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.Docs);
+            var viewModel = await new ProductProvider().GetProductViewModel(productName, ProductActiveTab.Docs);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Documentation", viewModel.DisplayName);
             return this.View(viewModel);
         }
