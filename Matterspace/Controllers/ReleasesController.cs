@@ -12,7 +12,7 @@ namespace Matterspace.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await productService.GetProductViewModel(productName, ProductActiveTab.Releases);
+            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.Releases);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Releases", viewModel.DisplayName);
             return this.View(viewModel);
         }

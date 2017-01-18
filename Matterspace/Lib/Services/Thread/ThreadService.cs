@@ -21,6 +21,8 @@ namespace Matterspace.Lib.Services.Thread
         {
             var thread = await Task.Run(() => this.GetThread(threadId));
 
+            if(thread == null) throw new Exception("Could not find the thread");
+
             var viewModel = new ThreadViewModel()
             {
                 Id = thread.Id.ToString(),
