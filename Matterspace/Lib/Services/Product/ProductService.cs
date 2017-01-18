@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 
-namespace Matterspace.Lib.Providers.Product
+namespace Matterspace.Lib.Services.Product
 {
-    public class ProductProvider : IDisposable
+    public class ProductService
     {
-        public ProductProvider()
+        public ProductService(MatterspaceDbContext db)
         {
             this.Db = new MatterspaceDbContext();
         }
@@ -38,11 +38,6 @@ namespace Matterspace.Lib.Providers.Product
                 WebsiteUrl = product.WebsiteUrl,
                 ActiveTab = activeTab
             };
-        }
-
-        public void Dispose()
-        {
-            this.Db.Dispose();
         }
     }
 }

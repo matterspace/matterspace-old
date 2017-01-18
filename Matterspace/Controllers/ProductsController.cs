@@ -6,7 +6,7 @@ using Matterspace.Lib.Helpers;
 using Matterspace.Model;
 using Matterspace.Model.Entities;
 using Matterspace.Models;
-using Matterspace.Lib.Providers.Product;
+using Matterspace.Lib.Services.Product;
 
 namespace Matterspace.Controllers
 {
@@ -50,9 +50,9 @@ namespace Matterspace.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.Home);
+            var viewModel = await new ProductService(this.Db).GetProductViewModel(productName, ProductActiveTab.Home);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Home", viewModel.DisplayName);
             return this.View(viewModel);
         }        

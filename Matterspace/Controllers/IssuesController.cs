@@ -1,5 +1,6 @@
-﻿using Matterspace.Lib.Helpers;
-using Matterspace.Lib.Providers.Product;
+﻿using Matterspace.Controllers.Thread;
+using Matterspace.Lib.Helpers;
+using Matterspace.Lib.Services.Product;
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ using System.Web.Mvc;
 
 namespace Matterspace.Controllers
 {
-    public class IssuesController : Controller
+    public class IssuesController : ThreadController
     {
         [HttpGet]
-        public async Task<ActionResult> Index(string name)
+        public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductProvider().GetProductViewModel(name, ProductActiveTab.Issues);
+            var viewModel = await productService.GetProductViewModel(productName, ProductActiveTab.Issues);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Issues", viewModel.DisplayName);
             return this.View(viewModel);
         }

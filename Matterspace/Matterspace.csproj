@@ -213,6 +213,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BacklogController.cs" />
+    <Compile Include="Controllers\Thread\ThreadController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdeasController.cs" />
@@ -229,24 +230,26 @@
     <Compile Include="Lib\Email\EmailMessage.cs" />
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
-    <Compile Include="Lib\Providers\Product\ProductProvider.cs" />
+    <Compile Include="Lib\Services\Product\ProductService.cs" />
+    <Compile Include="Lib\Services\Thread\ThreadService.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
-    <Compile Include="Models\FactorViewModel.cs" />
-    <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\ExternalLoginListViewModel.cs" />
+    <Compile Include="Models\FactorViewModel.cs" />
+    <Compile Include="Models\ForgotPasswordViewModel.cs" />
     <Compile Include="Models\ForgotViewModel.cs" />
     <Compile Include="Models\IndexViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\ManageLoginsViewModel.cs" />
-    <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\SendCodeViewModel.cs" />
     <Compile Include="Models\SetPasswordViewModel.cs" />
+    <Compile Include="Models\ThreadViewModel.cs" />
     <Compile Include="Models\TimelineUpdateViewModel.cs" />
     <Compile Include="Models\VerifyCodeViewModel.cs" />
     <Compile Include="Models\VerifyPhoneNumberViewModel.cs" />
@@ -402,6 +405,7 @@
     <Content Include="Views\QA\Index.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Views\Releases\Index.cshtml" />
+    <Content Include="Views\Shared\EditThread.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
