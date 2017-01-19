@@ -304,6 +304,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Mixins.scss" />
+    <None Include="Content\App.Thread.New.scss" />
     <None Include="Content\Site.scss" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -406,6 +407,7 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Views\Releases\Index.cshtml" />
     <Content Include="Views\Shared\EditThread.cshtml" />
+    <Content Include="Views\Shared\EditThreadForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,11 @@
+﻿.thread-entry {
+  border: 1px solid #ddd;
+  border-radius: 0.2rem;
+  padding: 10px; }
+  .thread-entry input, .thread-entry textarea {
+    background-color: #f7f7f9; }
+  .thread-entry input:focus, .thread-entry textarea:focus {
+    background-color: initial; }
+  .thread-entry .form-actions {
+    margin: 10px; }
+

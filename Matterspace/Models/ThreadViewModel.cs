@@ -13,5 +13,7 @@ namespace Matterspace.Models
         public string Title { get; set; }
 
         public ThreadType Type { get; set; }
+
+        public string Content { get; set; }
     }
 }

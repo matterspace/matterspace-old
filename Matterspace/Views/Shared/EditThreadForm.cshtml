@@ -1,0 +1,16 @@
+﻿@model Matterspace.Models.ThreadViewModel
+
+<div class="form-group">
+    <div class="input-group">
+        @Html.EditorFor(x => x.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
+    </div>
+
+    @*Placeholder top margin to fake editor controls space*@
+    <div class="input-group" style="margin-top: 3em;">
+        @Html.TextAreaFor(x => x.Content, new { @class = "form-control", placeholder = "Writing is good ;)" })
+    </div>
+
+    <div class="form-actions pull-right">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+</div>

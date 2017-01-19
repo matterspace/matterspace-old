@@ -1,0 +1,19 @@
+﻿@import "Variables.scss";
+
+.thread-entry {
+    input, textarea {
+        background-color: $gray-lightest;
+    }
+
+    input:focus, textarea:focus {
+        background-color: initial;
+    }
+
+    .form-actions {
+        margin: 10px;
+    }
+
+    border: 1px solid #ddd;
+    border-radius: $border-radius-sm;
+    padding: 10px;
+}

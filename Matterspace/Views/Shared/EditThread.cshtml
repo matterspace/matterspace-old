@@ -1,5 +1,12 @@
-﻿
+﻿@model Matterspace.Models.ProductViewModel
+
 @{
     Layout = "~/Views/Products/_LayoutProduct.cshtml";
 }
 
+<section class="thread-entry">
+    @using (Html.BeginForm("Edit", "Thread", FormMethod.Post))
+    {
+        @Html.Partial("EditThreadForm", Model.Thread)
+    }
+</section>

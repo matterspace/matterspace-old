@@ -50,6 +50,6 @@ namespace Matterspace.Models
 
         public ProductActiveTab ActiveTab { get; set; }
 
-
+        public ThreadViewModel Thread { get; set; }
     }
 }
