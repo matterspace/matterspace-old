@@ -13,7 +13,8 @@ namespace Matterspace.Lib.Services.Product
     {
         public ProductService(MatterspaceDbContext db)
         {
-            this.Db = new MatterspaceDbContext();
+            if (db == null) throw new ArgumentNullException(nameof(db));
+            this.Db = db;
         }
 
         public MatterspaceDbContext Db { get; }

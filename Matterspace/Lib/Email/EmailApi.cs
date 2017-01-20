@@ -13,9 +13,13 @@ namespace Matterspace.Lib.Email
         /// <param name="message"></param>
         public static void SendEmail(EmailMessage message)
         {
-            var client = new RestClient();
-            client.BaseUrl = new Uri(WebConfigurationManager.AppSettings[AppSettingsConstants.MailGunApi]);
-            client.Authenticator = new HttpBasicAuthenticator("api", WebConfigurationManager.AppSettings[AppSettingsConstants.MailGunApiSecrectKey]);
+            var client = new RestClient
+            {
+                BaseUrl = new Uri(WebConfigurationManager.AppSettings[AppSettingsConstants.MailGunApi]),
+                Authenticator =
+                    new HttpBasicAuthenticator("api",
+                        WebConfigurationManager.AppSettings[AppSettingsConstants.MailGunApiSecrectKey])
+            };
 
             var request = new RestRequest();
             request.AddParameter("domain", WebConfigurationManager.AppSettings[AppSettingsConstants.MailGunDomain], ParameterType.UrlSegment);

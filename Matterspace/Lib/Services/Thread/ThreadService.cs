@@ -2,6 +2,7 @@
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -12,15 +13,15 @@ namespace Matterspace.Lib.Services.Thread
     {
         public ThreadService(MatterspaceDbContext db)
         {
-            this.Db = new MatterspaceDbContext();
+            if (db == null) throw new ArgumentNullException(nameof(db));
+            this.Db = db;
         }
 
         public MatterspaceDbContext Db { get; }
 
         public async Task<ThreadViewModel> GetThreadViewModel(int threadId)
         {
-            var thread = await Task.Run(() => this.GetThread(threadId));
-
+            var thread = await this.Db.Threads.FindAsync(threadId);
             if(thread == null) throw new Exception("Could not find the thread");
 
             var viewModel = new ThreadViewModel()
@@ -30,11 +31,6 @@ namespace Matterspace.Lib.Services.Thread
             };
 
             return viewModel;
-        }
-
-        private Model.Entities.Thread GetThread(int threadId)
-        {
-            return this.Db.Threads.FirstOrDefault(x => x.Id == threadId);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Matterspace.Controllers.Thread
         protected ProductService productService;
         protected ThreadService threadService;
 
-        public ThreadController()
+        protected ThreadController()
         {
             this.Db = new MatterspaceDbContext();
             this.productService = new ProductService(this.Db);
@@ -40,6 +40,12 @@ namespace Matterspace.Controllers.Thread
                 viewModel.Thread = await this.threadService.GetThreadViewModel(id.Value);
 
             return this.View("EditThread", viewModel);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            this.Db.Dispose();
         }
     }
 }
