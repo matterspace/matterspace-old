@@ -49,7 +49,5 @@ namespace Matterspace.Models
         public string WebsiteUrl { get; set; }
 
         public ProductActiveTab ActiveTab { get; set; }
-
-        public ThreadViewModel Thread { get; set; }
     }
 }

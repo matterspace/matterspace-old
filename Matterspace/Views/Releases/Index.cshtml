@@ -1,4 +1,15 @@
-﻿
+﻿@model Matterspace.Models.ProductViewModel
+
 @{
-    Layout = "~/Views/Products/_LayoutProduct.cshtml";
+    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
 }
+
+@Html.Partial("~/Views/Shared/Product/_ProductPartial.cshtml", Model)
+
+<div class="product-home-wrapper">
+    <div class="product-body">
+        <div class="product-nav-content">
+            @*Content goes here*@
+        </div>
+    </div>
+</div>

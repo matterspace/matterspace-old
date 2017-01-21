@@ -5,15 +5,39 @@
         background-color: $gray-lightest;
     }
 
+    textarea {        
+        min-height: 300px;
+    }
+
     input:focus, textarea:focus {
         background-color: initial;
     }
 
     .form-actions {
-        margin: 10px;
+        margin: 10px 0;
     }
 
     border: 1px solid #ddd;
     border-radius: $border-radius-sm;
     padding: 10px;
 }
+
+.user-info {
+    img {
+        float: left
+    }
+
+    .user-name {
+        float: left;
+        margin-left: 10px;
+
+        span {
+            vertical-align: middle;
+        }
+    }
+    
+    display: flex;
+    padding-bottom: 14px;
+    border-bottom: 1px solid $gray-lighter;
+}
+

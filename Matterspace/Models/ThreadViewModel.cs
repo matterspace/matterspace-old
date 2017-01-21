@@ -15,5 +15,7 @@ namespace Matterspace.Models
         public ThreadType Type { get; set; }
 
         public string Content { get; set; }
+
+        public ProductViewModel Product { get; set; }
     }
 }

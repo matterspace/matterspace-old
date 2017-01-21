@@ -31,13 +31,27 @@ namespace Matterspace.Controllers.Thread
             return await this.Edit(productName, null);
         }
 
+        [HttpGet]
         public virtual async Task<ActionResult> Edit(string productName, int? id)
         {
-            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.Ideas);
-            viewModel.Thread = new ThreadViewModel();
+            var viewModel = new ThreadViewModel();
+            viewModel.Product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Ideas);
 
             if (id.HasValue)
-                viewModel.Thread = await this.threadService.GetThreadViewModel(id.Value);
+                viewModel = await this.threadService.GetThreadViewModel(id.Value);
+
+            return this.View("EditThread", viewModel);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> Edit(ThreadViewModel viewModel)
+        {
+            viewModel.Product = await this.productService.GetProductViewModel(viewModel.Product.Name, ProductActiveTab.Ideas);
+
+            if (ModelState.IsValid)
+            {
+
+            }
 
             return this.View("EditThread", viewModel);
         }

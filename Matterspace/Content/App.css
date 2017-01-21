@@ -159,10 +159,24 @@
   padding: 10px; }
   .thread-entry input, .thread-entry textarea {
     background-color: #f7f7f9; }
+  .thread-entry textarea {
+    min-height: 300px; }
   .thread-entry input:focus, .thread-entry textarea:focus {
     background-color: initial; }
   .thread-entry .form-actions {
-    margin: 10px; }
+    margin: 10px 0; }
+
+.user-info {
+  display: flex;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eceeef; }
+  .user-info img {
+    float: left; }
+  .user-info .user-name {
+    float: left;
+    margin-left: 10px; }
+    .user-info .user-name span {
+      vertical-align: middle; }
 
 body {
   /* for non-responsiveness */

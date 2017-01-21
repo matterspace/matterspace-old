@@ -1,9 +1,7 @@
 ﻿@using Matterspace.Models
-@model Matterspace.Models.ProductViewModel
+@model ProductViewModel
 
 @{
-    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
-
     // function that returns "active" if the given tab is actually the active tab. Otherwise it returns an empty string
     var getActiveClass = new Func<ProductActiveTab, string>((tab) => this.Model.ActiveTab == tab ? "active" : "");
 }
@@ -72,8 +70,5 @@
                 <span class="navbar-product-item-text">Releases</span>
             </a>
         </nav>
-        <div class="product-nav-content">
-            @RenderBody()
-        </div>
     </div>
 </div>

@@ -1,82 +1,92 @@
 ﻿@model Matterspace.Models.ProductViewModel
 
 @{
-    Layout = "~/Views/Products/_LayoutProduct.cshtml";
+    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
 }
 
-<div class="row">
-    <div class="col-main">
-        <div class="input-group">
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ideas
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">All ideas</a>
-                    <a class="dropdown-item" href="#">Pending ideas</a>
-                    <a class="dropdown-item" href="#">Accepted ideas</a>
-                    <a class="dropdown-item" href="#">Your ideas</a>
-                </div>
-            </div>
-            <input type="text" class="form-control" placeholder="Search for ideas">
-        </div>
-    </div>
-    <div class="col-side">
-        <a class="btn btn-success btn-block" href="@Url.Action("New")">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            New idea
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="product-thread-table">
-            <div class="product-thread-table-header">
-                <a href="#" class="open">
-                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                    <span>23 open</span>
-                </a>
-                <a href="#" class="closed">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    <span>3 closed</span>
-                </a>
-            </div>
-            <div class="product-thread-table-body">
-                <div class="product-thread-table-row">
-                    <div class="col-1">
-                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-2">
-                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-3">
-                        <div class="title">
-                            Implement chat support  #122 <span class="tag tag-default">New feature</span>
-                        </div>
-                        <div class="subtitle">
-                            29 points by andrerpena · 6 hours ago · 8 comments
-                        </div>
-                    </div>
-                </div>
-                <div class="product-thread-table-row">
-                    <div class="col-1">
-                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-2">
-                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                    </div>
-                    <div class="col-3">
-                        <div class="title">
-                            Make webhooks better #125 <span class="tag tag-default">Improvement</span>
-                        </div>
-                        <div class="subtitle">
-                            29 points by andrerpena · 5 hours ago · 8 comments
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@Html.Partial("~/Views/Shared/Product/_ProductPartial.cshtml", Model)
+
+<div class="product-home-wrapper">
+    <div class="product-body">
+        <div class="product-nav-content">
 
 
+            <div class="row">
+                <div class="col-main">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Ideas
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">All ideas</a>
+                                <a class="dropdown-item" href="#">Pending ideas</a>
+                                <a class="dropdown-item" href="#">Accepted ideas</a>
+                                <a class="dropdown-item" href="#">Your ideas</a>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search for ideas">
+                    </div>
+                </div>
+                <div class="col-side">
+                    <a class="btn btn-success btn-block" href="@Url.Action("New")">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        New idea
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-thread-table">
+                        <div class="product-thread-table-header">
+                            <a href="#" class="open">
+                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                <span>23 open</span>
+                            </a>
+                            <a href="#" class="closed">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>3 closed</span>
+                            </a>
+                        </div>
+                        <div class="product-thread-table-body">
+                            <div class="product-thread-table-row">
+                                <div class="col-1">
+                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="title">
+                                        Implement chat support  #122 <span class="tag tag-default">New feature</span>
+                                    </div>
+                                    <div class="subtitle">
+                                        29 points by andrerpena · 6 hours ago · 8 comments
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-thread-table-row">
+                                <div class="col-1">
+                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-2">
+                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-3">
+                                    <div class="title">
+                                        Make webhooks better #125 <span class="tag tag-default">Improvement</span>
+                                    </div>
+                                    <div class="subtitle">
+                                        29 points by andrerpena · 5 hours ago · 8 comments
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

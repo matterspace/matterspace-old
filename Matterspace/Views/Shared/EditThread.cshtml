@@ -1,12 +1,31 @@
-﻿@model Matterspace.Models.ProductViewModel
+﻿@model Matterspace.Models.ThreadViewModel
 
 @{
-    Layout = "~/Views/Products/_LayoutProduct.cshtml";
+    Layout = "_LayoutEditThread.cshtml";
 }
 
-<section class="thread-entry">
-    @using (Html.BeginForm("Edit", "Thread", FormMethod.Post))
-    {
-        @Html.Partial("EditThreadForm", Model.Thread)
-    }
-</section>
+<div class="container row">
+    <section class="thread-entry col-xs-12 col-md-9">
+        @using (Html.BeginForm("Edit", "Ideas", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.Product.Name);
+            @Html.HiddenFor(x => x.Product.DisplayName);
+            @Html.HiddenFor(x => x.Product.WebsiteUrl);
+            @Html.Partial("EditThreadForm", Model)
+        }
+    </section>
+    <aside class="thread-panel col-xs-12 col-md-3">
+        <div class="user-info">
+            <a href="#">
+                <img width="42"
+                     height="42"
+                     src="http://lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg" />
+
+                <div class="user-name">
+                    <span>Andre Pena<br />
+                    123 Followers</span>
+                </div>
+            </a>
+        </div>
+    </aside>
+</div>
