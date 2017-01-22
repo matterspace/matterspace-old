@@ -28,11 +28,19 @@
                     <span>Watching</span>
                 </a>
                 <div class="pull-right">
-                    <a href="#" class="btn twitter-button">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a><a href="#" class="btn facebook-button">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
+                    @if (Model.TwitterUrl != null)
+                    {
+                        <a href="@Model.TwitterUrl" class="btn twitter-button">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    }
+
+                    @if (Model.FacebookUrl != null)
+                    {
+                        <a href="@Model.FacebookUrl" class="btn facebook-button">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

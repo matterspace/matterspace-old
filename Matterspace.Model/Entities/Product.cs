@@ -38,6 +38,10 @@ namespace Matterspace.Model.Entities
 
         public string WebsiteUrl { get; set; }
 
+        public string FacebookUrl { get; set; }
+
+        public string TwitterUrl { get; set; }
+
         public byte[] Avatar { get; set; }
         
         public ICollection<ProductMember> Members { get; set; }

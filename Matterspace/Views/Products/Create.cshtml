@@ -46,6 +46,20 @@
                     @Html.TextBoxFor(m => m.WebsiteUrl, new { placeholder = "http://www.yourproduct.com", @class = "form-control" })
                 </div>
             </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.FacebookUrl)
+                <div class="input-group">
+                    @Html.TextBoxFor(m => m.FacebookUrl, new { placeholder = "http://www.facebook.com/yourpage", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.TwitterUrl)
+                <div class="input-group">
+                    @Html.TextBoxFor(m => m.TwitterUrl, new { placeholder = "http://www.twitter.com/yourusername", @class = "form-control" })
+                </div>
+            </div>
             <div class="validation-wrapper">
                 @Html.ValidationSummary(false)
             </div>

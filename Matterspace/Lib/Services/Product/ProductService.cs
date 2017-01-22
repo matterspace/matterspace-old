@@ -37,6 +37,8 @@ namespace Matterspace.Lib.Services.Product
                 DisplayName = product.DisplayName,
                 ShortDescription = product.ShortDescription,
                 WebsiteUrl = product.WebsiteUrl,
+                FacebookUrl = product.FacebookUrl,
+                TwitterUrl = product.TwitterUrl,
                 ActiveTab = activeTab
             };
         }

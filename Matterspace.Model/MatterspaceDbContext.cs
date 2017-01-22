@@ -50,9 +50,14 @@ namespace Matterspace.Model
 
             modelBuilder.Entity<Product>().Property(m => m.ShortDescription).HasMaxLength(120);
 
-
             modelBuilder.Entity<Product>().Property(m => m.WebsiteUrl)
                 .IsRequired()
+                .HasMaxLength(512);
+
+            modelBuilder.Entity<Product>().Property(m => m.FacebookUrl)
+                .HasMaxLength(512);
+
+            modelBuilder.Entity<Product>().Property(m => m.TwitterUrl)
                 .HasMaxLength(512);
 
             // ApplicationUserNotification

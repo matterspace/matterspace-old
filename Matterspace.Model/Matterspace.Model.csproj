@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201612101939368_initial.Designer.cs">
       <DependentUpon>201612101939368_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701221741121_SocialURL.cs" />
+    <Compile Include="Migrations\201701221741121_SocialURL.Designer.cs">
+      <DependentUpon>201701221741121_SocialURL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612101939368_initial.resx">
       <DependentUpon>201612101939368_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221741121_SocialURL.resx">
+      <DependentUpon>201701221741121_SocialURL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,7 +19,6 @@ namespace Matterspace.Controllers
 
         public MatterspaceDbContext Db { get; }
 
-        // GET: Products
         [HttpGet]
         public ActionResult Create()
         {
@@ -37,7 +36,9 @@ namespace Matterspace.Controllers
                     Name = formModel.Name.ToLower(),
                     DisplayName = formModel.DisplayName,
                     ShortDescription = formModel.ShortDescription,
-                    WebsiteUrl = formModel.WebsiteUrl
+                    WebsiteUrl = formModel.WebsiteUrl,
+                    TwitterUrl = formModel.TwitterUrl,
+                    FacebookUrl = formModel.FacebookUrl
                 };
 
                 this.Db.Products.Add(product);

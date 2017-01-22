@@ -49,5 +49,15 @@ namespace Matterspace.Models
         public string WebsiteUrl { get; set; }
 
         public ProductActiveTab ActiveTab { get; set; }
+
+        [DisplayName("Facebook Page URL")]
+        [StringLength(512, ErrorMessage = "The Facebook Page URL can be no longer than 512 characters.")]
+        [Url(ErrorMessage = "The Facebook Page URL must be valid")]
+        public string FacebookUrl { get; set; }
+
+        [DisplayName("Twitter URL")]
+        [StringLength(512, ErrorMessage = "The Twitter URL can be no longer than 512 characters.")]
+        [Url(ErrorMessage = "The Twitter URL must be valid")]
+        public string TwitterUrl { get; set; }
     }
 }

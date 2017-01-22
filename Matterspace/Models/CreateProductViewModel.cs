@@ -29,5 +29,15 @@ namespace Matterspace.Models
         [Url( ErrorMessage = "The website URL must be valid")]
         [Required(ErrorMessage = "The website URL is required. Make sure it starts with http:// or https://")] // todo: Fix this. http shouldn't be required
         public string WebsiteUrl { get; set; }
+
+        [DisplayName("Facebook Page URL")]
+        [StringLength(512, ErrorMessage = "The Facebook Page URL can be no longer than 512 characters.")]
+        [Url(ErrorMessage = "The Facebook Page URL must be valid")]
+        public string FacebookUrl { get; set; }
+
+        [DisplayName("Twitter URL")]
+        [StringLength(512, ErrorMessage = "The Twitter URL can be no longer than 512 characters.")]
+        [Url(ErrorMessage = "The Twitter URL must be valid")]
+        public string TwitterUrl { get; set; }
     }
 }
