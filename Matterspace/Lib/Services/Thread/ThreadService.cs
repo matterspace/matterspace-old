@@ -27,10 +27,25 @@ namespace Matterspace.Lib.Services.Thread
             var viewModel = new ThreadViewModel()
             {
                 Id = thread.Id.ToString(),
-                Type = thread.ThreadType
+                ThreadType = (ThreadType)((int)thread.ThreadType)
             };
 
             return viewModel;
+        }
+
+        public async Task SaveThread(ThreadViewModel threadViewModel)
+        {
+            var thread = new Model.Entities.Thread()
+            {
+
+                TextMarkdown = threadViewModel.Content,
+                Title = threadViewModel.Title,
+                ThreadType = (Model.Enums.ThreadType)((int)threadViewModel.ThreadType),
+                CreatedAt = DateTime.Now
+            };
+
+            this.Db.Threads.Add(thread);
+            await this.Db.SaveChangesAsync();
         }
     }
 }

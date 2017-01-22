@@ -1,4 +1,5 @@
-﻿using Matterspace.Lib.Services.Product;
+﻿using Matterspace.Lib.Helpers;
+using Matterspace.Lib.Services.Product;
 using Matterspace.Lib.Services.Thread;
 using Matterspace.Model;
 using Matterspace.Models;
@@ -18,11 +19,23 @@ namespace Matterspace.Controllers.Thread
         protected ProductService productService;
         protected ThreadService threadService;
 
+        protected abstract ProductActiveTab ActiveTab { get; }
+        protected abstract ThreadType TabType { get; }
+
         protected ThreadController()
         {
             this.Db = new MatterspaceDbContext();
             this.productService = new ProductService(this.Db);
             this.threadService = new ThreadService(this.Db);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Index(string productName)
+        {
+            var viewModel = await this.GetProductViewModel(productName);
+
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
+            return this.View(viewModel);
         }
 
         [HttpGet]
@@ -34,11 +47,7 @@ namespace Matterspace.Controllers.Thread
         [HttpGet]
         public virtual async Task<ActionResult> Edit(string productName, int? id)
         {
-            var viewModel = new ThreadViewModel();
-            viewModel.Product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Ideas);
-
-            if (id.HasValue)
-                viewModel = await this.threadService.GetThreadViewModel(id.Value);
+            var viewModel = await this.GetThreadViewModel(productName, id);
 
             return this.View("EditThread", viewModel);
         }
@@ -46,14 +55,41 @@ namespace Matterspace.Controllers.Thread
         [HttpPost]
         public virtual async Task<ActionResult> Edit(ThreadViewModel viewModel)
         {
-            viewModel.Product = await this.productService.GetProductViewModel(viewModel.Product.Name, ProductActiveTab.Ideas);
+            viewModel.Product = await this.GetProductViewModel(viewModel.Product.Name);
 
             if (ModelState.IsValid)
             {
-
+                await this.threadService.SaveThread(viewModel);
+                return this.View("Index", viewModel.Product);
             }
 
             return this.View("EditThread", viewModel);
+        }
+
+        /// <summary>
+        /// Returns a product view model according to the given product name
+        /// </summary>
+        protected async virtual Task<ProductViewModel> GetProductViewModel(string productName)
+        {
+            return await this.productService.GetProductViewModel(productName, ActiveTab);
+        }
+
+        /// <summary>
+        /// Returns a thread view model. If an id is passed, it'll return the given id's information
+        /// </summary>
+        protected async virtual Task<ThreadViewModel> GetThreadViewModel(string productName, int? id)
+        {
+            var viewModel = new ThreadViewModel()
+            {
+                ThreadType = TabType
+            };
+
+            viewModel.Product = await this.GetProductViewModel(productName);
+
+            if (id.HasValue)
+                viewModel = await this.threadService.GetThreadViewModel(id.Value);
+
+            return viewModel;
         }
 
         protected override void Dispose(bool disposing)

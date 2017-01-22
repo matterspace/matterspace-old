@@ -6,7 +6,7 @@
 
 <div class="container row">
     <section class="thread-entry col-xs-12 col-md-9">
-        @using (Html.BeginForm("Edit", "Ideas", FormMethod.Post))
+        @using (Html.BeginForm("Edit", "Ideas", FormMethod.Post, new { id = "thread-form" }))
         {
             @Html.HiddenFor(x => x.Product.Name);
             @Html.HiddenFor(x => x.Product.DisplayName);
@@ -22,10 +22,34 @@
                      src="http://lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg" />
 
                 <div class="user-name">
-                    <span>Andre Pena<br />
-                    123 Followers</span>
+                    <span>
+                        Andre Pena<br />
+                        123 Followers
+                    </span>
                 </div>
             </a>
         </div>
     </aside>
 </div>
+
+@section scripts {
+    <script>
+        let disableSubmit = () => {
+            if (isValid($('#thread-form'))) {
+                $('#submit').attr('disabled', false);
+            } else {
+                $('#submit').attr('disabled', true);
+            }
+        }
+
+        let isValid = (formElement) => {
+            return formElement.find('#Title').val() && formElement.find('#Content').val();
+        }
+
+        disableSubmit();
+
+        $('#thread-form').on('input', () => {
+            disableSubmit();
+        });
+    </script>
+}

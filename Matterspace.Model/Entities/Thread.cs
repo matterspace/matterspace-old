@@ -45,10 +45,14 @@ namespace Matterspace.Model.Entities
         public Thread ParentThread { get; set; }
 
         /// <summary>
+        /// Thread's Title
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
         /// Text in markdown form
         /// </summary>
         public string TextMarkdown { get; set; }
-
 
         public ICollection<ThreadReply> Replies { get; set; }
 

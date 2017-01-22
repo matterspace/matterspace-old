@@ -4,17 +4,26 @@ using Matterspace.Lib.Services.Product;
 using Matterspace.Models;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System;
 
 namespace Matterspace.Controllers
 {
     public class QAController : ThreadController
     {
-        [HttpGet]
-        public async Task<ActionResult> Index(string productName)
+        protected override ProductActiveTab ActiveTab
         {
-            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.QA);
-            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Questions & Answers", viewModel.DisplayName);
-            return this.View(viewModel);
+            get
+            {
+                return ProductActiveTab.QA;
+            }
+        }
+
+        protected override ThreadType TabType
+        {
+            get
+            {
+                return ThreadType.QA;
+            }
         }
     }
 }

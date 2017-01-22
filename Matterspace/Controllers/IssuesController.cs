@@ -13,12 +13,20 @@ namespace Matterspace.Controllers
 {
     public class IssuesController : ThreadController
     {
-        [HttpGet]
-        public async Task<ActionResult> Index(string productName)
+        protected override ProductActiveTab ActiveTab
         {
-            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.Issues);
-            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Issues", viewModel.DisplayName);
-            return this.View(viewModel);
+            get
+            {
+                return ProductActiveTab.Issues;
+            }
+        }
+
+        protected override ThreadType TabType
+        {
+            get
+            {
+                return ThreadType.Issue;
+            }
         }
     }
 }
