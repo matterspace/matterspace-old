@@ -9,6 +9,7 @@ namespace Matterspace.Model.Entities
             this.Members = new List<ProductMember>();
             this.Releases = new List<Release>();
             this.UsersFollowing = new List<ApplicationUserFollowingProduct>();
+            this.Threads = new List<Thread>();
         }
 
         /// <summary>
@@ -43,7 +44,9 @@ namespace Matterspace.Model.Entities
         public string TwitterUrl { get; set; }
 
         public byte[] Avatar { get; set; }
-        
+
+        public ICollection<Thread> Threads { get; set; }
+
         public ICollection<ProductMember> Members { get; set; }
 
         public ICollection<Release> Releases { get; set; }

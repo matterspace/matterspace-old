@@ -49,38 +49,25 @@
                             </a>
                         </div>
                         <div class="product-thread-table-body">
-                            <div class="product-thread-table-row">
-                                <div class="col-1">
-                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-2">
-                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-3">
-                                    <div class="title">
-                                        Implement chat support  #122 <span class="tag tag-default">New feature</span>
+                            @foreach (var thread in Model.Threads)
+                            {
+                                <div class="product-thread-table-row">
+                                    <div class="col-1">
+                                        <i class="fa fa-caret-up" aria-hidden="true"></i>
                                     </div>
-                                    <div class="subtitle">
-                                        29 points by andrerpena · 6 hours ago · 8 comments
+                                    <div class="col-2">
+                                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="product-thread-table-row">
-                                <div class="col-1">
-                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-2">
-                                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-3">
-                                    <div class="title">
-                                        Make webhooks better #125 <span class="tag tag-default">Improvement</span>
-                                    </div>
-                                    <div class="subtitle">
-                                        29 points by andrerpena · 5 hours ago · 8 comments
+                                    <div class="col-3">
+                                        <div class="title">
+                                            @thread.Title  #@thread.Id <span class="tag tag-default">New feature</span>
+                                        </div>
+                                        <div class="subtitle">
+                                            29 points by andrerpena · 6 hours ago · 8 comments
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                     </div>
                 </div>

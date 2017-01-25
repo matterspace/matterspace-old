@@ -12,5 +12,8 @@ namespace Matterspace.Model.Enums
         Issue = 2,
         BacklogItem = 3,
         Question = 4,
+        QA = 5,
+        Doc = 6,
+        Release = 7
     }
 }

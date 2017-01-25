@@ -1,4 +1,5 @@
-﻿@model Matterspace.Models.ThreadViewModel
+﻿@using Matterspace.Model
+@model Matterspace.Models.ThreadViewModel
 
 @{
     Layout = "_LayoutEditThread.cshtml";
@@ -8,6 +9,7 @@
     <section class="thread-entry col-xs-12 col-md-9">
         @using (Html.BeginForm("Edit", "Ideas", FormMethod.Post, new { id = "thread-form" }))
         {
+            @Html.HiddenFor(x => x.Product.Id);
             @Html.HiddenFor(x => x.Product.Name);
             @Html.HiddenFor(x => x.Product.DisplayName);
             @Html.HiddenFor(x => x.Product.WebsiteUrl);

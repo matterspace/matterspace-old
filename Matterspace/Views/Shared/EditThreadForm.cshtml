@@ -1,6 +1,7 @@
 ﻿@model Matterspace.Models.ThreadViewModel
 
 <div class="form-group">
+    @Html.HiddenFor(x => x.ThreadType)
     <div class="input-group">
         @Html.EditorFor(x => x.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
     </div>

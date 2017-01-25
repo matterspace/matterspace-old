@@ -1,6 +1,7 @@
 ﻿using Matterspace.Controllers.Thread;
 using Matterspace.Lib.Helpers;
 using Matterspace.Lib.Services.Product;
+using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;

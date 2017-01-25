@@ -23,6 +23,7 @@ namespace Matterspace.Models
 
     public class ProductViewModel
     {
+        public int? Id { get; set; }
         /// <summary>
         /// This is not an actual URL, but the URL part like matterspace.io/[this].
         /// This is the Name in the Product entity
@@ -59,5 +60,7 @@ namespace Matterspace.Models
         [StringLength(512, ErrorMessage = "The Twitter URL can be no longer than 512 characters.")]
         [Url(ErrorMessage = "The Twitter URL must be valid")]
         public string TwitterUrl { get; set; }
+
+        public IEnumerable<ThreadViewModel> Threads { get; set; }
     }
 }

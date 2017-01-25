@@ -2,6 +2,7 @@
 using Matterspace.Lib.Services.Product;
 using Matterspace.Lib.Services.Thread;
 using Matterspace.Model;
+using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace Matterspace.Controllers.Thread
         public async Task<ActionResult> Index(string productName)
         {
             var viewModel = await this.GetProductViewModel(productName);
+            viewModel.Threads = await this.threadService.GetThreads(viewModel.Id.Value, this.TabType);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
             return this.View(viewModel);
@@ -87,7 +89,7 @@ namespace Matterspace.Controllers.Thread
             viewModel.Product = await this.GetProductViewModel(productName);
 
             if (id.HasValue)
-                viewModel = await this.threadService.GetThreadViewModel(id.Value);
+                viewModel = await this.threadService.GetThread(id.Value);
 
             return viewModel;
         }

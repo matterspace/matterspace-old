@@ -60,6 +60,11 @@ namespace Matterspace.Model
             modelBuilder.Entity<Product>().Property(m => m.TwitterUrl)
                 .HasMaxLength(512);
 
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Threads)
+                .WithRequired(t => t.Product)
+                .WillCascadeOnDelete(false);
+
             // ApplicationUserNotification
             modelBuilder.Entity<ApplicationUserNotification>()
                 .HasRequired(m => m.TargetUser)

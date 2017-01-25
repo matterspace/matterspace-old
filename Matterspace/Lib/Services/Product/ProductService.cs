@@ -1,4 +1,5 @@
-﻿using Matterspace.Model;
+﻿using Matterspace.Lib.Services.Thread;
+using Matterspace.Model;
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace Matterspace.Lib.Services.Product
 
             return new ProductViewModel()
             {
+                Id = product.Id,
                 Name = product.Name,
                 DisplayName = product.DisplayName,
                 ShortDescription = product.ShortDescription,

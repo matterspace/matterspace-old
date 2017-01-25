@@ -20,6 +20,15 @@ namespace Matterspace.Model.Entities
 
         public int Id { get; set; }
 
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Text in markdown form
+        /// </summary>
+        public string TextMarkdown { get; set; }
+
+        // TODO: Thread Status
+
         public ThreadType ThreadType { get; set; }
 
         /// <summary>
@@ -44,15 +53,9 @@ namespace Matterspace.Model.Entities
         /// </summary>
         public Thread ParentThread { get; set; }
 
-        /// <summary>
-        /// Thread's Title
-        /// </summary>
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Text in markdown form
-        /// </summary>
-        public string TextMarkdown { get; set; }
+        public int ProductId { get; set; }
+        
+        public Product Product { get; set; }
 
         public ICollection<ThreadReply> Replies { get; set; }
 
