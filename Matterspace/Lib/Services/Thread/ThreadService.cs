@@ -37,29 +37,37 @@ namespace Matterspace.Lib.Services.Thread
             {
                 TextMarkdown = threadViewModel.Content,
                 Title = threadViewModel.Title,
-                ThreadType = threadViewModel.ThreadType,
+                Type = threadViewModel.Type,
                 CreatedAt = DateTime.Now,
-                ProductId = threadViewModel.Product.Id.Value
+                ProductId = threadViewModel.Product.Id.Value,
+                Status = ThreadStatus.Pending // Every thread starts pending
             };
 
             this.Db.Threads.Add(thread);
             await this.Db.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ThreadViewModel>> GetThreads(int productId, ThreadType type)
+        public async Task<IEnumerable<ThreadViewModel>> GetThreads(int productId, ThreadType? type = null)
         {
-            var threads = await this.Db.Threads.Where(x => x.ProductId == productId && x.ThreadType == type).ToListAsync();
-            return threads.Select(x => this.GetThreadViewModel(x));
+            var threads = this.Db.Threads.Where(x => x.ProductId == productId);
+
+            if (type.HasValue)
+                threads.Where(x => x.Type == type);
+
+            var threadList = await threads.ToListAsync();
+
+            return threadList.Select(x => this.GetThreadViewModel(x));
         }
 
-        private ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread)
+        public ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread)
         {
             return new ThreadViewModel()
             {
                 Id = thread.Id.ToString(),
                 Title = thread.Title,
                 Content = thread.TextMarkdown,
-                ThreadType = thread.ThreadType
+                Type = thread.Type,
+                Status = thread.Status
             };
         }
     }

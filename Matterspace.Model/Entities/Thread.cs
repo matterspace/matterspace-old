@@ -27,9 +27,9 @@ namespace Matterspace.Model.Entities
         /// </summary>
         public string TextMarkdown { get; set; }
 
-        // TODO: Thread Status
+        public ThreadStatus Status { get; set; }
 
-        public ThreadType ThreadType { get; set; }
+        public ThreadType Type { get; set; }
 
         /// <summary>
         /// User that created this thread

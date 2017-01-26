@@ -23,6 +23,11 @@ namespace Matterspace.Models
 
     public class ProductViewModel
     {
+        public ProductViewModel()
+        {
+            this.Threads = new List<ThreadViewModel>();
+        }
+
         public int? Id { get; set; }
         /// <summary>
         /// This is not an actual URL, but the URL part like matterspace.io/[this].

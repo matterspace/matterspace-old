@@ -12,10 +12,13 @@ namespace Matterspace.Lib.Services.Product
 {
     public class ProductService
     {
+        public ThreadService ThreadService { get; }
+
         public ProductService(MatterspaceDbContext db)
         {
             if (db == null) throw new ArgumentNullException(nameof(db));
             this.Db = db;
+            this.ThreadService = new ThreadService(this.Db);
         }
 
         public MatterspaceDbContext Db { get; }
@@ -41,7 +44,8 @@ namespace Matterspace.Lib.Services.Product
                 WebsiteUrl = product.WebsiteUrl,
                 FacebookUrl = product.FacebookUrl,
                 TwitterUrl = product.TwitterUrl,
-                ActiveTab = activeTab
+                ActiveTab = activeTab,
+                Threads = await this.ThreadService.GetThreads(product.Id)
             };
         }
     }

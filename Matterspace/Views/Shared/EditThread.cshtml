@@ -7,7 +7,7 @@
 
 <div class="container row">
     <section class="thread-entry col-xs-12 col-md-9">
-        @using (Html.BeginForm("Edit", "Ideas", FormMethod.Post, new { id = "thread-form" }))
+        @using (Html.BeginForm("Edit", Model.Type.ToString(), FormMethod.Post, new { id = "thread-form" }))
         {
             @Html.HiddenFor(x => x.Product.Id);
             @Html.HiddenFor(x => x.Product.Name);

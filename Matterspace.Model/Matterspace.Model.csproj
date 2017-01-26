@@ -92,6 +92,7 @@
     <Compile Include="Enums\ProductMembershipType.cs" />
     <Compile Include="Enums\QuestionStatus.cs" />
     <Compile Include="Enums\ReleaseStatus.cs" />
+    <Compile Include="Enums\ThreadStatus.cs" />
     <Compile Include="Enums\ThreadType.cs" />
     <Compile Include="MatterspaceDbContext.cs" />
     <Compile Include="Migrations\201612101939368_initial.cs" />
@@ -109,6 +110,10 @@
     <Compile Include="Migrations\201701242151279_ThreadListInProduct.cs" />
     <Compile Include="Migrations\201701242151279_ThreadListInProduct.Designer.cs">
       <DependentUpon>201701242151279_ThreadListInProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701262102300_ThreadStatus.cs" />
+    <Compile Include="Migrations\201701262102300_ThreadStatus.Designer.cs">
+      <DependentUpon>201701262102300_ThreadStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -132,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701242151279_ThreadListInProduct.resx">
       <DependentUpon>201701242151279_ThreadListInProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701262102300_ThreadStatus.resx">
+      <DependentUpon>201701262102300_ThreadStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

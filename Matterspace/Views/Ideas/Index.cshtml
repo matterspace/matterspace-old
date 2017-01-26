@@ -41,11 +41,16 @@
                         <div class="product-thread-table-header">
                             <a href="#" class="open">
                                 <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                <span>23 open</span>
+                                @{
+                                    var openCount = Model.Threads.Where(x => x.Status == Matterspace.Model.Enums.ThreadStatus.Pending).Count();
+                                    // This is less expensive than using two wheres
+                                    var closedCount = Model.Threads.Count() - openCount;
+                                }
+                                <span>@openCount open</span>
                             </a>
                             <a href="#" class="closed">
                                 <i class="fa fa-check" aria-hidden="true"></i>
-                                <span>3 closed</span>
+                                <span>@closedCount closed</span>
                             </a>
                         </div>
                         <div class="product-thread-table-body">

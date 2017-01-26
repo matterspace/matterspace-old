@@ -1,7 +1,7 @@
 ﻿@model Matterspace.Models.ThreadViewModel
 
 <div class="form-group">
-    @Html.HiddenFor(x => x.ThreadType)
+    @Html.HiddenFor(x => x.Type)
     <div class="input-group">
         @Html.EditorFor(x => x.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
     </div>
@@ -13,7 +13,7 @@
 
     <div class="form-actions">
         <div class="pull-right">
-            <button id="submit" type="submit" class="btn btn-success" disabled="true">Submit new @Model.ThreadType.ToString()</button>
+            <button id="submit" type="submit" class="btn btn-success" disabled="true">Submit new @Model.Type.ToString()</button>
         </div>
         <div class="clearfix"></div>
     </div>

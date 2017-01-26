@@ -34,7 +34,6 @@ namespace Matterspace.Controllers.Thread
         public async Task<ActionResult> Index(string productName)
         {
             var viewModel = await this.GetProductViewModel(productName);
-            viewModel.Threads = await this.threadService.GetThreads(viewModel.Id.Value, this.TabType);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
             return this.View(viewModel);
@@ -62,7 +61,7 @@ namespace Matterspace.Controllers.Thread
             if (ModelState.IsValid)
             {
                 await this.threadService.SaveThread(viewModel);
-                return this.View("Index", viewModel.Product);
+                return RedirectToAction("Index");
             }
 
             return this.View("EditThread", viewModel);
@@ -73,7 +72,9 @@ namespace Matterspace.Controllers.Thread
         /// </summary>
         protected async virtual Task<ProductViewModel> GetProductViewModel(string productName)
         {
-            return await this.productService.GetProductViewModel(productName, ActiveTab);
+            var viewModel = await this.productService.GetProductViewModel(productName, ActiveTab);
+
+            return viewModel;
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Matterspace.Controllers.Thread
         {
             var viewModel = new ThreadViewModel()
             {
-                ThreadType = TabType
+                Type = TabType
             };
 
             viewModel.Product = await this.GetProductViewModel(productName);
