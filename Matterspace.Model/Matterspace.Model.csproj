@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ThreadPageAttribute.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ApplicationUserFollowingThread.cs" />
     <Compile Include="Entities\ApplicationUserFollowingProduct.cs" />

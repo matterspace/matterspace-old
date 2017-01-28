@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Matterspace.Model.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,17 @@ namespace Matterspace.Model.Enums
 {
     public enum ThreadType
     {
+        [ThreadPage("Ideas")]
         Idea = 1,
+        [ThreadPage("Issues")]
         Issue = 2,
+        [ThreadPage("Backlog")]
         BacklogItem = 3,
-        Question = 4,
-        QA = 5,
-        Doc = 6,
-        Release = 7
+        [ThreadPage("QA")]
+        QA = 4,
+        [ThreadPage("Docs")]
+        Doc = 5,
+        [ThreadPage("Releases")]
+        Release = 6
     }
 }

@@ -246,6 +246,7 @@
     <Compile Include="Lib\AppSettingsConstants.cs" />
     <Compile Include="Lib\Email\EmailApi.cs" />
     <Compile Include="Lib\Email\EmailMessage.cs" />
+    <Compile Include="Lib\Extensions\EnumExtensions.cs" />
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
     <Compile Include="Lib\Services\Product\ProductService.cs" />

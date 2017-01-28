@@ -38,7 +38,7 @@ namespace Matterspace.Lib.Services.Thread
                 TextMarkdown = threadViewModel.Content,
                 Title = threadViewModel.Title,
                 Type = threadViewModel.Type,
-                CreatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
                 ProductId = threadViewModel.Product.Id.Value,
                 Status = ThreadStatus.Pending // Every thread starts pending
             };
