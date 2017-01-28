@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.Entity;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using Matterspace.Lib.Helpers;
 using Matterspace.Model;
@@ -44,7 +42,7 @@ namespace Matterspace.Controllers
                 this.Db.Products.Add(product);
                 await this.Db.SaveChangesAsync();
 
-                return this.RedirectToAction("Index", new {name = product.Name});
+                return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = product.Name });
             }
 
             return View(formModel);
