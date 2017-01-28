@@ -47,19 +47,35 @@ namespace Matterspace.Lib.Services.Thread
             await this.Db.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ThreadViewModel>> GetThreads(int productId, ThreadType? type = null)
+        public async Task<IEnumerable<ThreadViewModel>> GetThreads(int productId, ThreadType type)
         {
-            var threads = this.Db.Threads.Where(x => x.ProductId == productId);
+            var threads = await this.Db.Threads.Where(x => x.ProductId == productId && x.Type == type).ToListAsync();
 
-            if (type.HasValue)
-                threads.Where(x => x.Type == type);
-
-            var threadList = await threads.ToListAsync();
-
-            return threadList.Select(x => this.GetThreadViewModel(x));
+            return threads.Select(x => this.GetThreadViewModel(x));
         }
 
-        public ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread)
+        public async Task<IEnumerable<ThreadCountViewModel>> GetThreadsCount(int productId)
+        {
+            var threads = await this.Db.Threads
+                .Where(x => x.ProductId == productId) // Only threads by product id
+                .GroupBy(x => x.Type) // Group by its type
+                .Select(x => 
+                new
+                {
+                    Type = x.FirstOrDefault().Type, // Only the type
+                    Count = x.Count() // And the type count
+                })
+                .ToListAsync();
+
+            return threads
+                .Select(x => new ThreadCountViewModel()
+                {
+                    Type = x.Type,
+                    Count = x.Count
+                });
+        }
+
+        private ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread)
         {
             return new ThreadViewModel()
             {

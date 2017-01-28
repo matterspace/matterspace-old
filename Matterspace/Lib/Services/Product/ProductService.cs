@@ -45,7 +45,7 @@ namespace Matterspace.Lib.Services.Product
                 FacebookUrl = product.FacebookUrl,
                 TwitterUrl = product.TwitterUrl,
                 ActiveTab = activeTab,
-                Threads = await this.ThreadService.GetThreads(product.Id)
+                ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id)
             };
         }
     }

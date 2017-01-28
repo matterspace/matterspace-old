@@ -267,6 +267,7 @@
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\SendCodeViewModel.cs" />
     <Compile Include="Models\SetPasswordViewModel.cs" />
+    <Compile Include="Models\ThreadCountViewModel.cs" />
     <Compile Include="Models\ThreadViewModel.cs" />
     <Compile Include="Models\TimelineUpdateViewModel.cs" />
     <Compile Include="Models\VerifyCodeViewModel.cs" />

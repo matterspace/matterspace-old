@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Matterspace.Model.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -26,6 +27,7 @@ namespace Matterspace.Models
         public ProductViewModel()
         {
             this.Threads = new List<ThreadViewModel>();
+            this.ThreadsCount = new List<ThreadCountViewModel>();
         }
 
         public int? Id { get; set; }
@@ -66,6 +68,17 @@ namespace Matterspace.Models
         [Url(ErrorMessage = "The Twitter URL must be valid")]
         public string TwitterUrl { get; set; }
 
+        public IEnumerable<ThreadCountViewModel> ThreadsCount { get; set; }
+
         public IEnumerable<ThreadViewModel> Threads { get; set; }
+
+        /// <summary>
+        /// Returns the thread count for the current product
+        /// </summary>
+        public int GetThreadCount(ThreadType threadType)
+        {
+            var currThread = this.ThreadsCount.FirstOrDefault(x => x.Type == threadType);
+            return currThread != null ? currThread.Count : 0;
+        }
     }
 }
