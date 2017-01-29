@@ -34,5 +34,9 @@
   {
     "outputFile": "Content/App.Thread.New.css",
     "inputFile": "Content/App.Thread.New.scss"
+  },
+  {
+    "outputFile": "Content/App.Settings.css",
+    "inputFile": "Content/App.Settings.scss"
   }
 ]

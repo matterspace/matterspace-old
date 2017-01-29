@@ -1,0 +1,23 @@
+﻿@model Matterspace.Models.ProductViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
+}
+
+@Html.Partial("_ProductSettingsHeaderPartial", Model)
+
+<div class="settings-wrapper container row">
+    <section class="settings-content col-xs-12 col-md-9">
+        
+    </section>
+
+    <aside class="settings-side col-xs-12 col-md-3">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                Settings
+            </a>
+            <a href="#" class="list-group-item">Members</a>
+            <a href="#" class="list-group-item">Integrations</a>
+        </div>
+    </aside>
+</div>

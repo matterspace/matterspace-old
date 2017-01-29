@@ -1,0 +1,65 @@
+﻿@import "Variables.scss";
+
+.settings-home-wrapper {
+    .settings-header {
+        display: flex;
+
+        $avatar-size: 50px;
+
+        .header-side {
+            width: $avatar-size + ($gutter-md / 2);
+
+            .header-avatar {
+                width: $avatar-size;
+                height: $avatar-size;
+                background-image: url('/Content/Images/MSLogo.png');
+                background-size: cover;
+            }
+        }
+
+        .header-main {
+            flex: 1;
+
+            h3.header-title {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+            .header-subtitle {
+                color: $gray-light;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+
+.settings-wrapper {
+    .settings-content {
+        border: 1px solid #ddd;
+        border-radius: $border-radius-sm;
+        padding: 10px;
+    }
+
+    .settings-side {
+        .list-group {
+            a {
+                text-decoration: none;
+            }
+
+            .list-group-item {
+                color: #000;
+            }
+
+            .list-group-item:hover {
+                background-color: $gray-lightest;
+            }
+
+            .active {
+                background-color: $gray-lighter;
+                border-color: $gray-lighter;
+                border-left: 3px solid $gray-dark;
+            }
+        }
+    }
+}

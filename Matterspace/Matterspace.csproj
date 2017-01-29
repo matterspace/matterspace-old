@@ -231,6 +231,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BacklogController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\Thread\ThreadController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -327,6 +328,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Mixins.scss" />
+    <None Include="Content\App.Settings.scss">
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
     <None Include="Content\App.Thread.New.scss" />
     <None Include="Content\Site.scss" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -432,6 +436,9 @@
     <Content Include="Views\Shared\EditThreadForm.cshtml" />
     <Content Include="Views\Shared\_LayoutEditThread.cshtml" />
     <Content Include="Views\Shared\Product\_ProductPartial.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Shared\Product\_ProductNavbarPartial.cshtml" />
+    <Content Include="Views\Settings\_ProductSettingsHeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

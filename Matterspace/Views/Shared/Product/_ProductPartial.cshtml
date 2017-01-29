@@ -1,11 +1,6 @@
 ﻿@using Matterspace.Models
 @model ProductViewModel
 
-@{
-    // function that returns "active" if the given tab is actually the active tab. Otherwise it returns an empty string
-    var getActiveClass = new Func<ProductActiveTab, string>((tab) => this.Model.ActiveTab == tab ? "active" : "");
-}
-
 <div class="product-home-wrapper">
     <div class="product-header">
         <div class="header-side">
@@ -47,39 +42,12 @@
                 </div>
             </div>
         </div>
+        <div class="header-secondary pull-right">
+            @* TODO: show this only if admin *@
+            <a href="@Url.Action("Index", "Settings")" class="btn btn-secondary" title="Settings">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
-    <div class="product-body">
-        <nav class="navbar-product">
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Home)" href="@Url.Action("Index", "Products")">
-                <i class="fa fa-home" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Home</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Ideas)" href="@Url.Action("Index", "Ideas")">
-                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Ideas</span>
-                <span class="tag tag-default">@Model.GetThreadCount(Matterspace.Model.Enums.ThreadType.Idea)</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Issues)" href="@Url.Action("Index", "Issues")">
-                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Issues</span>
-                <span class="tag tag-default">@Model.GetThreadCount(Matterspace.Model.Enums.ThreadType.Issue)</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Backlog)" href="@Url.Action("Index", "Backlog")">
-                <i class="fa fa-list-alt" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Backlog</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.QA)" href="@Url.Action("Index", "QA")">
-                <i class="fa fa-question-circle" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Q&A</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Docs)" href="@Url.Action("Index", "Docs")">
-                <i class="fa fa-book" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Docs</span>
-            </a>
-            <a class="navbar-product-item @getActiveClass(ProductActiveTab.Releases)" href="@Url.Action("Index", "Releases")">
-                <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                <span class="navbar-product-item-text">Releases</span>
-            </a>
-        </nav>
-    </div>
+    @Html.Partial("~/Views/Shared/Product/_ProductNavbarPartial.cshtml", Model)
 </div>

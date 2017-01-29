@@ -10,12 +10,15 @@ namespace Matterspace.Controllers
 {
     public class ProductsController : Controller
     {
+        public MatterspaceDbContext Db { get; }
+
+        private ProductService productService;
+
         public ProductsController()
         {
             this.Db = new MatterspaceDbContext();
+            this.productService = new ProductService(this.Db);
         }
-
-        public MatterspaceDbContext Db { get; }
 
         [HttpGet]
         public ActionResult Create()
@@ -51,10 +54,11 @@ namespace Matterspace.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await new ProductService(this.Db).GetProductViewModel(productName, ProductActiveTab.Home);
+            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.Home);
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Home", viewModel.DisplayName);
+
             return this.View(viewModel);
-        }        
+        }
 
         protected override void Dispose(bool disposing)
         {
