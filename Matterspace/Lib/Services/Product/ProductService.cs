@@ -48,5 +48,27 @@ namespace Matterspace.Lib.Services.Product
                 ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id)
             };
         }
+
+        public async Task SaveProduct(ProductViewModel viewModel)
+        {
+            Model.Entities.Product product = null;
+
+            if (viewModel.Id.HasValue)
+                product = await this.Db.Products.FindAsync(viewModel.Id.Value);
+            else
+                product = new Model.Entities.Product();
+
+            product.Name = viewModel.Name.ToLower();
+            product.DisplayName = viewModel.DisplayName;
+            product.ShortDescription = viewModel.ShortDescription;
+            product.WebsiteUrl = viewModel.WebsiteUrl;
+            product.TwitterUrl = viewModel.TwitterUrl;
+            product.FacebookUrl = viewModel.FacebookUrl;
+            
+            if (!viewModel.Id.HasValue)
+                this.Db.Products.Add(product);
+
+            await this.Db.SaveChangesAsync();
+        }
     }
 }

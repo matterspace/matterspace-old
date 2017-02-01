@@ -1,0 +1,56 @@
+﻿@model Matterspace.Models.SettingsViewModel
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.Name)
+    <div class="input-group">
+        <div class="input-group-addon">http://matterspace.io/</div>
+        @Html.TextBoxFor(m => m.Product.Name, new { placeholder = "your-product-name", @class = "form-control" })
+        <div class="input-group-addon">
+            <i class="fa fa-question-circle"
+               aria-hidden="true"
+               data-toggle="tooltip"
+               data-placement="bottom"
+               title="This should be a URL friendly name. Only lower case characters, numbers and hyphens are allowed."
+               data-offset="-10 0"></i>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.DisplayName)
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.Product.DisplayName, new { placeholder = "Your product name", @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.ShortDescription)
+    <div class="input-group">
+        @Html.TextAreaFor(m => m.Product.ShortDescription, new { placeholder = "A short description of your product, no more than 120 characters", @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.WebsiteUrl)
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.Product.WebsiteUrl, new { placeholder = "http://www.yourproduct.com", @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.FacebookUrl)
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.Product.FacebookUrl, new { placeholder = "http://www.facebook.com/yourpage", @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Product.TwitterUrl)
+    <div class="input-group">
+        @Html.TextBoxFor(m => m.Product.TwitterUrl, new { placeholder = "http://www.twitter.com/yourusername", @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-actions">
+    <div class="pull-right">
+        <button id="submit" type="submit" class="btn btn-success">Save settings</button>
+    </div>
+    <div class="clearfix"></div>
+</div>

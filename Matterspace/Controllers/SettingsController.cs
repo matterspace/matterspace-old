@@ -26,10 +26,42 @@ namespace Matterspace.Controllers
         [HttpGet]
         public async Task<ActionResult> Index(string productName)
         {
-            var viewModel = await this.productService.GetProductViewModel(productName, ProductActiveTab.Home);
-            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Settings", viewModel.DisplayName);
+            var viewModel = await this.GetSettingsViewModel(productName);
+            viewModel.ActiveTab = SettingsActiveTab.Settings;
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Save(string productName, SettingsViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                await this.productService.SaveProduct(viewModel.Product);
+                return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = viewModel.Product.Name });
+            }
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Members(string productName)
+        {
+            var viewModel = await this.GetSettingsViewModel(productName);
+            viewModel.ActiveTab = SettingsActiveTab.Members;
+            return this.View(viewModel);
+        }
+
+        private async Task<SettingsViewModel> GetSettingsViewModel(string productName)
+        {
+            var product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Home);
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle("Settings", product.DisplayName);
+
+            var viewModel = new SettingsViewModel()
+            {
+                Product = product
+            };
+
+            return viewModel;
         }
     }
 }

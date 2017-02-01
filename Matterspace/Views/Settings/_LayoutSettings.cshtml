@@ -1,0 +1,26 @@
+﻿@using Matterspace.Models
+@model SettingsViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutContainer.cshtml";
+
+    var getActiveClass = new Func<SettingsActiveTab, string>((tab) => this.Model.ActiveTab == tab ? "active" : "");
+}
+
+@Html.Partial("_ProductSettingsHeaderPartial", Model.Product)
+
+<div class="settings-wrapper container row">
+    <section class="settings-content col-xs-12 col-md-9">
+        @RenderBody()
+    </section>
+
+    <aside class="settings-side col-xs-12 col-md-3">
+        <div class="list-group">
+            <a href="@Url.Action("Index", "Settings")" class="list-group-item @getActiveClass(SettingsActiveTab.Settings)">
+                Settings
+            </a>
+            <a href="@Url.Action("Members", "Settings")" class="list-group-item @getActiveClass(SettingsActiveTab.Members)">Members</a>
+            <a href="@Url.Action("Integrations", "Settings")" class="list-group-item @getActiveClass(SettingsActiveTab.Integrations)">Integrations</a>
+        </div>
+    </aside>
+</div>

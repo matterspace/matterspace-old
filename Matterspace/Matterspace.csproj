@@ -269,6 +269,7 @@
     <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\SendCodeViewModel.cs" />
     <Compile Include="Models\SetPasswordViewModel.cs" />
+    <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\ThreadCountViewModel.cs" />
     <Compile Include="Models\ThreadViewModel.cs" />
     <Compile Include="Models\TimelineUpdateViewModel.cs" />
@@ -293,6 +294,9 @@
     <None Include="Content\App.scss" />
     <Content Include="Content\App.css">
       <DependentUpon>App.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\App.Settings.css">
+      <DependentUpon>App.Settings.scss</DependentUpon>
     </Content>
     <Content Include="Content\App.Thread.New.css">
       <DependentUpon>App.Thread.New.scss</DependentUpon>
@@ -439,6 +443,10 @@
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Shared\Product\_ProductNavbarPartial.cshtml" />
     <Content Include="Views\Settings\_ProductSettingsHeaderPartial.cshtml" />
+    <Content Include="Views\Settings\_EditSettingsPartial.cshtml" />
+    <Content Include="Views\Shared\Product\_EditProductPartial.cshtml" />
+    <Content Include="Views\Settings\_LayoutSettings.cshtml" />
+    <Content Include="Views\Settings\Members.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

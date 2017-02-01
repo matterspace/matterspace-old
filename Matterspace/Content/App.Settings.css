@@ -17,9 +17,7 @@
       margin-bottom: 15px; }
 
 .settings-wrapper .settings-content {
-  border: 1px solid #ddd;
-  border-radius: 0.2rem;
-  padding: 10px; }
+  padding: 0; }
 
 .settings-wrapper .settings-side .list-group a {
   text-decoration: none; }

@@ -32,20 +32,8 @@ namespace Matterspace.Controllers
         {
             if (ModelState.IsValid)
             {
-                var product = new Product()
-                {
-                    Name = formModel.Name.ToLower(),
-                    DisplayName = formModel.DisplayName,
-                    ShortDescription = formModel.ShortDescription,
-                    WebsiteUrl = formModel.WebsiteUrl,
-                    TwitterUrl = formModel.TwitterUrl,
-                    FacebookUrl = formModel.FacebookUrl
-                };
-
-                this.Db.Products.Add(product);
-                await this.Db.SaveChangesAsync();
-
-                return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = product.Name });
+                await this.productService.SaveProduct((ProductViewModel)(formModel as object));
+                return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = formModel.Name });
             }
 
             return View(formModel);
