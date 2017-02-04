@@ -251,8 +251,10 @@
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
     <Compile Include="Lib\Services\Product\ProductService.cs" />
+    <Compile Include="Lib\Services\Settings\SettingsService.cs" />
     <Compile Include="Lib\Services\Thread\ThreadService.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
+    <Compile Include="Models\ApplicationUserViewModel.cs" />
     <Compile Include="Models\ChangePasswordViewModel.cs" />
     <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />

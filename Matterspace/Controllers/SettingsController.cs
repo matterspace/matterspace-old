@@ -1,5 +1,6 @@
 ﻿using Matterspace.Lib.Helpers;
 using Matterspace.Lib.Services.Product;
+using Matterspace.Lib.Services.Settings;
 using Matterspace.Model;
 using Matterspace.Models;
 using System;
@@ -15,11 +16,13 @@ namespace Matterspace.Controllers
     {
         public MatterspaceDbContext Db { get; }
 
+        private SettingsService settingsService;
         private ProductService productService;
 
         public SettingsController()
         {
             this.Db = new MatterspaceDbContext();
+            this.settingsService = new SettingsService(this.Db);
             this.productService = new ProductService(this.Db);
         }
 
@@ -49,6 +52,13 @@ namespace Matterspace.Controllers
             var viewModel = await this.GetSettingsViewModel(productName);
             viewModel.ActiveTab = SettingsActiveTab.Members;
             return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> AddMember(string productName, SettingsViewModel viewModel)
+        {
+            await this.settingsService.AddMemberToProject(viewModel.UserNameToAdd, viewModel.Product.Id.Value, viewModel.UserNameToAddId);
+            return this.RedirectToRoute(RouteConfig.PRODUCT_ACTIONS, new { productName = productName, controller = "Settings", action = "Members" });
         }
 
         private async Task<SettingsViewModel> GetSettingsViewModel(string productName)

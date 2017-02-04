@@ -72,6 +72,8 @@ namespace Matterspace.Models
 
         public IEnumerable<ThreadViewModel> Threads { get; set; }
 
+        public IEnumerable<ApplicationUserViewModel> Members { get; set; }
+
         /// <summary>
         /// Returns the thread count for the current product
         /// </summary>

@@ -33,7 +33,10 @@ namespace Matterspace.Lib.Services.Product
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
 
-            var product = await this.Db.Products.FirstAsync(m => m.Name == name);
+            var product = await this.Db.Products
+                .Include(x => x.Members)
+                .Include(x => x.Members.Select(m => m.Member))
+                .FirstAsync(m => m.Name == name);
 
             return new ProductViewModel()
             {
@@ -45,7 +48,13 @@ namespace Matterspace.Lib.Services.Product
                 FacebookUrl = product.FacebookUrl,
                 TwitterUrl = product.TwitterUrl,
                 ActiveTab = activeTab,
-                ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id)
+                ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id),
+                Members = product.Members.Select(x => new ApplicationUserViewModel()
+                {
+                    Id = x.Id,
+                    UserId = x.MemberId,
+                    UserName = x.Member.UserName
+                })
             };
         }
 

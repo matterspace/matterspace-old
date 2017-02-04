@@ -60,6 +60,10 @@ namespace Matterspace.Model
             modelBuilder.Entity<Product>().Property(m => m.TwitterUrl)
                 .HasMaxLength(512);
 
+            modelBuilder.Entity<Product>()
+                .HasMany(x => x.Members)
+                .WithRequired(x => x.Product);
+
             modelBuilder.Entity<Thread>()
                 .HasRequired(t => t.Product)
                 .WithMany(p => p.Threads)

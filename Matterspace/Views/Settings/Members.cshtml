@@ -4,4 +4,62 @@
     Layout = "~/Views/Settings/_LayoutSettings.cshtml";
 }
 
+<div class="card">
+    <div class="card-header">
+        Members
+    </div>
+    <div class="card-block">
+        <div>
+            @using (Html.BeginForm("AddMember", "Settings", FormMethod.Post, new { id = "thread-form" }))
+            {
+                @Html.HiddenFor(x => x.Product.Id);
 
+                <div class="form-group row">
+                    <div class="col-xs-12 col-sm-10 col-md-7">
+                        @Html.LabelFor(m => m.UserNameToAdd)
+                        <div class="input-group">
+                            @Html.TextBoxFor(m => m.UserNameToAdd, new { placeholder = "Username", @class = "form-control" })
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    Add member
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@if (Model.Product.Members.Any())
+{
+    <div class="card">
+        <div class="card-header">
+            Current members
+        </div>
+        <div class="card-block">
+            <div>
+                @foreach (var member in Model.Product.Members)
+                {
+                    <div class="member-settings">
+                        <p>@string.Format("@{0}", member.UserName)</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="timeline-blankslate">
+        <div class="timeline-blankslate-icon">
+            <i class="fa fa-users" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-blankslate-primary-message">
+            It seems that this product has no members.
+        </div>
+    </div>
+}
