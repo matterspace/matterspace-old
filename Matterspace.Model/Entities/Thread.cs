@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using Matterspace.Model.Enums;
 
 namespace Matterspace.Model.Entities

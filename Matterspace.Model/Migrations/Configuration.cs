@@ -2,19 +2,16 @@ using Matterspace.Model.Entities;
 
 namespace Matterspace.Model.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Matterspace.Model.MatterspaceDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MatterspaceDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Matterspace.Model.MatterspaceDbContext context)
+        protected override void Seed(MatterspaceDbContext context)
         {
 #if DEBUG
             // Deletes all data, from all tables, except for __MigrationHistory

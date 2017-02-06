@@ -1,14 +1,12 @@
-﻿using Matterspace.Lib.Helpers;
+﻿using System;
+using System.Diagnostics;
+using Matterspace.Lib.Helpers;
 using Matterspace.Lib.Services.Product;
 using Matterspace.Lib.Services.Thread;
 using Matterspace.Model;
 using Matterspace.Model.Enums;
 using Matterspace.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Matterspace.Controllers.Thread
@@ -17,8 +15,8 @@ namespace Matterspace.Controllers.Thread
     {
         protected MatterspaceDbContext Db { get; }
 
-        protected ProductService productService;
-        protected ThreadService threadService;
+        protected ProductService ProductService;
+        protected ThreadService ThreadService;
 
         protected abstract ProductActiveTab ActiveTab { get; }
         protected abstract ThreadType TabType { get; }
@@ -26,15 +24,17 @@ namespace Matterspace.Controllers.Thread
         protected ThreadController()
         {
             this.Db = new MatterspaceDbContext();
-            this.productService = new ProductService(this.Db);
-            this.threadService = new ThreadService(this.Db);
+            this.ProductService = new ProductService(this.Db);
+            this.ThreadService = new ThreadService(this.Db);
         }
 
         [HttpGet]
         public async Task<ActionResult> Index(string productName)
         {
             var viewModel = await this.GetProductViewModel(productName);
-            viewModel.Threads = await this.threadService.GetThreads(viewModel.Id.Value, this.TabType);
+
+            Debug.Assert(viewModel.Id != null, "viewModel.Id != null");
+            viewModel.Threads = await this.ThreadService.GetThreads(viewModel.Id.Value, this.TabType);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
 
@@ -58,10 +58,10 @@ namespace Matterspace.Controllers.Thread
         [HttpPost]
         public virtual async Task<ActionResult> Edit(ThreadViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
-                await this.threadService.SaveThread(viewModel);
-                return RedirectToAction("Index");
+                await this.ThreadService.SaveThread(viewModel);
+                return this.RedirectToAction("Index");
             }
 
             return this.View("EditThread", viewModel);
@@ -70,26 +70,27 @@ namespace Matterspace.Controllers.Thread
         /// <summary>
         /// Returns a product view model according to the given product name
         /// </summary>
-        protected async virtual Task<ProductViewModel> GetProductViewModel(string productName)
+        protected virtual async Task<ProductViewModel> GetProductViewModel(string productName)
         {
-            var viewModel = await this.productService.GetProductViewModel(productName, ActiveTab);
+            if (productName == null) throw new ArgumentNullException(nameof(productName));
+
+            var viewModel = await this.ProductService.GetProductViewModel(productName, this.ActiveTab);
             return viewModel;
         }
 
         /// <summary>
         /// Returns a thread view model. If an id is passed, it'll return the given id's information
         /// </summary>
-        protected async virtual Task<ThreadViewModel> GetThreadViewModel(string productName, int? id)
+        protected virtual async Task<ThreadViewModel> GetThreadViewModel(string productName, int? id)
         {
-            var viewModel = new ThreadViewModel()
+            var viewModel = new ThreadViewModel
             {
-                Type = TabType
+                Type = this.TabType,
+                Product = await this.GetProductViewModel(productName)
             };
 
-            viewModel.Product = await this.GetProductViewModel(productName);
-
             if (id.HasValue)
-                viewModel = await this.threadService.GetThread(id.Value);
+                viewModel = await this.ThreadService.GetThread(id.Value);
 
             return viewModel;
         }

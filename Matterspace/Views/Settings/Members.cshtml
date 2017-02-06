@@ -45,7 +45,7 @@
                 @foreach (var member in Model.Product.Members)
                 {
                     <div class="member-settings">
-                        <p>@string.Format("@{0}", member.UserName)</p>
+                        <p>@($"@{member.UserName}")</p>
                     </div>
                 }
             </div>
