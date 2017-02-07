@@ -2,10 +2,10 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/client.js',
+    entry: './src/index.js',
 
     output: {
-        filename: 'markdown-editor.js',
+        filename: 'react-bundle.js',
         path: './dist/',
         publicPath: 'content'
     },
@@ -30,7 +30,7 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('markdown-editor.css'),
+        new ExtractTextPlugin('react-bundle.css'),
         new webpack.optimize.UglifyJsPlugin({ minimize: true }),
         new webpack.DefinePlugin({
             'process.env': {

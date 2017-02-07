@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development babel-node ./demo/server.js",
     "build": "cross-env NOVE_ENV=production gulp build",
+    "build-demo-prod": "cross-env NODE_ENV=production gulp build-demo-prod",
     "build-publish": "cross-env NODE_ENV=development gulp build-publish"
   },
   "author": "",
@@ -39,6 +40,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-webpack": "^1.5.0",
+    "merge-stream": "^1.0.1",
     "node-sass": "^4.1.1",
     "normalize.css": "^5.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
