@@ -15,5 +15,5 @@ import App from './App';
 render(
     <App>
     </App>,
-    document.getElementById('#app_container')
+    document.getElementById('app_container')
 );
