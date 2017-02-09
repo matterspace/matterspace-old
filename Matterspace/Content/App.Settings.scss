@@ -47,10 +47,10 @@
 
             .list-group-item {
                 color: #000;
-            }
 
-            .list-group-item:hover {
-                background-color: $gray-lightest;
+                &hover {
+                    background-color: $gray-lightest;
+                }
             }
 
             .active {

@@ -204,9 +204,8 @@
 
 .settings-wrapper .settings-side .list-group .list-group-item {
   color: #000; }
-
-.settings-wrapper .settings-side .list-group .list-group-item:hover {
-  background-color: #f7f7f9; }
+  .settings-wrapper .settings-side .list-group .list-group-itemhover {
+    background-color: #f7f7f9; }
 
 .settings-wrapper .settings-side .list-group .active {
   background-color: #eceeef;

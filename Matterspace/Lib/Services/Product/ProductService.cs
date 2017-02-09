@@ -1,5 +1,7 @@
 ﻿using Matterspace.Lib.Services.Thread;
 using Matterspace.Model;
+using Matterspace.Model.Entities;
+using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
 using System.Collections.Generic;
@@ -48,13 +50,7 @@ namespace Matterspace.Lib.Services.Product
                 FacebookUrl = product.FacebookUrl,
                 TwitterUrl = product.TwitterUrl,
                 ActiveTab = activeTab,
-                ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id),
-                Members = product.Members.Select(x => new ApplicationUserViewModel()
-                {
-                    Id = x.Id,
-                    UserId = x.MemberId,
-                    UserName = x.Member.UserName
-                })
+                ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id)
             };
         }
 
@@ -78,6 +74,83 @@ namespace Matterspace.Lib.Services.Product
                 this.Db.Products.Add(product);
 
             await this.Db.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)
+        {
+            var members = await this.Db.ProductMembers
+                .Include(x => x.Member)
+                .Where(x => x.ProductId == productId)
+                .Select(x => x.Member)
+                .ToListAsync();
+
+            return members.Select(x => new ApplicationUserViewModel()
+            {
+                UserId = x.Id,
+                UserName = x.UserName
+            });
+        }
+
+        public async Task<OperationResult> AddMemberToProduct(string username, int productId, string userId = null)
+        {
+            var saveResult = new OperationResult();
+
+            // Get the user by its username
+            // If the id is not null (found user with auto complete), use it
+            var memberId = !string.IsNullOrEmpty(userId) ? userId
+                : await this.Db.Users
+                .Where(x => x.UserName == username)
+                .Select(x => x.Id)
+                .FirstOrDefaultAsync();
+
+            // If the user exists
+            if (!string.IsNullOrEmpty(memberId))
+            {
+                // Create a new product member
+                var productMember = new ProductMember()
+                {
+                    MembershipType = Model.Enums.ProductMembershipType.Member,
+                    ProductId = productId,
+                    MemberId = memberId
+                };
+
+                var isAlreadyAssigned = await this.Db.ProductMembers
+                    .Where(x => x.MemberId == productMember.MemberId && x.ProductId == productMember.ProductId)
+                    .AnyAsync();
+
+                // Only if this user isn't assigned to the project
+                if (!isAlreadyAssigned)
+                {
+                    this.Db.ProductMembers.Add(productMember);
+                    await this.Db.SaveChangesAsync();
+                }
+                else
+                {
+                    saveResult.AddMessage("The given user is already assigned to this project", OperationResultMessageType.Error);
+                }
+            }
+            else
+            {
+                saveResult.AddMessage("Could not find the given user", OperationResultMessageType.Error);
+            }
+
+            return saveResult;
+        }
+
+        public async Task<OperationResult> RemoveMemberFromProduct(string userId, string productName)
+        {
+            var removeResult = new OperationResult();
+
+            var member = await this.Db.ProductMembers
+                .FirstOrDefaultAsync(x => x.Member.Id == userId && x.Product.Name == productName);
+
+            if(member != null)
+            {
+                this.Db.ProductMembers.Remove(member);
+                await this.Db.SaveChangesAsync();
+            }
+
+            return removeResult;
         }
     }
 }

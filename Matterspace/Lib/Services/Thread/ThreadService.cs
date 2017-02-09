@@ -24,6 +24,7 @@ namespace Matterspace.Lib.Services.Thread
         public async Task<ThreadViewModel> GetThread(int threadId)
         {
             var thread = await this.Db.Threads.FindAsync(threadId);
+#warning Change this throw to result model when available
             if (thread == null) throw new Exception("Could not find the thread");
 
             var viewModel = this.GetThreadViewModel(thread);
@@ -58,12 +59,12 @@ namespace Matterspace.Lib.Services.Thread
         {
             var threads = await this.Db.Threads
                 .Where(x => x.ProductId == productId) // Only threads by product id
-                .GroupBy(x => x.Type) // Group by its type
+                .GroupBy(x => x.Type) // Group by their type
                 .Select(x => 
                 new
                 {
                     Type = x.FirstOrDefault().Type, // Only the type
-                    Count = x.Count() // And the type count
+                    Count = x.Count() // And the count by type
                 })
                 .ToListAsync();
 

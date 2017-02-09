@@ -19,7 +19,7 @@ namespace Matterspace.Controllers
             }
         }
 
-        protected override ThreadType TabType
+        protected override ThreadType ThreadType
         {
             get
             {

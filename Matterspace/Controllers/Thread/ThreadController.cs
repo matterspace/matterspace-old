@@ -21,7 +21,7 @@ namespace Matterspace.Controllers.Thread
         protected ThreadService threadService;
 
         protected abstract ProductActiveTab ActiveTab { get; }
-        protected abstract ThreadType TabType { get; }
+        protected abstract ThreadType ThreadType { get; }
 
         protected ThreadController()
         {
@@ -34,7 +34,7 @@ namespace Matterspace.Controllers.Thread
         public async Task<ActionResult> Index(string productName)
         {
             var viewModel = await this.GetProductViewModel(productName);
-            viewModel.Threads = await this.threadService.GetThreads(viewModel.Id.Value, this.TabType);
+            viewModel.Threads = await this.threadService.GetThreads(viewModel.Id.Value, this.ThreadType);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
 
@@ -83,7 +83,7 @@ namespace Matterspace.Controllers.Thread
         {
             var viewModel = new ThreadViewModel()
             {
-                Type = TabType
+                Type = ThreadType
             };
 
             viewModel.Product = await this.GetProductViewModel(productName);

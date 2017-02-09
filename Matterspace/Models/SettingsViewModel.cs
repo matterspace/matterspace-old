@@ -16,6 +16,11 @@ namespace Matterspace.Models
 
     public class SettingsViewModel
     {
+        public SettingsViewModel()
+        {
+            this.Result = new OperationResult();
+        }
+
         public SettingsActiveTab ActiveTab { get; set; }
 
         public ProductViewModel Product { get; set; }
@@ -25,5 +30,7 @@ namespace Matterspace.Models
         [Required]
         [DisplayName("Add an user to this project")]
         public string UserNameToAdd { get; set; }
+
+        public OperationResult Result { get; set; }
     }
 }

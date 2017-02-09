@@ -26,14 +26,23 @@ namespace Matterspace.Controllers
             this.productService = new ProductService(this.Db);
         }
 
+
+        /// <summary>
+        /// Settings page
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult> Index(string productName)
         {
             var viewModel = await this.GetSettingsViewModel(productName);
+
             viewModel.ActiveTab = SettingsActiveTab.Settings;
+
             return this.View(viewModel);
         }
 
+        /// <summary>
+        /// Saves the default settings for a product
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult> Save(string productName, SettingsViewModel viewModel)
         {
@@ -46,24 +55,56 @@ namespace Matterspace.Controllers
             return this.View(viewModel);
         }
 
+        /// <summary>
+        /// Members settings page
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult> Members(string productName)
         {
             var viewModel = await this.GetSettingsViewModel(productName);
+
             viewModel.ActiveTab = SettingsActiveTab.Members;
+
             return this.View(viewModel);
         }
 
+        /// <summary>
+        /// Add member to a product in settings
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult> AddMember(string productName, SettingsViewModel viewModel)
         {
-            await this.settingsService.AddMemberToProject(viewModel.UserNameToAdd, viewModel.Product.Id.Value, viewModel.UserNameToAddId);
-            return this.RedirectToRoute(RouteConfig.PRODUCT_ACTIONS, new { productName = productName, controller = "Settings", action = "Members" });
+            var saveResult = await this.productService.AddMemberToProduct(viewModel.UserNameToAdd, viewModel.Product.Id.Value, viewModel.UserNameToAddId);
+
+            var settingsViewModel = await this.GetSettingsViewModel(productName);
+            settingsViewModel.ActiveTab = SettingsActiveTab.Members;
+
+            settingsViewModel.Result = saveResult;
+
+            return this.View("Members", settingsViewModel);
+        }
+
+        /// <summary>
+        /// Add member to a product in settings
+        /// </summary>
+        [HttpPost]
+        public async Task<ActionResult> RemoveMember(string productName, string userId)
+        {
+            var removeResult = await this.productService.RemoveMemberFromProduct(userId, productName);
+
+            var settingsViewModel = await this.GetSettingsViewModel(productName);
+            settingsViewModel.ActiveTab = SettingsActiveTab.Members;
+
+            settingsViewModel.Result = removeResult;
+
+            return this.View("Members", settingsViewModel);
         }
 
         private async Task<SettingsViewModel> GetSettingsViewModel(string productName)
         {
             var product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Home);
+            product.Members = await this.productService.GetMembersInProduct(product.Id.Value);
+
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Settings", product.DisplayName);
 
             var viewModel = new SettingsViewModel()

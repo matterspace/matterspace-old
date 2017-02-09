@@ -28,6 +28,7 @@ namespace Matterspace.Models
         {
             this.Threads = new List<ThreadViewModel>();
             this.ThreadsCount = new List<ThreadCountViewModel>();
+            this.Members = new List<ApplicationUserViewModel>();
         }
 
         public int? Id { get; set; }

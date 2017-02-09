@@ -1,7 +1,10 @@
-﻿@model Matterspace.Models.SettingsViewModel
+﻿@using Matterspace.Models
+@model SettingsViewModel
 
 @{
     Layout = "~/Views/Settings/_LayoutSettings.cshtml";
+    var hasErrorForm = new Func<OperationResult, string>((result) => !result.Success ? "has-danger" : "");
+    var hasErrorInput = new Func<OperationResult, string>((result) => !result.Success ? "form-control-danger" : "");
 }
 
 <div class="card">
@@ -14,11 +17,11 @@
             {
                 @Html.HiddenFor(x => x.Product.Id);
 
-                <div class="form-group row">
+                <div class="form-group row @hasErrorForm(this.Model.Result)">
                     <div class="col-xs-12 col-sm-10 col-md-7">
                         @Html.LabelFor(m => m.UserNameToAdd)
                         <div class="input-group">
-                            @Html.TextBoxFor(m => m.UserNameToAdd, new { placeholder = "Username", @class = "form-control" })
+                            @Html.TextBoxFor(m => m.UserNameToAdd, new { placeholder = "Username", @class = "form-control " + hasErrorInput(this.Model.Result) })
                             <span class="input-group-btn">
                                 <button class="btn btn-success" type="submit">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -26,6 +29,10 @@
                                 </button>
                             </span>
                         </div>
+                        @foreach (var error in this.Model.Result.Messages.Where(x => x.Type == OperationResultMessageType.Error))
+                        {
+                            <div class="form-control-feedback">@error.Message</div>
+                        }
                     </div>
                 </div>
             }
@@ -45,7 +52,10 @@
                 @foreach (var member in Model.Product.Members)
                 {
                     <div class="member-settings">
-                        <p>@string.Format("@{0}", member.UserName)</p>
+                        <a href="@Url.Action("RemoveMember", new { userId = member.UserId })" class="text-danger">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                        @string.Format("@{0}", member.UserName)
                     </div>
                 }
             </div>
