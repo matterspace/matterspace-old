@@ -14,6 +14,7 @@ namespace Matterspace
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                        "~/Scripts/no-np/react-bundle.js",
                         "~/Scripts/app.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/vue").Include(
@@ -42,6 +43,7 @@ namespace Matterspace
             bundles.Add(new StyleBundle("~/Content/css-app").Include(
                       "~/Content/bootstrap.app.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/react-bundle.css",
                       "~/Content/site.css",
                       "~/Content/App.css"
                       ));

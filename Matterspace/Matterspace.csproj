@@ -248,6 +248,7 @@
     <Compile Include="Lib\Email\EmailApi.cs" />
     <Compile Include="Lib\Email\EmailMessage.cs" />
     <Compile Include="Lib\Extensions\EnumExtensions.cs" />
+    <Compile Include="Lib\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
     <Compile Include="Lib\Services\Product\ProductService.cs" />
@@ -324,6 +325,7 @@
     <Content Include="Content\Mixins.css">
       <DependentUpon>Mixins.scss</DependentUpon>
     </Content>
+    <Content Include="Content\react-bundle.css" />
     <Content Include="Content\Signin-signup.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
@@ -380,7 +382,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\no-np\markdown-editor.js" />
+    <Content Include="Scripts\no-np\react-bundle.js" />
     <Content Include="Scripts\no-np\tether.min.js" />
     <Content Include="Scripts\no-np\vue.min.js" />
     <Content Include="Scripts\respond.js" />

@@ -36,7 +36,7 @@
 
 @section scripts {
     <script>
-        let disableSubmit = () => {
+        var disableSubmit = () => {
             if (isValid($('#thread-form'))) {
                 $('#submit').attr('disabled', false);
             } else {
@@ -44,7 +44,7 @@
             }
         }
 
-        let isValid = (formElement) => {
+        var isValid = (formElement) => {
             return formElement.find('#Title').val() && formElement.find('#Content').val();
         }
 
