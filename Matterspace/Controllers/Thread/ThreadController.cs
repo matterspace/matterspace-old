@@ -34,7 +34,7 @@ namespace Matterspace.Controllers.Thread
             var viewModel = await this.GetProductViewModel(productName);
 
             Debug.Assert(viewModel.Id != null, "viewModel.Id != null");
-            viewModel.Threads = await this.ThreadService.GetThreads(viewModel.Id.Value, this.TabType);
+            viewModel.Threads = await this.ThreadService.GetThreads(viewModel.Id.Value, this.ThreadType);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle(viewModel.ActiveTab.ToString(), viewModel.DisplayName);
 

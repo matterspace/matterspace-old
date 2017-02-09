@@ -8,6 +8,6 @@ namespace Matterspace.Controllers
     {
         protected override ProductActiveTab ActiveTab => ProductActiveTab.Docs;
 
-        protected override ThreadType TabType => ThreadType.Doc;
+        protected override ThreadType ThreadType => ThreadType.Doc;
     }
 }
