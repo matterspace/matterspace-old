@@ -3,8 +3,17 @@
 
 @{
     Layout = "~/Views/Settings/_LayoutSettings.cshtml";
-    var hasErrorForm = new Func<OperationResult, string>((result) => !result.Success ? "has-danger" : "");
-    var hasErrorInput = new Func<OperationResult, string>((result) => !result.Success ? "form-control-danger" : "");
+    var hasErrorForm = new Func<OperationResult, string>((result) => !result.Success && result.Messages.Any(x => x.Key == "add-member") ? "has-danger" : "");
+    var hasErrorInput = new Func<OperationResult, string>((result) => !result.Success && result.Messages.Any(x => x.Key == "add-member") ? "form-control-danger" : "");
+}
+
+@foreach (var error in this.Model.Result.Messages.Where(x => x.Type == OperationResultMessageType.Error && x.Key != "add-member"))
+{
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        @error.Message
+    </div>
 }
 
 <div class="card">
@@ -29,7 +38,7 @@
                                 </button>
                             </span>
                         </div>
-                        @foreach (var error in this.Model.Result.Messages.Where(x => x.Type == OperationResultMessageType.Error))
+                        @foreach (var error in this.Model.Result.Messages.Where(x => x.Type == OperationResultMessageType.Error && x.Key == "add-member"))
                         {
                             <div class="form-control-feedback">@error.Message</div>
                         }
@@ -52,7 +61,7 @@
                 @foreach (var member in Model.Product.Members)
                 {
                     <div class="member-settings">
-                        <a href="@Url.Action("RemoveMember", new { userId = member.UserId })" class="text-danger">
+                        <a href="@Url.Action("RemoveMember", new { id = member.UserId })" class="text-danger">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                         @($"@{member.UserName}")

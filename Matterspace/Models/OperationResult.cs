@@ -15,6 +15,7 @@ namespace Matterspace.Models
     public class OperationResultMessage
     {
         public OperationResultMessageType Type { get; set; }
+        public string Key { get; set; }
         public string Message { get; set; }
     }
 
@@ -43,11 +44,12 @@ namespace Matterspace.Models
 
         public IEnumerable<OperationResultMessage> Messages { get; private set; }
 
-        public void AddMessage(string text, OperationResultMessageType type)
+        public void AddMessage(string key, string text, OperationResultMessageType type)
         {
             var currentMessages = this.Messages.ToList();
             currentMessages.Add(new OperationResultMessage()
             {
+                Key = key,
                 Type = type,
                 Message = text
             });

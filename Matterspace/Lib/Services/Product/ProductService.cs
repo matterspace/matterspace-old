@@ -125,12 +125,12 @@ namespace Matterspace.Lib.Services.Product
                 }
                 else
                 {
-                    saveResult.AddMessage("The given user is already assigned to this project", OperationResultMessageType.Error);
+                    saveResult.AddMessage("add-member", "The given user is already assigned to this project", OperationResultMessageType.Error);
                 }
             }
             else
             {
-                saveResult.AddMessage("Could not find the given user", OperationResultMessageType.Error);
+                saveResult.AddMessage("add-member", "Could not find the given user", OperationResultMessageType.Error);
             }
 
             return saveResult;

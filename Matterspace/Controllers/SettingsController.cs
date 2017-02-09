@@ -81,12 +81,12 @@ namespace Matterspace.Controllers
         }
 
         /// <summary>
-        /// Add member to a product in settings
+        /// Remove a member to a product in settings
         /// </summary>
         [HttpPost]
-        public async Task<ActionResult> RemoveMember(string productName, string userId)
+        public async Task<ActionResult> RemoveMember(string productName, string id)
         {
-            var removeResult = await this.productService.RemoveMemberFromProduct(userId, productName);
+            var removeResult = await this.productService.RemoveMemberFromProduct(id, productName);
 
             var settingsViewModel = await this.GetSettingsViewModel(productName);
             settingsViewModel.ActiveTab = SettingsActiveTab.Members;
