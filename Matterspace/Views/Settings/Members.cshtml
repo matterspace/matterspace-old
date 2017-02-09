@@ -55,7 +55,7 @@
                         <a href="@Url.Action("RemoveMember", new { userId = member.UserId })" class="text-danger">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
-                        @string.Format("@{0}", member.UserName)
+                        @($"@{member.UserName}")
                     </div>
                 }
             </div>

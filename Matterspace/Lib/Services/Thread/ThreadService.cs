@@ -1,5 +1,4 @@
-﻿using Matterspace.Lib.Services.Product;
-using Matterspace.Model;
+﻿using Matterspace.Model;
 using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
@@ -7,7 +6,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace Matterspace.Lib.Services.Thread
 {
@@ -52,7 +50,7 @@ namespace Matterspace.Lib.Services.Thread
         {
             var threads = await this.Db.Threads.Where(x => x.ProductId == productId && x.Type == type).ToListAsync();
 
-            return threads.Select(x => this.GetThreadViewModel(x));
+            return threads.Select(this.GetThreadViewModel);
         }
 
         public async Task<IEnumerable<ThreadCountViewModel>> GetThreadsCount(int productId)

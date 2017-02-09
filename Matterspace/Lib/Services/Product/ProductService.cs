@@ -4,10 +4,8 @@ using Matterspace.Model.Entities;
 using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Matterspace.Lib.Services.Product
@@ -56,12 +54,15 @@ namespace Matterspace.Lib.Services.Product
 
         public async Task SaveProduct(ProductViewModel viewModel)
         {
-            Model.Entities.Product product = null;
+            Model.Entities.Product product;
 
             if (viewModel.Id.HasValue)
                 product = await this.Db.Products.FindAsync(viewModel.Id.Value);
             else
+            {
                 product = new Model.Entities.Product();
+                this.Db.Products.Add(product);
+            }
 
             product.Name = viewModel.Name.ToLower();
             product.DisplayName = viewModel.DisplayName;
@@ -69,9 +70,6 @@ namespace Matterspace.Lib.Services.Product
             product.WebsiteUrl = viewModel.WebsiteUrl;
             product.TwitterUrl = viewModel.TwitterUrl;
             product.FacebookUrl = viewModel.FacebookUrl;
-            
-            if (!viewModel.Id.HasValue)
-                this.Db.Products.Add(product);
 
             await this.Db.SaveChangesAsync();
         }

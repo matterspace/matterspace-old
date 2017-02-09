@@ -1,13 +1,12 @@
 namespace Matterspace.Model.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
     
     public partial class initial : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
+            this.CreateTable(
                 "dbo.ApplicationUserFollowingThread",
                 c => new
                     {
@@ -21,8 +20,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.ThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Thread",
                 c => new
                     {
@@ -43,8 +42,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.Thread", t => t.ParentThreadId)
                 .Index(t => t.AuthorId)
                 .Index(t => t.ParentThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.User",
                 c => new
                     {
@@ -63,8 +62,8 @@ namespace Matterspace.Model.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.UserClaims",
                 c => new
                     {
@@ -76,8 +75,8 @@ namespace Matterspace.Model.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.UserLogins",
                 c => new
                     {
@@ -88,8 +87,8 @@ namespace Matterspace.Model.Migrations
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ApplicationUserNotification",
                 c => new
                     {
@@ -110,8 +109,8 @@ namespace Matterspace.Model.Migrations
                 .Index(t => t.ThreadId)
                 .Index(t => t.ThreadReplyId)
                 .Index(t => t.RelatedThreadStatusChangeEventId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadStatusChangeEvent",
                 c => new
                     {
@@ -134,8 +133,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.Thread", t => t.ThreadId, cascadeDelete: true)
                 .Index(t => t.AuthorId)
                 .Index(t => t.ThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadReply",
                 c => new
                     {
@@ -150,8 +149,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.Thread", t => t.ThreadId, cascadeDelete: true)
                 .Index(t => t.AuthorId)
                 .Index(t => t.ThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadReference",
                 c => new
                     {
@@ -167,8 +166,8 @@ namespace Matterspace.Model.Migrations
                 .Index(t => t.ReferencedThreadId)
                 .Index(t => t.RefererThreadId)
                 .Index(t => t.RefererThreadReplyId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ProductMember",
                 c => new
                     {
@@ -182,8 +181,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.Product", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.MemberId)
                 .Index(t => t.ProductId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Product",
                 c => new
                     {
@@ -197,8 +196,8 @@ namespace Matterspace.Model.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "UQ_Name");
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.Release",
                 c => new
                     {
@@ -212,8 +211,8 @@ namespace Matterspace.Model.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Product", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.ProductId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadRelease",
                 c => new
                     {
@@ -226,8 +225,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.Thread", t => t.ThreadId, cascadeDelete: true)
                 .Index(t => t.ThreadId)
                 .Index(t => t.ReleaseId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ApplicationUserFollowingProduct",
                 c => new
                     {
@@ -241,8 +240,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.ProductId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.UserRoles",
                 c => new
                     {
@@ -254,8 +253,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.UserRole", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadReplyVote",
                 c => new
                     {
@@ -269,8 +268,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId)
                 .Index(t => t.ThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.ThreadVote",
                 c => new
                     {
@@ -284,8 +283,8 @@ namespace Matterspace.Model.Migrations
                 .ForeignKey("dbo.User", t => t.UserId)
                 .Index(t => t.UserId)
                 .Index(t => t.ThreadId);
-            
-            CreateTable(
+
+            this.CreateTable(
                 "dbo.UserRole",
                 c => new
                     {
@@ -299,87 +298,87 @@ namespace Matterspace.Model.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserRoles", "RoleId", "dbo.UserRole");
-            DropForeignKey("dbo.ApplicationUserFollowingThread", "UserId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserFollowingThread", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.Thread", "ParentThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadVote", "UserId", "dbo.User");
-            DropForeignKey("dbo.ThreadVote", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.Thread", "AuthorId", "dbo.User");
-            DropForeignKey("dbo.ThreadReplyVote", "UserId", "dbo.User");
-            DropForeignKey("dbo.ThreadReplyVote", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.UserRoles", "UserId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserFollowingProduct", "UserId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserFollowingProduct", "ProductId", "dbo.Product");
-            DropForeignKey("dbo.ThreadRelease", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadRelease", "ReleaseId", "dbo.Release");
-            DropForeignKey("dbo.Release", "ProductId", "dbo.Product");
-            DropForeignKey("dbo.ProductMember", "ProductId", "dbo.Product");
-            DropForeignKey("dbo.ProductMember", "MemberId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserNotification", "ThreadReplyId", "dbo.ThreadReply");
-            DropForeignKey("dbo.ThreadReference", "RefererThreadReplyId", "dbo.ThreadReply");
-            DropForeignKey("dbo.ThreadReference", "RefererThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadReference", "ReferencedThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadReply", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadReply", "AuthorId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserNotification", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ApplicationUserNotification", "TargetUserId", "dbo.User");
-            DropForeignKey("dbo.ApplicationUserNotification", "RelatedThreadStatusChangeEventId", "dbo.ThreadStatusChangeEvent");
-            DropForeignKey("dbo.ThreadStatusChangeEvent", "ThreadId", "dbo.Thread");
-            DropForeignKey("dbo.ThreadStatusChangeEvent", "AuthorId", "dbo.User");
-            DropForeignKey("dbo.UserLogins", "UserId", "dbo.User");
-            DropForeignKey("dbo.UserClaims", "UserId", "dbo.User");
-            DropIndex("dbo.UserRole", "RoleNameIndex");
-            DropIndex("dbo.ThreadVote", new[] { "ThreadId" });
-            DropIndex("dbo.ThreadVote", new[] { "UserId" });
-            DropIndex("dbo.ThreadReplyVote", new[] { "ThreadId" });
-            DropIndex("dbo.ThreadReplyVote", new[] { "UserId" });
-            DropIndex("dbo.UserRoles", new[] { "RoleId" });
-            DropIndex("dbo.UserRoles", new[] { "UserId" });
-            DropIndex("dbo.ApplicationUserFollowingProduct", new[] { "ProductId" });
-            DropIndex("dbo.ApplicationUserFollowingProduct", new[] { "UserId" });
-            DropIndex("dbo.ThreadRelease", new[] { "ReleaseId" });
-            DropIndex("dbo.ThreadRelease", new[] { "ThreadId" });
-            DropIndex("dbo.Release", new[] { "ProductId" });
-            DropIndex("dbo.Product", "UQ_Name");
-            DropIndex("dbo.ProductMember", new[] { "ProductId" });
-            DropIndex("dbo.ProductMember", new[] { "MemberId" });
-            DropIndex("dbo.ThreadReference", new[] { "RefererThreadReplyId" });
-            DropIndex("dbo.ThreadReference", new[] { "RefererThreadId" });
-            DropIndex("dbo.ThreadReference", new[] { "ReferencedThreadId" });
-            DropIndex("dbo.ThreadReply", new[] { "ThreadId" });
-            DropIndex("dbo.ThreadReply", new[] { "AuthorId" });
-            DropIndex("dbo.ThreadStatusChangeEvent", new[] { "ThreadId" });
-            DropIndex("dbo.ThreadStatusChangeEvent", new[] { "AuthorId" });
-            DropIndex("dbo.ApplicationUserNotification", new[] { "RelatedThreadStatusChangeEventId" });
-            DropIndex("dbo.ApplicationUserNotification", new[] { "ThreadReplyId" });
-            DropIndex("dbo.ApplicationUserNotification", new[] { "ThreadId" });
-            DropIndex("dbo.ApplicationUserNotification", new[] { "TargetUserId" });
-            DropIndex("dbo.UserLogins", new[] { "UserId" });
-            DropIndex("dbo.UserClaims", new[] { "UserId" });
-            DropIndex("dbo.User", "UserNameIndex");
-            DropIndex("dbo.Thread", new[] { "ParentThreadId" });
-            DropIndex("dbo.Thread", new[] { "AuthorId" });
-            DropIndex("dbo.ApplicationUserFollowingThread", new[] { "ThreadId" });
-            DropIndex("dbo.ApplicationUserFollowingThread", new[] { "UserId" });
-            DropTable("dbo.UserRole");
-            DropTable("dbo.ThreadVote");
-            DropTable("dbo.ThreadReplyVote");
-            DropTable("dbo.UserRoles");
-            DropTable("dbo.ApplicationUserFollowingProduct");
-            DropTable("dbo.ThreadRelease");
-            DropTable("dbo.Release");
-            DropTable("dbo.Product");
-            DropTable("dbo.ProductMember");
-            DropTable("dbo.ThreadReference");
-            DropTable("dbo.ThreadReply");
-            DropTable("dbo.ThreadStatusChangeEvent");
-            DropTable("dbo.ApplicationUserNotification");
-            DropTable("dbo.UserLogins");
-            DropTable("dbo.UserClaims");
-            DropTable("dbo.User");
-            DropTable("dbo.Thread");
-            DropTable("dbo.ApplicationUserFollowingThread");
+            this.DropForeignKey("dbo.UserRoles", "RoleId", "dbo.UserRole");
+            this.DropForeignKey("dbo.ApplicationUserFollowingThread", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserFollowingThread", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.Thread", "ParentThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadVote", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.ThreadVote", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.Thread", "AuthorId", "dbo.User");
+            this.DropForeignKey("dbo.ThreadReplyVote", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.ThreadReplyVote", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.UserRoles", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserFollowingProduct", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserFollowingProduct", "ProductId", "dbo.Product");
+            this.DropForeignKey("dbo.ThreadRelease", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadRelease", "ReleaseId", "dbo.Release");
+            this.DropForeignKey("dbo.Release", "ProductId", "dbo.Product");
+            this.DropForeignKey("dbo.ProductMember", "ProductId", "dbo.Product");
+            this.DropForeignKey("dbo.ProductMember", "MemberId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserNotification", "ThreadReplyId", "dbo.ThreadReply");
+            this.DropForeignKey("dbo.ThreadReference", "RefererThreadReplyId", "dbo.ThreadReply");
+            this.DropForeignKey("dbo.ThreadReference", "RefererThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadReference", "ReferencedThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadReply", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadReply", "AuthorId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserNotification", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ApplicationUserNotification", "TargetUserId", "dbo.User");
+            this.DropForeignKey("dbo.ApplicationUserNotification", "RelatedThreadStatusChangeEventId", "dbo.ThreadStatusChangeEvent");
+            this.DropForeignKey("dbo.ThreadStatusChangeEvent", "ThreadId", "dbo.Thread");
+            this.DropForeignKey("dbo.ThreadStatusChangeEvent", "AuthorId", "dbo.User");
+            this.DropForeignKey("dbo.UserLogins", "UserId", "dbo.User");
+            this.DropForeignKey("dbo.UserClaims", "UserId", "dbo.User");
+            this.DropIndex("dbo.UserRole", "RoleNameIndex");
+            this.DropIndex("dbo.ThreadVote", new[] { "ThreadId" });
+            this.DropIndex("dbo.ThreadVote", new[] { "UserId" });
+            this.DropIndex("dbo.ThreadReplyVote", new[] { "ThreadId" });
+            this.DropIndex("dbo.ThreadReplyVote", new[] { "UserId" });
+            this.DropIndex("dbo.UserRoles", new[] { "RoleId" });
+            this.DropIndex("dbo.UserRoles", new[] { "UserId" });
+            this.DropIndex("dbo.ApplicationUserFollowingProduct", new[] { "ProductId" });
+            this.DropIndex("dbo.ApplicationUserFollowingProduct", new[] { "UserId" });
+            this.DropIndex("dbo.ThreadRelease", new[] { "ReleaseId" });
+            this.DropIndex("dbo.ThreadRelease", new[] { "ThreadId" });
+            this.DropIndex("dbo.Release", new[] { "ProductId" });
+            this.DropIndex("dbo.Product", "UQ_Name");
+            this.DropIndex("dbo.ProductMember", new[] { "ProductId" });
+            this.DropIndex("dbo.ProductMember", new[] { "MemberId" });
+            this.DropIndex("dbo.ThreadReference", new[] { "RefererThreadReplyId" });
+            this.DropIndex("dbo.ThreadReference", new[] { "RefererThreadId" });
+            this.DropIndex("dbo.ThreadReference", new[] { "ReferencedThreadId" });
+            this.DropIndex("dbo.ThreadReply", new[] { "ThreadId" });
+            this.DropIndex("dbo.ThreadReply", new[] { "AuthorId" });
+            this.DropIndex("dbo.ThreadStatusChangeEvent", new[] { "ThreadId" });
+            this.DropIndex("dbo.ThreadStatusChangeEvent", new[] { "AuthorId" });
+            this.DropIndex("dbo.ApplicationUserNotification", new[] { "RelatedThreadStatusChangeEventId" });
+            this.DropIndex("dbo.ApplicationUserNotification", new[] { "ThreadReplyId" });
+            this.DropIndex("dbo.ApplicationUserNotification", new[] { "ThreadId" });
+            this.DropIndex("dbo.ApplicationUserNotification", new[] { "TargetUserId" });
+            this.DropIndex("dbo.UserLogins", new[] { "UserId" });
+            this.DropIndex("dbo.UserClaims", new[] { "UserId" });
+            this.DropIndex("dbo.User", "UserNameIndex");
+            this.DropIndex("dbo.Thread", new[] { "ParentThreadId" });
+            this.DropIndex("dbo.Thread", new[] { "AuthorId" });
+            this.DropIndex("dbo.ApplicationUserFollowingThread", new[] { "ThreadId" });
+            this.DropIndex("dbo.ApplicationUserFollowingThread", new[] { "UserId" });
+            this.DropTable("dbo.UserRole");
+            this.DropTable("dbo.ThreadVote");
+            this.DropTable("dbo.ThreadReplyVote");
+            this.DropTable("dbo.UserRoles");
+            this.DropTable("dbo.ApplicationUserFollowingProduct");
+            this.DropTable("dbo.ThreadRelease");
+            this.DropTable("dbo.Release");
+            this.DropTable("dbo.Product");
+            this.DropTable("dbo.ProductMember");
+            this.DropTable("dbo.ThreadReference");
+            this.DropTable("dbo.ThreadReply");
+            this.DropTable("dbo.ThreadStatusChangeEvent");
+            this.DropTable("dbo.ApplicationUserNotification");
+            this.DropTable("dbo.UserLogins");
+            this.DropTable("dbo.UserClaims");
+            this.DropTable("dbo.User");
+            this.DropTable("dbo.Thread");
+            this.DropTable("dbo.ApplicationUserFollowingThread");
         }
     }
 }
