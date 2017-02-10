@@ -78,9 +78,7 @@
         margin-top: $gutter-md / 2;
 
         nav.navbar-product {
-            border: 1px solid $default-border-color;
-            background-color: $gray-lightest;
-            border-radius: $border-radius;
+            border-bottom: 1px solid $default-border-color;
 
             a.navbar-product-item {
                 color: $gray-dark;
@@ -101,8 +99,7 @@
                 }
 
                 &.active {
-                    border-top: 1px solid $brand-danger;
-                    background-color: $gray-lighter;
+                    border-bottom: 2px solid $brand-danger;
 
                     .fa {
                         color: darken($gray-lighter, 20%);
