@@ -20,9 +20,9 @@
 
     .user-wrapper {
         flex: 0 1 auto;
-        padding: 0 $gutter-sm/2 $gutter-sm/2 0;
+        padding: 0 $gutter-md/2 $gutter-md/2 0;
         img {
-            border-radius: $border-radius-sm;
+            border-radius: $border-radius;
             width: 40px;
             height: 40px;
         }
@@ -30,7 +30,7 @@
 
     .editor-wrapper {
         border: 1px solid $default-border-color;
-        border-radius: $border-radius-sm;
+        border-radius: $border-radius;
         padding: $gutter-sm/ 2;
         flex: 1 1 auto;
     }
