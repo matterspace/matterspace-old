@@ -52,6 +52,7 @@ namespace Matterspace.Model.Entities
         public ICollection<Release> Releases { get; set; }
 
         public ICollection<ApplicationUserFollowingProduct> UsersFollowing { get; set; }
-        
+
+        public ICollection<ThreadCategory> Categories { get; set; }
     }
 }

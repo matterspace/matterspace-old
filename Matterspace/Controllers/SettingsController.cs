@@ -97,6 +97,19 @@ namespace Matterspace.Controllers
         }
 
         /// <summary>
+        /// Categories settings page
+        /// </summary>
+        [HttpGet]
+        public async Task<ActionResult> Categories(string productName)
+        {
+            var viewModel = await this.GetSettingsViewModel(productName);
+
+            viewModel.ActiveTab = SettingsActiveTab.Categories;
+
+            return this.View(viewModel);
+        }
+
+        /// <summary>
         /// Integrations settings page
         /// </summary>
         [HttpGet]

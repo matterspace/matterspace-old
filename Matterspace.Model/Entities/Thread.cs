@@ -20,6 +20,10 @@ namespace Matterspace.Model.Entities
         public int Id { get; set; }
 
         public string Title { get; set; }
+        
+        public string CategoryId { get; set; }
+        
+        public ThreadCategory Category { get; set; }
 
         /// <summary>
         /// Text in markdown form

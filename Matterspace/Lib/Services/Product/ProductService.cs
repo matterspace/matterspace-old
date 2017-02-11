@@ -35,8 +35,6 @@ namespace Matterspace.Lib.Services.Product
             if (name == null) throw new ArgumentNullException(nameof(name));
 
             var product = await this.Db.Products
-                .Include(x => x.Members)
-                .Include(x => x.Members.Select(m => m.Member))
                 .FirstAsync(m => m.Name == name);
 
             return new ProductViewModel()
@@ -51,6 +49,23 @@ namespace Matterspace.Lib.Services.Product
                 ActiveTab = activeTab,
                 ThreadsCount = await this.ThreadService.GetThreadsCount(product.Id)
             };
+        }
+
+
+        // For instance, this method is here because we have two products viewmodels
+        public async Task CreateProduct(CreateProductViewModel viewModel)
+        {
+            var productViewModel = new ProductViewModel
+            {
+                Name = viewModel.Name,
+                DisplayName = viewModel.DisplayName,
+                ShortDescription = viewModel.ShortDescription,
+                WebsiteUrl = viewModel.WebsiteUrl,
+                FacebookUrl = viewModel.FacebookUrl,
+                TwitterUrl = viewModel.TwitterUrl
+            };
+
+            await this.SaveProduct(productViewModel);
         }
 
         public async Task SaveProduct(ProductViewModel viewModel)
@@ -73,6 +88,12 @@ namespace Matterspace.Lib.Services.Product
             product.FacebookUrl = viewModel.FacebookUrl;
 
             await this.Db.SaveChangesAsync();
+
+            if (!viewModel.Id.HasValue)
+            {
+                product.Categories = this.GetDefaultCategories(product.Id);
+                await this.Db.SaveChangesAsync();
+            }
         }
 
         public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)
@@ -154,6 +175,83 @@ namespace Matterspace.Lib.Services.Product
             }
 
             return removeResult;
+        }
+
+
+        /// <summary>
+        /// Gets the default categories for a new product
+        /// </summary>
+        private ICollection<ThreadCategory> GetDefaultCategories(int productId)
+        {
+            var categories = new List<ThreadCategory>();
+
+            // Ideas categories
+            categories.Add(new ThreadCategory
+            {
+                Name = "Idea Category 1",
+                ProductId = productId,
+                ThreadType = ThreadType.Idea
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "Idea Category 2",
+                ProductId = productId,
+                ThreadType = ThreadType.Idea
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "Idea Category 2",
+                ProductId = productId,
+                ThreadType = ThreadType.Idea
+            });
+
+            // Issues categories
+            categories.Add(new ThreadCategory
+            {
+                Name = "Issue Category 1",
+                ProductId = productId,
+                ThreadType = ThreadType.Issue
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "Issue Category 2",
+                ProductId = productId,
+                ThreadType = ThreadType.Issue
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "Issue Category 3",
+                ProductId = productId,
+                ThreadType = ThreadType.Issue
+            });
+
+            // QA categories
+            categories.Add(new ThreadCategory
+            {
+                Name = "QA Category 1",
+                ProductId = productId,
+                ThreadType = ThreadType.QA
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "QA Category 2",
+                ProductId = productId,
+                ThreadType = ThreadType.QA
+            });
+
+            categories.Add(new ThreadCategory
+            {
+                Name = "QA Category 3",
+                ProductId = productId,
+                ThreadType = ThreadType.QA
+            });
+
+            return categories;
         }
     }
 }

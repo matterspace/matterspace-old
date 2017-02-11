@@ -455,6 +455,7 @@
     <Content Include="Views\Settings\_LayoutSettings.cshtml" />
     <Content Include="Views\Settings\Members.cshtml" />
     <Content Include="Views\Settings\Integrations.cshtml" />
+    <Content Include="Views\Settings\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

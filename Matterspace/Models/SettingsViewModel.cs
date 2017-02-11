@@ -7,6 +7,7 @@ namespace Matterspace.Models
     {
         Settings,
         Members,
+        Categories,
         Integrations
     }
 

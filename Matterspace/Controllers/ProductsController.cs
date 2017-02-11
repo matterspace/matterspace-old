@@ -33,7 +33,7 @@ namespace Matterspace.Controllers
             if (!this.ModelState.IsValid)
                 return this.View(formModel);
 
-            await this._productService.SaveProduct((ProductViewModel)(formModel as object));
+            await this._productService.CreateProduct(formModel);
             return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = formModel.Name });
         }
 
