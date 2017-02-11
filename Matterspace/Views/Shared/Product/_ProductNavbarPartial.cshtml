@@ -40,7 +40,7 @@
             <span class="navbar-product-item-text">Releases</span>
         </a>
         @* TODO: show this only if admin *@
-        <a class="navbar-product-item" href="@Url.Action("Index", "Settings")">
+        <a class="navbar-product-item @getActiveClass(ProductActiveTab.Settings)" href="@Url.Action("Index", "Settings")">
             <i class="fa fa-cog" aria-hidden="true"></i>
             <span class="navbar-product-item-text">Settings</span>
         </a>

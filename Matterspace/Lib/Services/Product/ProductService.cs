@@ -148,6 +148,10 @@ namespace Matterspace.Lib.Services.Product
                 this.Db.ProductMembers.Remove(member);
                 await this.Db.SaveChangesAsync();
             }
+            else
+            {
+                removeResult.AddMessage("remove-member", "The given user is not a contributor to this project, therefore cannot be removed", OperationResultMessageType.Error);
+            }
 
             return removeResult;
         }

@@ -17,7 +17,8 @@ namespace Matterspace.Models
         Backlog,
         QA,
         Docs,
-        Releases
+        Releases,
+        Settings
     }
 
     public class ProductViewModel

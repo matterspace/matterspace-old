@@ -16,19 +16,18 @@
       color: #818a91;
       margin-bottom: 15px; }
 
-.settings-wrapper .settings-content {
-  padding: 0; }
-
-.settings-wrapper .settings-side .list-group a {
-  text-decoration: none; }
-
-.settings-wrapper .settings-side .list-group .list-group-item {
-  color: #000; }
-  .settings-wrapper .settings-side .list-group .list-group-itemhover {
-    background-color: #f7f7f9; }
-
-.settings-wrapper .settings-side .list-group .active {
-  background-color: #eceeef;
-  border-color: #eceeef;
-  border-left: 3px solid #373a3c; }
+.settings-wrapper {
+  margin-top: 13px; }
+  .settings-wrapper .settings-content {
+    padding: 0; }
+  .settings-wrapper .settings-side .list-group a {
+    text-decoration: none; }
+  .settings-wrapper .settings-side .list-group .list-group-item {
+    color: #000; }
+    .settings-wrapper .settings-side .list-group .list-group-itemhover {
+      background-color: #f7f7f9; }
+  .settings-wrapper .settings-side .list-group .active {
+    background-color: #eceeef;
+    border-color: #eceeef;
+    border-left: 3px solid #373a3c; }
 

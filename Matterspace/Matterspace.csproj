@@ -448,11 +448,11 @@
     <Content Include="Views\Shared\Product\_ProductPartial.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Shared\Product\_ProductNavbarPartial.cshtml" />
-    <Content Include="Views\Settings\_ProductSettingsHeaderPartial.cshtml" />
     <Content Include="Views\Settings\_EditSettingsPartial.cshtml" />
     <Content Include="Views\Shared\Product\_EditProductPartial.cshtml" />
     <Content Include="Views\Settings\_LayoutSettings.cshtml" />
     <Content Include="Views\Settings\Members.cshtml" />
+    <Content Include="Views\Settings\Integrations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

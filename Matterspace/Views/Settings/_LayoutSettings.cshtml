@@ -3,11 +3,10 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutContainer.cshtml";
-
     var getActiveClass = new Func<SettingsActiveTab, string>((tab) => Model.ActiveTab == tab ? "active" : "");
 }
 
-@Html.Partial("_ProductSettingsHeaderPartial", Model.Product)
+@Html.Partial("~/Views/Shared/Product/_ProductPartial.cshtml", Model.Product)
 
 <div class="settings-wrapper container row">
     <section class="settings-content col-xs-12 col-md-9">

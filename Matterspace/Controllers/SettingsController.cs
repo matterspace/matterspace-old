@@ -83,7 +83,7 @@ namespace Matterspace.Controllers
         /// <summary>
         /// Remove a member to a product in settings
         /// </summary>
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> RemoveMember(string productName, string id)
         {
             var removeResult = await this.productService.RemoveMemberFromProduct(id, productName);
@@ -96,9 +96,22 @@ namespace Matterspace.Controllers
             return this.View("Members", settingsViewModel);
         }
 
+        /// <summary>
+        /// Integrations settings page
+        /// </summary>
+        [HttpGet]
+        public async Task<ActionResult> Integrations(string productName)
+        {
+            var viewModel = await this.GetSettingsViewModel(productName);
+
+            viewModel.ActiveTab = SettingsActiveTab.Integrations;
+
+            return this.View(viewModel);
+        }
+
         private async Task<SettingsViewModel> GetSettingsViewModel(string productName)
         {
-            var product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Home);
+            var product = await this.productService.GetProductViewModel(productName, ProductActiveTab.Settings);
             product.Members = await this.productService.GetMembersInProduct(product.Id.Value);
 
             this.ViewBag.Title = TitleHelper.GetProductTabTitle("Settings", product.DisplayName);
