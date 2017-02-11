@@ -39,7 +39,8 @@ namespace Matterspace.Lib.Services.Thread
                 Type = threadViewModel.Type,
                 CreatedAt = DateTime.UtcNow,
                 ProductId = threadViewModel.Product.Id.Value,
-                Status = ThreadStatus.Pending // Every thread starts pending
+                Status = ThreadStatus.Pending, // Every thread starts pending
+                CategoryId = threadViewModel.CategoryId
             };
 
             this.Db.Threads.Add(thread);

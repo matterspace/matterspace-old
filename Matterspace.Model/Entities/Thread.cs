@@ -21,7 +21,7 @@ namespace Matterspace.Model.Entities
 
         public string Title { get; set; }
         
-        public string CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         
         public ThreadCategory Category { get; set; }
 

@@ -69,6 +69,11 @@ namespace Matterspace.Model
                 .WithMany(p => p.Threads)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Thread>()
+                .HasOptional(t => t.Category)
+                .WithMany(p => p.Threads)
+                .WillCascadeOnDelete(false);
+
             // ApplicationUserNotification
             modelBuilder.Entity<ApplicationUserNotification>()
                 .HasRequired(m => m.TargetUser)

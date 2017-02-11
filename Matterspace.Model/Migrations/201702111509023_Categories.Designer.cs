@@ -7,13 +7,13 @@ namespace Matterspace.Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ThreadCategory : IMigrationMetadata
+    public sealed partial class Categories : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ThreadCategory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Categories));
         
         string IMigrationMetadata.Id
         {
-            get { return "201702111357465_ThreadCategory"; }
+            get { return "201702111509023_Categories"; }
         }
         
         string IMigrationMetadata.Source

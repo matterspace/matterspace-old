@@ -117,9 +117,9 @@
     <Compile Include="Migrations\201701262102300_ThreadStatus.Designer.cs">
       <DependentUpon>201701262102300_ThreadStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702111357465_ThreadCategory.cs" />
-    <Compile Include="Migrations\201702111357465_ThreadCategory.Designer.cs">
-      <DependentUpon>201702111357465_ThreadCategory.cs</DependentUpon>
+    <Compile Include="Migrations\201702111509023_Categories.cs" />
+    <Compile Include="Migrations\201702111509023_Categories.Designer.cs">
+      <DependentUpon>201702111509023_Categories.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,8 +146,8 @@
     <EmbeddedResource Include="Migrations\201701262102300_ThreadStatus.resx">
       <DependentUpon>201701262102300_ThreadStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702111357465_ThreadCategory.resx">
-      <DependentUpon>201702111357465_ThreadCategory.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702111509023_Categories.resx">
+      <DependentUpon>201702111509023_Categories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
