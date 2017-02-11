@@ -1,25 +1,23 @@
 ﻿.thread-entry {
-  border: 1px solid #ddd;
-  border-radius: 0.2rem;
-  padding: 10px; }
+  display: flex; }
   .thread-entry input, .thread-entry textarea {
     background-color: #f7f7f9; }
+    .thread-entry input:focus, .thread-entry textarea:focus {
+      background-color: initial; }
   .thread-entry textarea {
     min-height: 300px; }
-  .thread-entry input:focus, .thread-entry textarea:focus {
-    background-color: initial; }
   .thread-entry .form-actions {
     margin: 10px 0; }
-
-.user-info {
-  display: flex;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #eceeef; }
-  .user-info img {
-    float: left; }
-  .user-info .user-name {
-    float: left;
-    margin-left: 10px; }
-    .user-info .user-name span {
-      vertical-align: middle; }
+  .thread-entry .user-wrapper {
+    flex: 0 1 auto;
+    padding: 0 13px 13px 0; }
+    .thread-entry .user-wrapper img {
+      border-radius: 0.25rem;
+      width: 40px;
+      height: 40px; }
+  .thread-entry .editor-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 10px;
+    flex: 1 1 auto; }
 

@@ -3,41 +3,36 @@
 .thread-entry {
     input, textarea {
         background-color: $gray-lightest;
+        &:focus {
+            background-color: initial;
+        }
     }
 
     textarea {        
         min-height: 300px;
     }
 
-    input:focus, textarea:focus {
-        background-color: initial;
-    }
-
     .form-actions {
-        margin: 10px 0;
-    }
-
-    border: 1px solid #ddd;
-    border-radius: $border-radius-sm;
-    padding: 10px;
-}
-
-.user-info {
-    img {
-        float: left
-    }
-
-    .user-name {
-        float: left;
-        margin-left: 10px;
-
-        span {
-            vertical-align: middle;
-        }
+        margin: $gutter-sm/2 0;
     }
     
     display: flex;
-    padding-bottom: 14px;
-    border-bottom: 1px solid $gray-lighter;
-}
 
+    .user-wrapper {
+        flex: 0 1 auto;
+        padding: 0 $gutter-md/2 $gutter-md/2 0;
+        img {
+            border-radius: $border-radius;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .editor-wrapper {
+        border: 1px solid $default-border-color;
+        border-radius: $border-radius;
+        padding: $gutter-sm/ 2;
+        flex: 1 1 auto;
+    }
+
+}

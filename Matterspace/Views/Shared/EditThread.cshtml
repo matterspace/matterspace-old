@@ -5,38 +5,29 @@
     Layout = "_LayoutEditThread.cshtml";
 }
 
-<div class="container row">
-    <section class="thread-entry col-xs-12 col-md-9">
-        @using (Html.BeginForm("Edit", Model.Type.GetThreadPage(), FormMethod.Post, new { id = "thread-form" }))
-        {
-            @Html.HiddenFor(x => x.Product.Id);
-            @Html.HiddenFor(x => x.Product.Name);
-            @Html.HiddenFor(x => x.Product.DisplayName);
-            @Html.HiddenFor(x => x.Product.WebsiteUrl);
-            @Html.Partial("EditThreadForm", Model)
-        }
-    </section>
-    <aside class="thread-panel col-xs-12 col-md-3">
-        <div class="user-info">
-            <a href="#">
-                <img width="42"
-                     height="42"
-                     src="http://lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg" />
-
-                <div class="user-name">
-                    <span>
-                        Andre Pena<br />
-                        123 Followers
-                    </span>
-                </div>
-            </a>
+<div class="row">
+    <div class="col-md-12">
+        <div class="thread-entry">
+            <div class="user-wrapper">
+                <img src="http://lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg"/>
+            </div>
+            <div class="editor-wrapper">
+                @using (Html.BeginForm("Edit", Model.Type.GetThreadPage(), FormMethod.Post, new {id = "thread-form"}))
+                {
+                    @Html.HiddenFor(x => x.Product.Id)
+                    @Html.HiddenFor(x => x.Product.Name)
+                    @Html.HiddenFor(x => x.Product.DisplayName)
+                    @Html.HiddenFor(x => x.Product.WebsiteUrl)
+                    @Html.Partial("EditThreadForm", Model)
+                }
+            </div>
         </div>
-    </aside>
+    </div>
 </div>
 
 @section scripts {
     <script>
-        let disableSubmit = () => {
+        var disableSubmit = () => {
             if (isValid($('#thread-form'))) {
                 $('#submit').attr('disabled', false);
             } else {
@@ -44,7 +35,7 @@
             }
         }
 
-        let isValid = (formElement) => {
+        var isValid = (formElement) => {
             return formElement.find('#Title').val() && formElement.find('#Content').val();
         }
 

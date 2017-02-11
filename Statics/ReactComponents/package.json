@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=development babel-node ./demo/server.js",
     "build": "cross-env NOVE_ENV=production gulp build",
     "build-demo-prod": "cross-env NODE_ENV=production gulp build-demo-prod",
-    "build-publish": "cross-env NODE_ENV=development gulp build-publish"
+    "build-publish": "cross-env NODE_ENV=production gulp build-publish"
   },
   "author": "",
   "license": "MIT",

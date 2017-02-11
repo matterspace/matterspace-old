@@ -1,4 +1,5 @@
-﻿@model Matterspace.Models.ThreadViewModel
+﻿@using Matterspace.Lib.Extensions
+@model Matterspace.Models.ThreadViewModel
 
 <div class="form-group">
     @Html.HiddenFor(x => x.Type)
@@ -7,8 +8,8 @@
     </div>
 
     @*Placeholder top margin to fake editor controls space*@
-    <div class="input-group" style="margin-top: 3em;">
-        @Html.TextAreaFor(x => x.Content, new { @class = "form-control", placeholder = "Writing is good ;)" })
+    <div class="input-group">
+        @Html.ReactMdeFor(x => x.Content)
     </div>
 
     <div class="form-actions">
