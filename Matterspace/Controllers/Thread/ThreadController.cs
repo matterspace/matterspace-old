@@ -75,6 +75,9 @@ namespace Matterspace.Controllers.Thread
             if (productName == null) throw new ArgumentNullException(nameof(productName));
 
             var viewModel = await this.ProductService.GetProductViewModel(productName, this.ActiveTab);
+
+            viewModel.Categories = await this.ProductService.GetCategoriesForProduct(viewModel.Id.Value, this.ThreadType);
+
             return viewModel;
         }
 

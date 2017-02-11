@@ -274,6 +274,7 @@
     <Compile Include="Models\SendCodeViewModel.cs" />
     <Compile Include="Models\SetPasswordViewModel.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
+    <Compile Include="Models\ThreadCategoryViewModel.cs" />
     <Compile Include="Models\ThreadCountViewModel.cs" />
     <Compile Include="Models\ThreadViewModel.cs" />
     <Compile Include="Models\TimelineUpdateViewModel.cs" />

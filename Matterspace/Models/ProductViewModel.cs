@@ -28,6 +28,7 @@ namespace Matterspace.Models
             this.Threads = new List<ThreadViewModel>();
             this.ThreadsCount = new List<ThreadCountViewModel>();
             this.Members = new List<ApplicationUserViewModel>();
+            this.Categories = new List<ThreadCategoryViewModel>();
         }
 
         public int? Id { get; set; }
@@ -73,6 +74,8 @@ namespace Matterspace.Models
         public IEnumerable<ThreadViewModel> Threads { get; set; }
 
         public IEnumerable<ApplicationUserViewModel> Members { get; set; }
+
+        public IEnumerable<ThreadCategoryViewModel> Categories { get; set; }
 
         /// <summary>
         /// Returns the thread count for the current product

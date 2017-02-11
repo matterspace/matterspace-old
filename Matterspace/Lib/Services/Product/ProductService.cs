@@ -4,6 +4,7 @@ using Matterspace.Model.Entities;
 using Matterspace.Model.Enums;
 using Matterspace.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -94,6 +95,22 @@ namespace Matterspace.Lib.Services.Product
                 product.Categories = this.GetDefaultCategories(product.Id);
                 await this.Db.SaveChangesAsync();
             }
+        }
+
+        public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesForProduct(int productId, ThreadType categoryThreadType)
+        {
+            var categories = await this.Db.Products
+                .Where(x => x.Id == productId)
+                .SelectMany(x => x.Categories)
+                .Where(x => x.ThreadType == categoryThreadType)
+                .ToListAsync();
+
+            return categories.Select(x => new ThreadCategoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                ProductId = x.ProductId
+            });
         }
 
         public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)

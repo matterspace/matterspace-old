@@ -1,4 +1,9 @@
 ﻿using Matterspace.Model.Enums;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Matterspace.Models
 {
@@ -15,5 +20,17 @@ namespace Matterspace.Models
         public string Content { get; set; }
 
         public ProductViewModel Product { get; set; }
+
+        [Required()]
+        public int CategoryId { get; set; }
+
+        [DisplayName("Select a category")]
+        public ThreadCategoryViewModel Category
+        {
+            get
+            {
+                return this.Product.Categories.FirstOrDefault(x => x.Id == this.CategoryId);
+            }
+        }
     }
 }
