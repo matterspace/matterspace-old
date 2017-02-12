@@ -1,0 +1,49 @@
+﻿@using Matterspace.Model.Enums
+@model Matterspace.Models.ThreadCategoryViewModel
+
+@{
+    var categorySelectList = new List<SelectListItem>();
+    categorySelectList.Add(new SelectListItem
+    {
+        Text = "Idea",
+        Value = ((int)ThreadType.Idea).ToString()
+    });
+    categorySelectList.Add(new SelectListItem
+    {
+        Text = "Issue",
+        Value = ((int)ThreadType.Issue).ToString()
+    });
+    categorySelectList.Add(new SelectListItem
+    {
+        Text = "QA",
+        Value = ((int)ThreadType.QA).ToString()
+    });
+}
+
+@using (Html.BeginForm("EditCategory", "Settings", FormMethod.Post, new { id = "thread-form" }))
+{
+    @Html.HiddenFor(x => x.ProductId);
+    <div class="form-group">
+        <div class="form-group row col-xs-12 col-md-4">
+            @Html.LabelFor(x => x.ThreadType)
+            <div class="input-group">
+                @Html.DropDownListFor(x => x.ThreadType, categorySelectList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name)
+            <div class="input-group">
+                @Html.EditorFor(x => x.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <div class="pull-right">
+                <button id="submit" type="submit" class="btn btn-success">Submit @(Model.Id.HasValue ? "" : "new") category</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+}

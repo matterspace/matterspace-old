@@ -51,7 +51,7 @@ namespace Matterspace.Controllers.Thread
         public virtual async Task<ActionResult> Edit(string productName, int? id)
         {
             var viewModel = await this.GetThreadViewModel(productName, id);
-            viewModel.Product.Categories = await this.ProductService.GetCategoriesForProduct(viewModel.Product.Id.Value, this.ThreadType);
+            viewModel.Product.Categories = await this.ProductService.GetCategoriesFromProduct(viewModel.Product.Id.Value, this.ThreadType);
 
             return this.View("EditThread", viewModel);
         }

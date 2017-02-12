@@ -1,0 +1,15 @@
+﻿@model Matterspace.Models.SettingsViewModel
+
+@{
+    Layout = "_LayoutSettings.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        @(Model.Category.Id.HasValue ? "Editing" : "New") category
+    </div>
+    <div class="card-block">
+        @Html.Partial("_EditCategoryFormPartial", Model.Category)
+    </div>
+</div>

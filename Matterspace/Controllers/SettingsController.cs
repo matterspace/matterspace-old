@@ -103,11 +103,42 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Categories(string productName)
         {
             var viewModel = await this.GetSettingsViewModel(productName);
-            viewModel.Product.Categories = await this.productService.GetCategoriesForProduct(viewModel.Product.Id.Value);
+            viewModel.Product.Categories = await this.productService.GetCategoriesFromProduct(viewModel.Product.Id.Value);
 
             viewModel.ActiveTab = SettingsActiveTab.Categories;
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> NewCategory(string productName)
+        {
+            return await this.EditCategory(productName, null);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> EditCategory(string productName, int? id)
+        {
+            var viewModel = await this.GetSettingsViewModel(productName);
+
+            viewModel.Category = id.HasValue
+                ? await this.productService.GetCategoryInProduct(viewModel.Product.Id.Value, id.Value)
+                : new ThreadCategoryViewModel() { ProductId = viewModel.Product.Id.Value };
+
+            viewModel.ActiveTab = SettingsActiveTab.Categories;
+
+            return this.View("EditCategory", viewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> EditCategory(ThreadCategoryViewModel viewModel)
+        {
+            if (this.ModelState.IsValid)
+            {
+                await this.productService.SaveCategory(viewModel.ProductId, viewModel);
+            }
+
+            return this.View("EditCategory", viewModel);
         }
 
         /// <summary>

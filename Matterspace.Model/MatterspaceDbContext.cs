@@ -118,6 +118,7 @@ namespace Matterspace.Model
         public DbSet<ApplicationUserNotification> ApplicationUserNotifications { get; set; }
         public DbSet<Thread> Threads { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ThreadCategory> ThreadCategories { get; set; }
         public DbSet<ProductMember> ProductMembers { get; set; }
         public DbSet<Release> Releases { get; set; }
         public DbSet<ThreadReference> ThreadReferences { get; set; }

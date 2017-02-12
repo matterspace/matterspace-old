@@ -29,5 +29,7 @@ namespace Matterspace.Models
         public string UserNameToAdd { get; set; }
 
         public OperationResult Result { get; set; }
+
+        public ThreadCategoryViewModel Category { get; set; }
     }
 }

@@ -97,7 +97,10 @@ namespace Matterspace.Lib.Services.Product
             }
         }
 
-        public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesForProduct(int productId, ThreadType? categoryThreadType = null)
+        /// <summary>
+        /// Get every category for a product. Return by type if any is given
+        /// </summary>
+        public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesFromProduct(int productId, ThreadType? categoryThreadType = null)
         {
             var categories = this.Db.Products
                 .Where(x => x.Id == productId)
@@ -107,6 +110,44 @@ namespace Matterspace.Lib.Services.Product
                 categories.Where(x => x.ThreadType == categoryThreadType);
 
             return this.GetCategoriesListAsViewModel(await categories.ToListAsync());
+        }
+
+        /// <summary>
+        /// Get a single category from a product
+        /// </summary>
+        public async Task<ThreadCategoryViewModel> GetCategoryInProduct(int productId, int categoryId)
+        {
+            // Categories should have id per product
+            var categories = await this.Db.ThreadCategories
+                .Where(x => x.Id == categoryId)
+                .ToListAsync();
+
+            return this.GetCategoriesListAsViewModel(categories)
+                .FirstOrDefault();
+        }
+
+        public async Task SaveCategory(int productId, ThreadCategoryViewModel viewModel)
+        {
+            ThreadCategory category;
+
+            if (viewModel.Id.HasValue)
+            {
+                category = await this.Db.Products
+                    .Where(x => x.Id == productId)
+                    .SelectMany(x => x.Categories)
+                    .FirstOrDefaultAsync(x => x.Id == viewModel.Id.Value);
+            }
+            else
+            {
+                category = new ThreadCategory();
+                this.Db.ThreadCategories.Add(category);
+            }
+
+            category.Name = viewModel.Name;
+            category.ThreadType = viewModel.ThreadType;
+            category.ProductId = productId;
+
+            await this.Db.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)

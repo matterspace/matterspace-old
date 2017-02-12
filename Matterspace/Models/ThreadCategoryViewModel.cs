@@ -8,7 +8,7 @@ namespace Matterspace.Models
 {
     public class ThreadCategoryViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public string Name { get; set; }
 
