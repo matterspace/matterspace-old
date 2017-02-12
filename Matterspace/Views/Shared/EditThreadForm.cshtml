@@ -18,12 +18,15 @@
         </div>
     </div>
 
-    <div class="form-group row col-xs-12 col-md-4">
-        @Html.LabelFor(x => x.Category)
-        <div class="input-group">
-            @Html.DropDownListFor(x => x.CategoryId, categorySelectList, new { @class = "form-control" })
+    @if (Model.Product.Categories.Any())
+    {
+        <div class="form-group row col-xs-12 col-md-4">
+            @Html.LabelFor(x => x.Category)
+            <div class="input-group">
+                @Html.DropDownListFor(x => x.CategoryId, categorySelectList, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
+    }
 
     <div class="form-group">
         <div class="input-group">

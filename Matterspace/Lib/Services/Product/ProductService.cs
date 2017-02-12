@@ -97,15 +97,16 @@ namespace Matterspace.Lib.Services.Product
             }
         }
 
-        public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesForProduct(int productId, ThreadType categoryThreadType)
+        public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesForProduct(int productId, ThreadType? categoryThreadType = null)
         {
-            var categories = await this.Db.Products
+            var categories = this.Db.Products
                 .Where(x => x.Id == productId)
-                .SelectMany(x => x.Categories)
-                .Where(x => x.ThreadType == categoryThreadType)
-                .ToListAsync();
+                .SelectMany(x => x.Categories);
 
-            return this.GetCategoriesListAsViewModel(categories);
+            if (categoryThreadType != null)
+                categories.Where(x => x.ThreadType == categoryThreadType);
+
+            return this.GetCategoriesListAsViewModel(await categories.ToListAsync());
         }
 
         public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)
@@ -273,6 +274,7 @@ namespace Matterspace.Lib.Services.Product
                 {
                     Id = x.Id,
                     Name = x.Name,
+                    ThreadType = x.ThreadType,
                     ProductId = x.ProductId
                 });
         }

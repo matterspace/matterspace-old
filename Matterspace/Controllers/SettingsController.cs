@@ -103,6 +103,7 @@ namespace Matterspace.Controllers
         public async Task<ActionResult> Categories(string productName)
         {
             var viewModel = await this.GetSettingsViewModel(productName);
+            viewModel.Product.Categories = await this.productService.GetCategoriesForProduct(viewModel.Product.Id.Value);
 
             viewModel.ActiveTab = SettingsActiveTab.Categories;
 
