@@ -49,7 +49,9 @@ namespace Matterspace.Lib.Services.Thread
 
         public async Task<IEnumerable<ThreadViewModel>> GetThreads(int productId, ThreadType type)
         {
-            var threads = await this.Db.Threads.Where(x => x.ProductId == productId && x.Type == type).ToListAsync();
+            var threads = await this.Db.Threads
+                .Include(x => x.Category)
+                .Where(x => x.ProductId == productId && x.Type == type).ToListAsync();
 
             return threads.Select(this.GetThreadViewModel);
         }
@@ -83,7 +85,14 @@ namespace Matterspace.Lib.Services.Thread
                 Title = thread.Title,
                 Content = thread.TextMarkdown,
                 Type = thread.Type,
-                Status = thread.Status
+                Status = thread.Status,
+                CategoryId = thread.CategoryId,
+                Category = new ThreadCategoryViewModel
+                {
+                    Id = thread.Category.Id,
+                    Name = thread.Category.Name,
+                    ProductId = thread.ProductId
+                }
             };
         }
     }

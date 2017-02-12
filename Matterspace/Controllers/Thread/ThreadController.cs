@@ -51,6 +51,7 @@ namespace Matterspace.Controllers.Thread
         public virtual async Task<ActionResult> Edit(string productName, int? id)
         {
             var viewModel = await this.GetThreadViewModel(productName, id);
+            viewModel.Product.Categories = await this.ProductService.GetCategoriesForProduct(viewModel.Product.Id.Value, this.ThreadType);
 
             return this.View("EditThread", viewModel);
         }
@@ -74,9 +75,7 @@ namespace Matterspace.Controllers.Thread
         {
             if (productName == null) throw new ArgumentNullException(nameof(productName));
 
-            var viewModel = await this.ProductService.GetProductViewModel(productName, this.ActiveTab);
-
-            viewModel.Categories = await this.ProductService.GetCategoriesForProduct(viewModel.Id.Value, this.ThreadType);
+            var viewModel = await this.ProductService.GetProductViewModel(productName, this.ActiveTab);            
 
             return viewModel;
         }

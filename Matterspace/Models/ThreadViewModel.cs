@@ -22,15 +22,9 @@ namespace Matterspace.Models
         public ProductViewModel Product { get; set; }
 
         [Required()]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         [DisplayName("Select a category")]
-        public ThreadCategoryViewModel Category
-        {
-            get
-            {
-                return this.Product.Categories.FirstOrDefault(x => x.Id == this.CategoryId);
-            }
-        }
+        public ThreadCategoryViewModel Category { get; set; }
     }
 }
