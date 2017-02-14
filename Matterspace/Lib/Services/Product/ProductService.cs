@@ -66,10 +66,11 @@ namespace Matterspace.Lib.Services.Product
                 TwitterUrl = viewModel.TwitterUrl
             };
 
-            await this.SaveProduct(productViewModel);
+            var productId = await this.SaveProduct(productViewModel);
+            await AddMemberToProduct(viewModel.UserName, productId);
         }
 
-        public async Task SaveProduct(ProductViewModel viewModel)
+        public async Task<int> SaveProduct(ProductViewModel viewModel)
         {
             Model.Entities.Product product;
 
@@ -95,6 +96,8 @@ namespace Matterspace.Lib.Services.Product
                 product.Categories = this.GetDefaultCategories(product.Id);
                 await this.Db.SaveChangesAsync();
             }
+
+            return product.Id;
         }
 
         /// <summary>
@@ -163,6 +166,20 @@ namespace Matterspace.Lib.Services.Product
                 UserId = x.Id,
                 UserName = x.UserName
             });
+        }
+
+        public async Task<IEnumerable<ProductViewModel>> GetProductsByMember(string userId)
+        {
+            var products = await (from member in Db.ProductMembers
+                                  where member.MemberId.Equals(userId)
+                                  join product in Db.Products on member.ProductId equals product.Id
+                                  select new ProductViewModel
+                                  {
+                                     Id = product.Id,
+                                     DisplayName = product.DisplayName,
+                                  }).ToListAsync();
+
+            return products;
         }
 
         public async Task<OperationResult> AddMemberToProduct(string username, int productId, string userId = null)

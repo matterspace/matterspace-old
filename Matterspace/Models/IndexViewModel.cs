@@ -14,6 +14,7 @@ namespace Matterspace.Models
         /// User time-line updates
         /// </summary>
         public IList<TimelineUpdateViewModel> Updates { get; set; }
+        public IEnumerable<ProductViewModel> Products { get; set; }
 
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }

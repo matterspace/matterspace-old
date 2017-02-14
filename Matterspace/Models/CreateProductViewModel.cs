@@ -39,5 +39,10 @@ namespace Matterspace.Models
         [StringLength(512, ErrorMessage = "The Twitter URL can be no longer than 512 characters.")]
         [Url(ErrorMessage = "The Twitter URL must be valid")]
         public string TwitterUrl { get; set; }
+
+        /// <summary>
+        /// UserName that created the product.
+        /// </summary>
+        public string UserName { get; set; }
     }
 }

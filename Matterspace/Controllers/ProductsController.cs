@@ -33,6 +33,12 @@ namespace Matterspace.Controllers
             if (!this.ModelState.IsValid)
                 return this.View(formModel);
 
+            if(string.IsNullOrEmpty(HttpContext.User.Identity.Name))
+            {
+                throw new InvalidOperationException("User not found.");
+            }
+
+            formModel.UserName = HttpContext.User.Identity.Name;
             await this._productService.CreateProduct(formModel);
             return this.RedirectToRoute(RouteConfig.PRODUCT_HOME, new { productName = formModel.Name });
         }
