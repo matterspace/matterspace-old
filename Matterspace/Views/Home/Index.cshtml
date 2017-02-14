@@ -60,6 +60,10 @@
             </div>
         </div>
         <div class="card-block">
+            @foreach(var product in Model.Products)
+            {
+                @Html.Label(product.DisplayName); <br />
+            }
         </div>
     </div>
 </div>
