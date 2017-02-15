@@ -105,12 +105,11 @@ namespace Matterspace.Lib.Services.Product
         /// </summary>
         public async Task<IEnumerable<ThreadCategoryViewModel>> GetCategoriesFromProduct(int productId, ThreadType? categoryThreadType = null)
         {
-            var categories = this.Db.Products
-                .Where(x => x.Id == productId)
-                .SelectMany(x => x.Categories);
+            var categories = this.Db.ThreadCategories
+                .Where(x => x.ProductId == productId);
 
             if (categoryThreadType != null)
-                categories.Where(x => x.ThreadType == categoryThreadType);
+                categories = categories.Where(x => x.ThreadType == categoryThreadType);
 
             return this.GetCategoriesListAsViewModel(await categories.ToListAsync());
         }

@@ -21,7 +21,11 @@ namespace Matterspace.Lib.Services.Thread
 
         public async Task<ThreadViewModel> GetThread(int threadId)
         {
-            var thread = await this.Db.Threads.FindAsync(threadId);
+            var thread = await this.Db.Threads
+                .Include(x => x.Product)
+                .Include(x => x.Category)
+                .FirstOrDefaultAsync(x => x.Id == threadId);
+
 #warning Change this throw to result model when available
             if (thread == null) throw new Exception("Could not find the thread");
 
@@ -92,6 +96,16 @@ namespace Matterspace.Lib.Services.Thread
                     Id = thread.Category.Id,
                     Name = thread.Category.Name,
                     ProductId = thread.ProductId
+                },
+                Product = new ProductViewModel
+                {
+                    Id = thread.Product.Id,
+                    Name = thread.Product.Name,
+                    DisplayName = thread.Product.DisplayName,
+                    ShortDescription = thread.Product.ShortDescription,
+                    WebsiteUrl = thread.Product.WebsiteUrl,
+                    FacebookUrl = thread.Product.FacebookUrl,
+                    TwitterUrl = thread.Product.TwitterUrl
                 }
             };
         }

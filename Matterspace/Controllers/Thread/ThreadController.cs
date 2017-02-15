@@ -53,6 +53,8 @@ namespace Matterspace.Controllers.Thread
             var viewModel = await this.GetThreadViewModel(productName, id);
             viewModel.Product.Categories = await this.ProductService.GetCategoriesFromProduct(viewModel.Product.Id.Value, this.ThreadType);
 
+            this.ViewBag.Title = TitleHelper.GetProductTabTitle(id == null ? "New Idea" : "Editing Idea", viewModel.Product.DisplayName);
+
             return this.View("EditThread", viewModel);
         }
 
@@ -85,14 +87,21 @@ namespace Matterspace.Controllers.Thread
         /// </summary>
         protected virtual async Task<ThreadViewModel> GetThreadViewModel(string productName, int? id)
         {
-            var viewModel = new ThreadViewModel
-            {
-                Type = this.ThreadType,
-                Product = await this.GetProductViewModel(productName)
-            };
+            ThreadViewModel viewModel;
 
             if (id.HasValue)
+            {
                 viewModel = await this.ThreadService.GetThread(id.Value);
+                viewModel.Product.ActiveTab = this.ActiveTab;
+            }   
+            else
+            {
+                viewModel = new ThreadViewModel
+                {
+                    Type = this.ThreadType,
+                    Product = await this.GetProductViewModel(productName)
+                };
+            }
 
             return viewModel;
         }

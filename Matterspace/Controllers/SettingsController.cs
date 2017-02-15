@@ -113,11 +113,11 @@ namespace Matterspace.Controllers
         [HttpGet]
         public async Task<ActionResult> NewCategory(string productName)
         {
-            return await this.EditCategory(productName, null);
+            return await this.EditCategory(productName);
         }
 
         [HttpGet]
-        public async Task<ActionResult> EditCategory(string productName, int? id)
+        public async Task<ActionResult> EditCategory(string productName, int? id = null)
         {
             var viewModel = await this.GetSettingsViewModel(productName);
 
@@ -131,12 +131,18 @@ namespace Matterspace.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> EditCategory(ThreadCategoryViewModel viewModel)
+        public async Task<ActionResult> EditCategory(string productName, ThreadCategoryViewModel formModel)
         {
             if (this.ModelState.IsValid)
             {
-                await this.productService.SaveCategory(viewModel.ProductId, viewModel);
+                await this.productService.SaveCategory(formModel.ProductId, formModel);
             }
+
+            var viewModel = await this.GetSettingsViewModel(productName);
+
+            viewModel.Category = formModel;
+
+            viewModel.ActiveTab = SettingsActiveTab.Categories;
 
             return this.View("EditCategory", viewModel);
         }
