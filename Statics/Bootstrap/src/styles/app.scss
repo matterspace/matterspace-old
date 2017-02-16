@@ -1,4 +1,18 @@
+@import "~bootstrap/scss/_variables";
+
 // override BS4 variables here
 $font-size-root:          14px;
 $headings-font-weight:    normal;
-@import "~bootstrap/scss/bootstrap.scss";
+
+//$list-group-hover-bg:           #f5f5f5 !default;
+//$list-group-active-color:       $component-active-color !default;
+$list-group-active-bg:          $gray-lightest;
+//$list-group-active-border:      $list-group-active-bg !default;
+$list-group-active-text-color:  $gray-dark;
+$list-group-link-color:         $gray-dark;
+
+                // background-color: $gray-lighter;
+                // border-color: $gray-lighter;
+                // border-left: 3px solid $gray-dark;
+
+@import "~bootstrap/scss/bootstrap";
