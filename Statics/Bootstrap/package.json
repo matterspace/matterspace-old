@@ -10,7 +10,7 @@
   "author": "Andre Pena",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap": "^4.0.0-alpha.6",
     "style-loader": "^0.13.1"
   },
   "devDependencies": {

@@ -1,58 +1,60 @@
 ﻿@using Microsoft.AspNet.Identity
-<nav class="navbar navbar-top navbar-light">
+<div class="nav-container">
     <div class="container">
-        <span class="brand-wrapper">
-            <a class="navbar-brand" href="#">
-                <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
-            </a>
-            @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
-        </span>
-        <ul class="nav navbar-nav navbar-with-dropdown-menu float-xs-right">
-            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View notifications">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-bell" aria-hidden="true"></i>
+        <nav class="navbar justify-content-between navbar-toggleable-xl navbar-top navbar-light">
+            <span class="brand-wrapper">
+                <a class="navbar-brand" href="#">
+                    <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
                 </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Create new...">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                </a>
-                <div class="navbar-dropdown-menu-wrapper">
-                    <ul class="navbar-dropdown-menu">
-                        <li class="navbar-dropdown-menu-item">
-                            @Html.ActionLink("New product", "Create", "Products")
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View profile and more">
-                <a class="nav-link" href="#">
-                    <span class="navbar-profile-picture"></span>
-                    <i class="fa fa-caret-down navbar-profile-picture-dropdown-button" aria-hidden="true"></i>
-                </a>
-                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
-                {
-                    @Html.AntiForgeryToken()
+                @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
+            </span>
+            <ul class="nav navbar-nav navbar-with-dropdown-menu float-xs-right">
+                <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View notifications">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-bell" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Create new...">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
                     <div class="navbar-dropdown-menu-wrapper">
                         <ul class="navbar-dropdown-menu">
-                            <li class="navbar-dropdown-menu-item navitem-header navbar-item-divider">
-                                Signed in as <br/>
-                                <strong>@User.Identity.GetUserName()</strong>
-                            </li>
                             <li class="navbar-dropdown-menu-item">
-                                <a href="#">Your profile</a>
-                            </li>
-                            <li class="navbar-dropdown-menu-item">
-                                <a href="#">Settings</a>
-                            </li>
-                            <li class="navbar-dropdown-menu-item">
-                                <a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a>
+                                @Html.ActionLink("New product", "Create", "Products")
                             </li>
                         </ul>
                     </div>
-                }
-            </li>
-        </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View profile and more">
+                    <a class="nav-link" href="#">
+                        <span class="navbar-profile-picture"></span>
+                        <i class="fa fa-caret-down navbar-profile-picture-dropdown-button" aria-hidden="true"></i>
+                    </a>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="navbar-dropdown-menu-wrapper">
+                            <ul class="navbar-dropdown-menu">
+                                <li class="navbar-dropdown-menu-item navitem-header navbar-item-divider">
+                                    Signed in as <br />
+                                    <strong>@User.Identity.GetUserName()</strong>
+                                </li>
+                                <li class="navbar-dropdown-menu-item">
+                                    <a href="#">Your profile</a>
+                                </li>
+                                <li class="navbar-dropdown-menu-item">
+                                    <a href="#">Settings</a>
+                                </li>
+                                <li class="navbar-dropdown-menu-item">
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Sign out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </li>
+            </ul>
+        </nav>
     </div>
-</nav>
+</div>
