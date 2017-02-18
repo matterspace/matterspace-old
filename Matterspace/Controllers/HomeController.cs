@@ -20,11 +20,9 @@ namespace Matterspace.Controllers
             _productService = new ProductService(_database);
         }
 
+        [Authorize]
         public async Task<ActionResult> Index()
         {
-            if (!this.Request.IsAuthenticated)
-                return this.View("Index.NotAuthenticated");
-
             var userId = ((ClaimsPrincipal)HttpContext.User).Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
             if(userId == null)
             {
