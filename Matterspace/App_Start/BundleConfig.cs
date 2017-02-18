@@ -27,7 +27,7 @@ namespace Matterspace
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/no-np/tether.min.js",
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/no-np/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
             // This is the bundle that should be added for the non-authenticated part of Matterspace

@@ -3397,7 +3397,7 @@ a.badge:focus, a.badge:hover {
     z-index: 2;
     color: #fff;
     background-color: #f7f7f9;
-    border-color: #0275d8; }
+    border-color: #eceeef; }
     .list-group-item.active .list-group-item-heading,
     .list-group-item.active .list-group-item-heading > small,
     .list-group-item.active .list-group-item-heading > .small {
