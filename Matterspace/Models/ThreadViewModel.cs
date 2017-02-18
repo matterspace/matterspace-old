@@ -1,15 +1,14 @@
 ﻿using Matterspace.Model.Enums;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace Matterspace.Models
 {
     public class ThreadViewModel
     {
         public string Id { get; set; }
+
+        public string AuthorId { get; set; }
 
         public string Title { get; set; }
 

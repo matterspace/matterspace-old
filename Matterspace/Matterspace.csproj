@@ -250,6 +250,7 @@
     <Compile Include="Lib\Extensions\EnumExtensions.cs" />
     <Compile Include="Lib\Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Lib\Helpers\TitleHelper.cs" />
+    <Compile Include="Lib\Helpers\UserHelper.cs" />
     <Compile Include="Lib\OAuth\FacebookBackchannelHttpHandler.cs" />
     <Compile Include="Lib\Services\Product\ProductService.cs" />
     <Compile Include="Lib\Services\Settings\SettingsService.cs" />

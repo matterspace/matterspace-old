@@ -2,10 +2,8 @@
 using Matterspace.Models;
 using Matterspace.Model;
 using Matterspace.Lib.Services.Product;
-using System.Web;
 using System.Threading.Tasks;
-using System.Security.Claims;
-using System.Linq;
+using Matterspace.Lib.Helpers;
 
 namespace Matterspace.Controllers
 {
@@ -23,13 +21,8 @@ namespace Matterspace.Controllers
         [Authorize]
         public async Task<ActionResult> Index()
         {
-            var userId = ((ClaimsPrincipal)HttpContext.User).Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
-            if(userId == null)
-            {
-                throw new HttpRequestValidationException("User id not found in Claims.");
-            }
-
-            var products = await _productService.GetProductsByMember(userId.Value);
+            var userId = UserHelper.GetUserIdFromClaims(HttpContext);
+            var products = await _productService.GetProductsByMember(userId);
 
             // the user is authenticated
             var indexViewModel = new IndexViewModel

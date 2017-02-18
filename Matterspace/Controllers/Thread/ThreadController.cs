@@ -63,6 +63,7 @@ namespace Matterspace.Controllers.Thread
         {
             if (this.ModelState.IsValid)
             {
+                viewModel.AuthorId = UserHelper.GetUserIdFromClaims(HttpContext);
                 await this.ThreadService.SaveThread(viewModel);
                 return this.RedirectToAction("Index");
             }
