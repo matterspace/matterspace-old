@@ -9,20 +9,21 @@ namespace Matterspace.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly MatterspaceDbContext _database;
         private readonly ProductService _productService;
 
         public HomeController()
         {
-            _database = new MatterspaceDbContext();
-            _productService = new ProductService(_database);
+            var database = new MatterspaceDbContext();
+            this._productService = new ProductService(database);
         }
-
-        [Authorize]
+        
         public async Task<ActionResult> Index()
         {
-            var userId = UserHelper.GetUserIdFromClaims(HttpContext);
-            var products = await _productService.GetProductsByMember(userId);
+            if (!this.Request.IsAuthenticated)
+                return this.View("Index.NotAuthenticated");
+
+            var userId = UserHelper.GetUserIdFromClaims(this.HttpContext);
+            var products = await this._productService.GetProductsByMember(userId);
 
             // the user is authenticated
             var indexViewModel = new IndexViewModel
