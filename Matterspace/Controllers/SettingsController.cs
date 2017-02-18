@@ -136,6 +136,7 @@ namespace Matterspace.Controllers
             if (this.ModelState.IsValid)
             {
                 await this.productService.SaveCategory(formModel.ProductId, formModel);
+                return this.RedirectToRoute(RouteConfig.PRODUCT_ACTIONS, new { productName = productName, controller = "Settings", action = "Categories" });
             }
 
             var viewModel = await this.GetSettingsViewModel(productName);
@@ -145,6 +146,13 @@ namespace Matterspace.Controllers
             viewModel.ActiveTab = SettingsActiveTab.Categories;
 
             return this.View("EditCategory", viewModel);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> DeleteCategory(string productName, int id)
+        {
+            await this.productService.DeleteCategory(id);
+            return this.RedirectToRoute(RouteConfig.PRODUCT_ACTIONS, new { productName = productName, controller = "Settings", action = "Categories" });
         }
 
         /// <summary>

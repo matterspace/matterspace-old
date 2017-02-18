@@ -207,8 +207,6 @@
     width: 25%; }
     .settings-wrapper .settings-side .list-group a {
       text-decoration: none; }
-    .settings-wrapper .settings-side .list-group .list-group-itemhover {
-      background-color: #f7f7f9; }
     .settings-wrapper .settings-side .list-group .active {
       border-left: 3px solid #373a3c; }
 
@@ -309,21 +307,21 @@ nav.navbar-top {
         position: absolute;
         display: inline-block;
         content: ""; }
-    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
-      padding: 5px 10px;
-      display: block;
-      color: inherit;
-      text-decoration: none; }
-      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a:hover {
-        background-color: #0275d8;
-        color: white; }
-    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
-      padding: 5px 10px;
-      text-overflow: ellipsis;
-      overflow: hidden; }
-    nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-      margin-bottom: 3px; }
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a {
+        padding: 5px 10px;
+        display: block;
+        color: inherit;
+        text-decoration: none; }
+        nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item a:hover {
+          background-color: #0275d8;
+          color: white; }
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navitem-header {
+        padding: 5px 10px;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+      nav.navbar-top .navbar-dropdown-menu-wrapper ul.navbar-dropdown-menu li.navbar-dropdown-menu-item.navbar-item-divider {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        margin-bottom: 3px; }
 
 .timeline-blankslate {
   position: relative;
@@ -338,4 +336,12 @@ nav.navbar-top {
 
 .validation-summary-errors {
   color: #d9534f; }
+
+.btn-transparent {
+  background: none;
+  border: none;
+  padding: 0; }
+
+.btn-click {
+  cursor: pointer; }
 

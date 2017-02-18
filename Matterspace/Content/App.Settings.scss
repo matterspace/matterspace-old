@@ -49,13 +49,6 @@
                 text-decoration: none;
             }
 
-            .list-group-item {
-
-                &hover {
-                    background-color: $gray-lightest;
-                }
-            }
-
             .active {
                 border-left: 3px solid $gray-dark;
             }

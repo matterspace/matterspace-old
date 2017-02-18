@@ -42,7 +42,16 @@
                     </div>
                     <div class="col-xs-3">
                         <div class="pull-right">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                            <a href="@Url.Action("EditCategory", new { id = category.Id })">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            @using (Html.BeginForm("DeleteCategory", "Settings", new { Id = category.Id }, FormMethod.Post))
+                            {
+                                <button class="btn-transparent btn-click" type="submit">
+                                    <i class="fa fa-remove" aria-hidden="true"></i>
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

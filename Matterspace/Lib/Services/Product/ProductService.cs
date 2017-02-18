@@ -152,6 +152,19 @@ namespace Matterspace.Lib.Services.Product
             await this.Db.SaveChangesAsync();
         }
 
+        public async Task DeleteCategory(int id)
+        {
+            ThreadCategory category = new ThreadCategory
+            {
+                Id = id
+            };
+
+            this.Db.ThreadCategories.Attach(category);
+            this.Db.ThreadCategories.Remove(category);
+
+            await this.Db.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<ApplicationUserViewModel>> GetMembersInProduct(int productId)
         {
             var members = await this.Db.ProductMembers

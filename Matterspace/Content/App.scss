@@ -141,9 +141,6 @@ nav.navbar-top {
                 display: inline-block;
                 content: "";
             }
-        }
-
-        ul.navbar-dropdown-menu {
 
             li.navbar-dropdown-menu-item {
 
@@ -196,4 +193,14 @@ nav.navbar-top {
 
 .validation-summary-errors {
     color: $brand-danger;
+}
+
+.btn-transparent {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.btn-click {
+    cursor: pointer;
 }
