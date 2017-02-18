@@ -44,7 +44,6 @@ namespace Matterspace
                       "~/Content/bootstrap.app.css",
                       "~/Content/font-awesome.css",
                       "~/Content/react-bundle.css",
-                      "~/Content/site.css",
                       "~/Content/App.css"
                       ));
         }

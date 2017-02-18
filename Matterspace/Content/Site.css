@@ -1,16 +1,10 @@
-﻿body {
-  padding-bottom: 20px; }
+﻿.nav-container nav.navbar-top .brand-wrapper .navbar-logo {
+  width: 20px;
+  position: relative;
+  top: -2px; }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-  padding-left: 15px;
-  padding-right: 15px; }
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-  white-space: normal; }
+.nav-container nav.navbar-top .brand-wrapper #matterspace-logo {
+  padding-left: 4px; }
 
 .site-footer {
   position: relative;
@@ -31,11 +25,19 @@
       .site-footer .site-footer-links li + li {
         margin-left: 10px; }
 
-.navbar .navbar-logo {
-  width: 20px;
-  position: relative;
-  top: -2px;
-  right: -6px; }
+body {
+  padding-bottom: 20px; }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+  white-space: normal; }
 
 /* ASP.NET validation */
 span.field-validation-error {

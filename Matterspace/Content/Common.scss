@@ -1,0 +1,46 @@
+﻿@import "Variables.scss";
+
+.nav-container {
+
+    nav.navbar-top {
+
+        .brand-wrapper {
+            .navbar-logo {
+                width: 20px;
+                position: relative;
+                top: -2px;
+            }
+
+            #matterspace-logo {
+                padding-left: 4px;
+            }
+        }
+    }
+}
+
+
+.site-footer {
+    position: relative;
+    padding-top: $gutter-md;
+    padding-bottom: $gutter-md;
+    margin-top: $gutter-md;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #767676;
+    border-top: 1px solid #eee;
+
+    .site-footer-links {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            line-height: 16px;
+            // for other lis that are not the first
+            + li {
+                margin-left: 10px;
+            }
+        }
+    }
+}

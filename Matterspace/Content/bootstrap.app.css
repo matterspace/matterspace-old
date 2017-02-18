@@ -2623,13 +2623,13 @@ tbody.collapse.show {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 1rem; }
+  padding: 0.5rem 0; }
 
 .navbar-brand {
   display: inline-block;
   padding-top: .25rem;
   padding-bottom: .25rem;
-  margin-right: 1rem;
+  margin-right: 0;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap; }
@@ -2673,11 +2673,11 @@ tbody.collapse.show {
 
 .navbar-toggler-left {
   position: absolute;
-  left: 1rem; }
+  left: 0; }
 
 .navbar-toggler-right {
   position: absolute;
-  right: 1rem; }
+  right: 0; }
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {

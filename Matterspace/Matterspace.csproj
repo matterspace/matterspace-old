@@ -337,6 +337,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
     <None Include="Content\App.Thread.New.scss" />
+    <Content Include="Content\Common.scss" />
     <None Include="Content\Site.scss" />
     <Content Include="Lib\Email\Templates\AccountConfirmation.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

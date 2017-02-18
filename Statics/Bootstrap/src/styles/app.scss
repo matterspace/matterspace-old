@@ -4,11 +4,12 @@
 $font-size-base:                14px;
 $headings-font-weight:          normal;
 $grid-gutter-width-base:        26px;        
+$navbar-padding-x:              0;
 
 $list-group-active-bg:          $gray-lightest;
 $list-group-active-border:      $gray-lighter;
-$list-group-active-color:       $gray-dark !default;
-$list-group-link-color:         $gray !default;
+$list-group-active-color:       $gray-dark;
+$list-group-link-color:         $gray;
 
 @import "~bootstrap/scss/bootstrap";
 
