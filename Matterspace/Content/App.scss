@@ -30,6 +30,7 @@ body {
 
 .ms-card {
 
+    margin-bottom: $gutter-md / 2;
     .ms-card-header {
         padding: 0.4rem 0.6rem;
         background-color: $gray-lightest;
@@ -96,7 +97,7 @@ div.app-container {
                     border-radius: 50%;
                     display: block;
                     position: absolute;
-                    top: 4px;
+                    top: 2px;
                 }
 
                 i.navbar-profile-picture-dropdown-button {
