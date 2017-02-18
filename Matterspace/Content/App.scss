@@ -29,7 +29,8 @@ body {
 }
 
 .ms-card {
-    
+
+    margin-bottom: $gutter-md / 2;
     .ms-card-header {
         padding: 0.4rem 0.6rem;
         background-color: $gray-lightest;
@@ -55,6 +56,7 @@ body {
             a {
                 text-decoration: none;
                 color: white;
+
                 &:visited {
                     color: white;
                 }
@@ -67,104 +69,106 @@ div.app-container {
     margin-top: $gutter-md;
 }
 
-nav.navbar-top {
+.nav-container {
     border-bottom: 1px solid $default-border-color;
-    border-radius: 0;
 
-    ul.navbar-nav {
-        position: relative;
+    nav.navbar-top {
 
-        li.nav-item {
-            &.active div.navbar-dropdown-menu-wrapper {
-                display: block;
-            }
-        }
-    }
-
-    ul.navbar-with-dropdown-menu {
-
-        li.nav-item {
+        ul.navbar-nav {
             position: relative;
 
-            span.navbar-profile-picture {
-                background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
-                height: 32px;
-                width: 32px;
-                background-size: 32px 32px;
-                border-radius: 50%;
-                display: block;
-                position: absolute;
-                top: 2px;
-            }
-
-            i.navbar-profile-picture-dropdown-button {
-                margin-left: 36px;
+            li.nav-item {
+                &.active div.navbar-dropdown-menu-wrapper {
+                    display: block;
+                }
             }
         }
-    }
 
+        ul.navbar-with-dropdown-menu {
 
-    .navbar-dropdown-menu-wrapper {
-        display: none;
+            li.nav-item {
+                position: relative;
 
-        ul.navbar-dropdown-menu {
-            position: absolute;
-            width: 190px;
-            right: 0;
-            list-style: none;
-            background-color: white;
-            border: 1px solid $default-border-color;
-            padding: 3px 0;
-            z-index: 100;
-            right: 0;
-            left: auto;
-            margin-top: 10px;
-
-            &::before {
-                top: -16px;
-                right: 9px;
-                left: auto;
-                border: 8px solid transparent;
-                border-bottom-color: $default-border-color;
-                position: absolute;
-                display: inline-block;
-                content: "";
-            }
-
-            &::after {
-                top: -14px;
-                right: 10px;
-                left: auto;
-                border: 7px solid transparent;
-                border-bottom-color: #fff;
-                position: absolute;
-                display: inline-block;
-                content: "";
-            }
-
-            li.navbar-dropdown-menu-item {
-
-                a {
-                    padding: 5px 10px;
+                span.navbar-profile-picture {
+                    background-image: url(//lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg);
+                    height: 32px;
+                    width: 32px;
+                    background-size: 32px 32px;
+                    border-radius: 50%;
                     display: block;
-                    color: inherit;
-                    text-decoration: none;
+                    position: absolute;
+                    top: 2px;
+                }
 
-                    &:hover {
-                        background-color: $brand-primary;
-                        color: white;
+                i.navbar-profile-picture-dropdown-button {
+                    margin-left: 36px;
+                }
+            }
+        }
+
+
+        .navbar-dropdown-menu-wrapper {
+            display: none;
+
+            ul.navbar-dropdown-menu {
+                position: absolute;
+                width: 190px;
+                right: 0;
+                list-style: none;
+                background-color: white;
+                border: 1px solid $default-border-color;
+                padding: 3px 0;
+                z-index: 100;
+                right: 0;
+                left: auto;
+                margin-top: 10px;
+
+                &::before {
+                    top: -16px;
+                    right: 9px;
+                    left: auto;
+                    border: 8px solid transparent;
+                    border-bottom-color: $default-border-color;
+                    position: absolute;
+                    display: inline-block;
+                    content: "";
+                }
+
+                &::after {
+                    top: -14px;
+                    right: 10px;
+                    left: auto;
+                    border: 7px solid transparent;
+                    border-bottom-color: #fff;
+                    position: absolute;
+                    display: inline-block;
+                    content: "";
+                }
+
+                li.navbar-dropdown-menu-item {
+
+                    a {
+                        padding: 5px 10px;
+                        display: block;
+                        color: inherit;
+                        text-decoration: none;
+
+                        &:hover {
+                            background-color: $brand-primary;
+                            color: white;
+                        }
                     }
-                }
 
-                &.navitem-header {
-                    padding: 5px 10px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                }
+                    &.navitem-header {
+                        padding: 5px 10px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
 
-                &.navbar-item-divider {
-                    border-bottom: 1px solid $default-border-color;
-                    margin-bottom: 3px;
+                    &.navbar-item-divider {
+                        border-bottom: 1px solid $default-border-color;
+                        margin-bottom: 3px;
+                    }
                 }
             }
         }
@@ -203,4 +207,11 @@ nav.navbar-top {
 
 .btn-click {
     cursor: pointer;
+}
+
+/* Flex utilities */
+
+// make a flex item to occupy all available space
+.fi-grow {
+    flex: 1 1 auto;
 }

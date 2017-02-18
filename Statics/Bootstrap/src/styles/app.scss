@@ -1,8 +1,9 @@
 @import "~bootstrap/scss/_variables";
 
 // override BS4 variables here
-$font-size-root:          14px;
-$headings-font-weight:    normal;
+$font-size-base:                14px;
+$headings-font-weight:          normal;
+$grid-gutter-width-base:        26px;        
 
 $list-group-active-bg:          $gray-lightest;
 $list-group-active-border:      $gray-lighter;

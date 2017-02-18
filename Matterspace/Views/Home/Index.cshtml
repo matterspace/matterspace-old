@@ -4,68 +4,70 @@
     Layout = "../Shared/_LayoutContainer.cshtml";
 }
 
-<div class="col-md-8 main-content-column">
-    @if (Model.Updates.Count == 0)
-    {
-        // this is a blank slate
-        <div class="timeline-blankslate">
-            <div class="timeline-blankslate-icon">
-                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-            </div>
-            <div class="timeline-blankslate-primary-message">
-                It seems you have no updates.
-            </div>
-            <div class="timeline-blankslate-secondary-message">
-                This is your timeline. Here you can see updates from the products you're watching and
-                posts you are subscribed to.
-            </div>
+<div class="row">
+    <div class="col-8 main-content-column">
+        @if (Model.Updates.Count == 0)
+        {
+            // this is a blank slate
+            <div class="timeline-blankslate">
+                <div class="timeline-blankslate-icon">
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                </div>
+                <div class="timeline-blankslate-primary-message">
+                    It seems you have no updates.
+                </div>
+                <div class="timeline-blankslate-secondary-message">
+                    This is your timeline. Here you can see updates from the products you're watching and
+                    posts you are subscribed to.
+                </div>
 
-        </div>
-    }
-    else
-    {
-        // Display the user timeline here
-    }
-</div>
-<div class="col-md-4 side-bar-column">
-    <div class="ms-card card ">
-        <p class="ms-card-header">
-            Posts you are subscribed to
-        </p>
-        <div class="card-block">
-
-        </div>
+            </div>
+        }
+        else
+        {
+            // Display the user timeline here
+        }
     </div>
-    <div class="ms-card card">
-        <p class="ms-card-header">
-            Products you are watching
-        </p>
-        <div class="card-block">
+    <div class="col-4 side-bar-column">
+        <div class="ms-card card ">
+            <p class="ms-card-header">
+                Posts you are subscribed to
+            </p>
+            <div class="card-block">
 
-        </div>
-    </div>
-    <div class="ms-card card">
-        <p class="ms-card-header">
-            Your products
-        </p>
-        <div class="ms-card-subheader">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Find a community...">
-                <span class="input-group-btn">
-                    <button class="btn btn-success" type="button">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                        @Html.ActionLink("Create", "Create", "Products")
-                    </button>
-                </span>
             </div>
         </div>
-        <div class="card-block">
-            <ul>
-                @foreach (var product in Model.Products)
-                {
-                    <li><a href="~/p/@product.Name">@product.DisplayName</a></li>
-                }
-            </ul>
+        <div class="ms-card card">
+            <p class="ms-card-header">
+                Products you are watching
+            </p>
+            <div class="card-block">
+
+            </div>
+        </div>
+        <div class="ms-card card">
+            <p class="ms-card-header">
+                Your products
+            </p>
+            <div class="ms-card-subheader">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Find a community...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            @Html.ActionLink("Create", "Create", "Products")
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="card-block">
+                <ul>
+                    @foreach (var product in Model.Products)
+                    {
+                        <li><a href="~/p/@product.Name">@product.DisplayName</a></li>
+                    }
+                </ul>
+            </div>
         </div>
     </div>
 </div>

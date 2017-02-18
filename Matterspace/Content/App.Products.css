@@ -62,14 +62,14 @@
   .product-home-wrapper .product-body .product-nav-content {
     margin-top: 13px; }
     .product-home-wrapper .product-body .product-nav-content .col-main {
-      padding-left: 15px;
+      padding-left: 13px;
       padding-right: 13px;
       float: left;
       box-sizing: border-box;
       width: calc(100% - 128px); }
     .product-home-wrapper .product-body .product-nav-content .col-side {
       padding-left: 0;
-      padding-right: 15px;
+      padding-right: 13px;
       float: left;
       box-sizing: border-box;
       width: 128px; }

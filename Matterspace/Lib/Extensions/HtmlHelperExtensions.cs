@@ -25,7 +25,7 @@ namespace Matterspace.Lib.Extensions
 
             var reactMdeContainerId = "container_" + fullHtmlFieldName;
 
-            var div = $"<div id=\"{reactMdeContainerId}\"></div>";
+            var div = $"<div id=\"{reactMdeContainerId}\" class=\"fi-grow\"></div>";
             var script = $"<script>document.addEventListener(\"DOMContentLoaded\", function() {{ window._renderMarkdownEditor(\"{"#" + reactMdeContainerId}\", \"{fullHtmlFieldName}\", \"{fullHtmlFieldName}\", \"{value}\"); }});</script>";
 
             return MvcHtmlString.Create($"{div}\n{script}");
