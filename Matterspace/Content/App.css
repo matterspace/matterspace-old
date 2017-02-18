@@ -345,3 +345,7 @@ div.app-container {
 .btn-click {
   cursor: pointer; }
 
+/* Flex utilities */
+.fi-grow {
+  flex: 1 1 auto; }
+

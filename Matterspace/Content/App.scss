@@ -208,3 +208,10 @@ div.app-container {
 .btn-click {
     cursor: pointer;
 }
+
+/* Flex utilities */
+
+// make a flex item to occupy all available space
+.fi-grow {
+    flex: 1 1 auto;
+}
