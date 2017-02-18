@@ -1,0 +1,3 @@
+EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL';
+EXEC sp_MSForEachTable 'IF OBJECT_ID(''?'') NOT IN (ISNULL(OBJECT_ID(''[dbo].[__MigrationHistory]''),0)) DELETE FROM ?';
+EXEC sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL';
