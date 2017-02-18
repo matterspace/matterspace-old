@@ -189,6 +189,7 @@ namespace Matterspace.Lib.Services.Product
                                   {
                                      Id = product.Id,
                                      DisplayName = product.DisplayName,
+                                     Name = product.Name
                                   }).ToListAsync();
 
             return products;
