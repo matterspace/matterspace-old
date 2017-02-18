@@ -1,4 +1,10 @@
-﻿.nav-container nav.navbar-top .brand-wrapper .navbar-logo {
+﻿.nav-container a.navbar-brand {
+  color: #373a3c !important; }
+  .nav-container a.navbar-brand img {
+    position: relative;
+    top: -2px; }
+
+.nav-container nav.navbar-top .brand-wrapper .navbar-logo {
   width: 20px;
   position: relative;
   top: -2px; }

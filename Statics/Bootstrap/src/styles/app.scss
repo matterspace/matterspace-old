@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/_variables";
 
+$default-border-color:          rgba(0,0,0,.125) !default;
+
 // override BS4 variables here
 $font-size-base:                14px;
 $headings-font-weight:          normal;
@@ -7,7 +9,7 @@ $grid-gutter-width-base:        26px;
 $navbar-padding-x:              0;
 
 $list-group-active-bg:          $gray-lightest;
-$list-group-active-border:      $gray-lighter;
+$list-group-active-border:      $default-border-color;
 $list-group-active-color:       $gray-dark;
 $list-group-link-color:         $gray;
 

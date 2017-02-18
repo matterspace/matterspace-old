@@ -2,12 +2,10 @@
 <div class="nav-container">
     <div class="container">
         <nav class="navbar justify-content-between navbar-toggleable-xl navbar-top navbar-light">
-            <span class="brand-wrapper">
-                <a class="navbar-brand" href="#">
-                    <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
-                </a>
-                @Html.ActionLink("Matterspace", "Index", "Home", null, new { id = "matterspace-logo", @class = "navbar-brand" })
-            </span>
+            <a class="navbar-brand mr-0" href="/">
+                <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
+                <span class="ms-logo-text">Matterspace</span>
+            </a>
             <ul class="nav navbar-nav navbar-with-dropdown-menu float-xs-right">
                 <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="View notifications">
                     <a class="nav-link" href="#">

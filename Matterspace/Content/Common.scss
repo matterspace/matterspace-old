@@ -2,6 +2,14 @@
 
 .nav-container {
 
+    a.navbar-brand {
+        color: $gray-dark !important;
+        img {
+            position: relative;
+            top: -2px;
+        }
+    }
+
     nav.navbar-top {
 
         .brand-wrapper {

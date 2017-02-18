@@ -30,8 +30,11 @@
     float: left;
     box-sizing: border-box;
     width: 25%; }
-    .settings-wrapper .settings-side .list-group a {
-      text-decoration: none; }
+    .settings-wrapper .settings-side .list-group a.list-group-item {
+      text-decoration: none;
+      color: #373a3c !important; }
+      .settings-wrapper .settings-side .list-group a.list-group-item:hover {
+        background-color: #f7f7f9 !important; }
     .settings-wrapper .settings-side .list-group .active {
       border-left: 3px solid #373a3c; }
 

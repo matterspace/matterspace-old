@@ -1,16 +1,24 @@
 ﻿<div class="nav-container">
     <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-light">
-            <span class="brand-wrapper">
-                <a class="navbar-brand" href="#">
-                    <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
-                </a>
-                @Html.ActionLink("Matterspace", "Index", "Home", null, new { @class = "navbar-brand", id = "matterspace-logo" })
-            </span>
-            <div class="form-inline float-sm-right sign-buttons-wrapper">
-                @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = " nav-link btn btn-outline-success" })
-                @Html.ActionLink("Sign up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = " nav-link btn btn-success" })
+        <nav class="navbar navbar-toggleable-sm pl-0 pr-0">
+            <button class="navbar-toggler navbar-toggler-right" style="right: 0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-0" href="/">
+                <img src="/Content/Images/MSLogo-xs.png" class="navbar-logo" />
+                <span class="ms-logo-text">Matterspace</span>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mt-2 mt-md-0">
+                    <li class="nav-item mt-2 mb-2 m-md-0">
+                        @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = " nav-link btn btn-outline-success" })
+                    </li>
+                    <li class="nav-item mt-0 mb-2 m-md-0 ml-md-2">
+                        @Html.ActionLink("Sign up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = " nav-link btn btn-success" })
+                    </li>
+                </ul>
             </div>
+
         </nav>
     </div>
 </div>

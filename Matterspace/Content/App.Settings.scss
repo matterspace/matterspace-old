@@ -44,9 +44,18 @@
 
     .settings-side {
         @include col(25%, $paddingRight: 0);
+
+
+
         .list-group {
-            a {
+
+            a.list-group-item {
                 text-decoration: none;
+                color: $gray-dark !important;
+
+                &:hover {
+                    background-color: $gray-lightest !important;
+                }
             }
 
             .active {
