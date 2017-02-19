@@ -103,6 +103,8 @@ namespace Matterspace.Lib.Services.Thread
                 Content = thread.TextMarkdown,
                 Type = thread.Type,
                 Status = thread.Status,
+                CreatedAt = thread.CreatedAt,
+                RelativeDate = this.GetRelativeDate(thread.CreatedAt),
                 CategoryId = thread.CategoryId,
                 Category = category == null
                 ? null
@@ -128,6 +130,20 @@ namespace Matterspace.Lib.Services.Thread
                     UserName = thread.Author.UserName
                 }
             };
+        }
+
+        private string GetRelativeDate(DateTime createdAt)
+        {
+            var timeSpanAgo = DateTime.UtcNow - createdAt;
+
+            if (timeSpanAgo.Days > 0)
+                return timeSpanAgo.Days == 1 ? $"{timeSpanAgo.Days} day ago" : $"{timeSpanAgo.Days} days ago";
+            else if (timeSpanAgo.Hours > 0)
+                return timeSpanAgo.Hours == 1 ? $"{timeSpanAgo.Hours} hour ago" : $"{timeSpanAgo.Hours} hours ago";
+            else if (timeSpanAgo.Minutes > 0)
+                return timeSpanAgo.Minutes == 1 ? $"{timeSpanAgo.Minutes} minute ago" : $"{timeSpanAgo.Minutes} minutes ago";
+            else
+                return "seconds ago";
         }
     }
 }

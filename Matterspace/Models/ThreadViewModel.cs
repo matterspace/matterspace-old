@@ -1,4 +1,5 @@
 ﻿using Matterspace.Model.Enums;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -21,6 +22,10 @@ namespace Matterspace.Models
         public string Content { get; set; }
 
         public ProductViewModel Product { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public string RelativeDate { get; set; }
 
         [Required()]
         public int? CategoryId { get; set; }
