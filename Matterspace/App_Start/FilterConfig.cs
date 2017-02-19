@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using Matterspace.Lib;
+using System.Web.Mvc;
 
 namespace Matterspace
 {
@@ -6,7 +7,7 @@ namespace Matterspace
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new TelemetryHandleErrorAttribute());
         }
     }
 }

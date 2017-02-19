@@ -256,6 +256,7 @@
     <Compile Include="Lib\Services\Settings\SettingsService.cs" />
     <Compile Include="Lib\Services\Thread\ThreadService.cs" />
     <Compile Include="Lib\Services\User\UserService.cs" />
+    <Compile Include="Lib\TelemetryHandleErrorAttribute.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ApplicationUserViewModel.cs" />
     <Compile Include="Models\ChangePasswordViewModel.cs" />
