@@ -10,6 +10,8 @@ namespace Matterspace.Models
 
         public string AuthorId { get; set; }
 
+        public ApplicationUserViewModel Author { get; set; }
+
         public string Title { get; set; }
 
         public ThreadType Type { get; set; }
@@ -23,7 +25,26 @@ namespace Matterspace.Models
         [Required()]
         public int? CategoryId { get; set; }
 
+        private ThreadCategoryViewModel _category { get; set; }
+
         [DisplayName("Select a category")]
-        public ThreadCategoryViewModel Category { get; set; }
+        public ThreadCategoryViewModel Category
+        {
+            get
+            {
+                // If a thread does not have a category (eg: it was deleted)
+                // Return an uncategorized one
+                return _category != null
+                    ? _category
+                    : new ThreadCategoryViewModel
+                    {
+                        Name = "Uncategorized"
+                    };
+            }
+            set
+            {
+                this._category = value;
+            }
+        }
     }
 }

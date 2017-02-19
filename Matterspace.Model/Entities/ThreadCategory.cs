@@ -18,7 +18,5 @@ namespace Matterspace.Model.Entities
         public Product Product { get; set; }
 
         public ThreadType ThreadType { get; set; }
-
-        public ICollection<Thread> Threads { get; set; }
     }
 }

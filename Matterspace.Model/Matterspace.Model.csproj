@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201702111509023_Categories.Designer.cs">
       <DependentUpon>201702111509023_Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702192149542_NullableCategoryId.cs" />
+    <Compile Include="Migrations\201702192149542_NullableCategoryId.Designer.cs">
+      <DependentUpon>201702192149542_NullableCategoryId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702111509023_Categories.resx">
       <DependentUpon>201702111509023_Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702192149542_NullableCategoryId.resx">
+      <DependentUpon>201702192149542_NullableCategoryId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

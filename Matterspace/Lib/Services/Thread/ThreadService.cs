@@ -24,12 +24,16 @@ namespace Matterspace.Lib.Services.Thread
             var thread = await this.Db.Threads
                 .Include(x => x.Product)
                 .Include(x => x.Category)
+                .Include(x => x.Author)
                 .FirstOrDefaultAsync(x => x.Id == threadId);
 
 #warning Change this throw to result model when available
             if (thread == null) throw new Exception("Could not find the thread");
 
-            var viewModel = this.GetThreadViewModel(thread);
+            var category = await this.Db.ThreadCategories
+                .FirstOrDefaultAsync(x => x.ProductId == thread.ProductId && x.Id == thread.CategoryId);
+
+            var viewModel = this.GetThreadViewModel(thread, category);
 
             return viewModel;
         }
@@ -56,9 +60,17 @@ namespace Matterspace.Lib.Services.Thread
         {
             var threads = await this.Db.Threads
                 .Include(x => x.Category)
-                .Where(x => x.ProductId == productId && x.Type == type).ToListAsync();
+                .Include(x => x.Author)
+                .Where(x => x.ProductId == productId && x.Type == type)
+                .ToListAsync();
 
-            return threads.Select(this.GetThreadViewModel);
+            var categoriesIds = threads.Select(x => x.CategoryId);
+
+            var categories = await this.Db.ThreadCategories
+                .Where(x => x.ProductId == productId && categoriesIds.Contains(x.Id))
+                .ToListAsync();
+
+            return threads.Select(x => this.GetThreadViewModel(x, categories.FirstOrDefault(c => c.Id == x.CategoryId)));
         }
 
         public async Task<IEnumerable<ThreadCountViewModel>> GetThreadsCount(int productId)
@@ -82,7 +94,7 @@ namespace Matterspace.Lib.Services.Thread
                 });
         }
 
-        private ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread)
+        private ThreadViewModel GetThreadViewModel(Model.Entities.Thread thread, Model.Entities.ThreadCategory category)
         {
             return new ThreadViewModel()
             {
@@ -92,11 +104,13 @@ namespace Matterspace.Lib.Services.Thread
                 Type = thread.Type,
                 Status = thread.Status,
                 CategoryId = thread.CategoryId,
-                Category = new ThreadCategoryViewModel
+                Category = category == null
+                ? null
+                : new ThreadCategoryViewModel
                 {
-                    Id = thread.Category.Id,
-                    Name = thread.Category.Name,
-                    ProductId = thread.ProductId
+                    Id = category.Id,
+                    Name = category.Name,
+                    ProductId = category.ProductId
                 },
                 Product = new ProductViewModel
                 {
@@ -107,6 +121,11 @@ namespace Matterspace.Lib.Services.Thread
                     WebsiteUrl = thread.Product.WebsiteUrl,
                     FacebookUrl = thread.Product.FacebookUrl,
                     TwitterUrl = thread.Product.TwitterUrl
+                },
+                Author = new ApplicationUserViewModel
+                {
+                    Id = thread.Author.Id,
+                    UserName = thread.Author.UserName
                 }
             };
         }

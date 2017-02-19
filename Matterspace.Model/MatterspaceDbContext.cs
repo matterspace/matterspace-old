@@ -69,9 +69,9 @@ namespace Matterspace.Model
                 .WithMany(p => p.Threads)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ThreadCategory>()
-                .HasMany(t => t.Threads)
-                .WithOptional(t => t.Category);
+            modelBuilder.Entity<Thread>()
+                .HasOptional(t => t.Category)
+                .WithOptionalDependent();
 
             // ApplicationUserNotification
             modelBuilder.Entity<ApplicationUserNotification>()

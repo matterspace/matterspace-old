@@ -2,7 +2,7 @@
 {
     public class ApplicationUserViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string UserId { get; set; }
 
