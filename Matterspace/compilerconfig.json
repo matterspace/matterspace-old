@@ -38,5 +38,9 @@
   {
     "outputFile": "Content/App.Settings.css",
     "inputFile": "Content/App.Settings.scss"
+  },
+  {
+    "outputFile": "Content/App.Thread.Watch.css",
+    "inputFile": "Content/App.Thread.Watch.scss"
   }
 ]

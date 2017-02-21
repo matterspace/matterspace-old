@@ -20,5 +20,17 @@ namespace Matterspace.Lib.Helpers
 
             return $"{tabDisplayName} · {productDisplayName}";
         }
+
+        /// <summary>
+        /// Gets the formatted title for a thread tab
+        /// </summary>
+        public static string GetThreadTabTitle(string threadTitle, string threadId, string productDisplayName)
+        {
+            if (threadTitle == null) throw new ArgumentNullException(nameof(threadTitle));
+            if (threadId == null) throw new ArgumentNullException(nameof(threadId));
+            if (productDisplayName == null) throw new ArgumentNullException(nameof(productDisplayName));
+
+            return $"{threadTitle} · #{threadId} · {productDisplayName}";
+        }
     }
 }

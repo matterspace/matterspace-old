@@ -1,0 +1,19 @@
+﻿@model Matterspace.Models.ThreadEntryViewModel
+
+<div class="thread-entry">
+    <div class="entry-aside">
+        <div class="author-image">
+            <img src="http://lh3.googleusercontent.com/-H2ScI8V-1xg/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK8czqkxYdwopYXdhpuVeaF4UeJ28w/s32-c-mo/photo.jpg" />
+        </div>
+    </div>
+    <div class="entry-content">
+        <div class="card">
+            <div class="card-header">
+               user posted this 2 minutes ago
+            </div>
+            <div class="card-block">
+                @Model.Content
+            </div>
+        </div>
+    </div>
+</div>

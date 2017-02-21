@@ -71,6 +71,16 @@ namespace Matterspace.Controllers.Thread
             return this.View("EditThread", viewModel);
         }
 
+        [HttpGet]
+        public virtual async Task<ActionResult> Watch(int id)
+        {
+            var viewModel = await this.ThreadService.GetThread(id);
+
+            this.ViewBag.Title = TitleHelper.GetThreadTabTitle(viewModel.Title, viewModel.Id, viewModel.Product.DisplayName);
+
+            return this.View("WatchThread", viewModel);
+        }
+
         /// <summary>
         /// Returns a product view model according to the given product name
         /// </summary>

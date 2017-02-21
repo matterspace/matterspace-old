@@ -1,0 +1,39 @@
+﻿@import "Variables.scss";
+@import "Mixins.scss";
+
+.watch-thread-wrapper {
+    margin-top: $gutter-md / 2;
+
+    .thread-header {
+        border-bottom: 1px solid $gray-lighter;
+
+        .thread-title {
+            font-size: 2.15rem;
+
+            .thread-id {
+                color: $gray-light;
+            }
+        }
+
+        .thread-sub {
+            font-size: $font-size-lg - 0.3;
+            color: $gray-light;
+
+            .author-name {
+                font-size: $font-size-lg !important;
+            }
+        }
+    }
+
+    .thread-entry {
+        margin-top: $gutter-md / 2;
+
+        .entry-aside {
+            @include col(25)
+        }
+
+        .entry-content {
+            @include col(75)
+        }
+    }
+}

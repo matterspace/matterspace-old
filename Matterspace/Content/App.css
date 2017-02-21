@@ -249,6 +249,34 @@
 .categories-actions {
   margin-bottom: 13px; }
 
+.watch-thread-wrapper {
+  margin-top: 13px; }
+  .watch-thread-wrapper .thread-header {
+    border-bottom: 1px solid #eceeef; }
+    .watch-thread-wrapper .thread-header .thread-title {
+      font-size: 2.15rem; }
+      .watch-thread-wrapper .thread-header .thread-title .thread-id {
+        color: #818a91; }
+    .watch-thread-wrapper .thread-header .thread-sub {
+      font-size: 0.95rem;
+      color: #818a91; }
+      .watch-thread-wrapper .thread-header .thread-sub .author-name {
+        font-size: 1.25rem !important; }
+  .watch-thread-wrapper .thread-entry {
+    margin-top: 13px; }
+    .watch-thread-wrapper .thread-entry .entry-aside {
+      padding-left: 13px;
+      padding-right: 13px;
+      float: left;
+      box-sizing: border-box;
+      width: 25; }
+    .watch-thread-wrapper .thread-entry .entry-content {
+      padding-left: 13px;
+      padding-right: 13px;
+      float: left;
+      box-sizing: border-box;
+      width: 75; }
+
 body {
   /* for non-responsiveness */
   min-width: 1020px;

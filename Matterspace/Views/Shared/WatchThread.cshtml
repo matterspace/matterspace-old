@@ -1,0 +1,26 @@
+﻿@using Matterspace.Models
+@model ThreadViewModel
+
+@{
+    Layout = "Thread/_LayoutThreadProduct.cshtml";
+}
+
+<div class="watch-thread-wrapper">
+    <div class="thread-header">
+        <h4 class="thread-title">
+            @Model.Title  · <span class="thread-id">#@Model.Id</span>
+        </h4>
+        <div class="thread-sub">
+            by <span class="author-name">@Model.Author.UserName</span> · @Model.RelativeDate
+        </div>
+    </div>
+    @Html.Partial("Thread/_ThreadEntry", new ThreadEntryViewModel
+    {
+        Author = Model.Author,
+        Content = Model.Content
+    })
+</div>
+
+@section scripts {
+
+}

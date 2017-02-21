@@ -2,7 +2,7 @@
 @model Matterspace.Models.ThreadViewModel
 
 @{
-    Layout = "_LayoutEditThread.cshtml";
+    Layout = "Thread/_LayoutThreadProduct.cshtml";
 }
 
 <div class="row">
@@ -18,7 +18,7 @@
                     @Html.HiddenFor(x => x.Product.Name)
                     @Html.HiddenFor(x => x.Product.DisplayName)
                     @Html.HiddenFor(x => x.Product.WebsiteUrl)
-                    @Html.Partial("EditThreadForm", Model)
+                    @Html.Partial("Thread/EditThreadForm", Model)
                 }
             </div>
         </div>

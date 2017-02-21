@@ -65,11 +65,18 @@
                                     </div>
                                     <div class="col-3">
                                         <div class="title">
-                                            @thread.Title  #@thread.Id <span class="badge badge-default">@thread.Category.Name</span>
+                                            <a href="@Url.Action("Watch", new { id = thread.Id })">
+                                                #@thread.Id · @thread.Title
+                                            </a>
+                                            <span class="badge badge-default">@thread.Category.Name</span>
                                         </div>
                                         <div class="subtitle">
-                                            29 points by @thread.Author.UserName · @thread.RelativeDate · 0 comments
+                                            29 points by @thread.Author.UserName ·
+                                            <a href="@Url.Action("Watch", new { id = thread.Id })">
+                                                @thread.RelativeDate
+                                            </a> · 0 comments
                                         </div>
+
                                     </div>
                                 </div>
                             }

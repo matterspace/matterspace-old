@@ -279,6 +279,7 @@
     <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\ThreadCategoryViewModel.cs" />
     <Compile Include="Models\ThreadCountViewModel.cs" />
+    <Compile Include="Models\ThreadEntryViewModel.cs" />
     <Compile Include="Models\ThreadViewModel.cs" />
     <Compile Include="Models\TimelineUpdateViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -310,6 +311,9 @@
     <Content Include="Content\App.Thread.New.css">
       <DependentUpon>App.Thread.New.scss</DependentUpon>
     </Content>
+    <Content Include="Content\App.Thread.Watch.css">
+      <DependentUpon>App.Thread.Watch.scss</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.app.css" />
     <Content Include="Content\bootstrap.site.css" />
     <Content Include="Content\font-awesome.css" />
@@ -339,6 +343,7 @@
     </None>
     <None Include="Content\App.Thread.New.scss" />
     <Content Include="Content\Common.scss" />
+    <Content Include="Content\App.Thread.Watch.scss" />
     <None Include="Content\Site.scss" />
     <Content Include="Lib\Email\Templates\AccountConfirmation.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -434,8 +439,8 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Views\Releases\Index.cshtml" />
     <Content Include="Views\Shared\EditThread.cshtml" />
-    <Content Include="Views\Shared\EditThreadForm.cshtml" />
-    <Content Include="Views\Shared\_LayoutEditThread.cshtml" />
+    <Content Include="Views\Shared\Thread\EditThreadForm.cshtml" />
+    <Content Include="Views\Shared\Thread\_LayoutThreadProduct.cshtml" />
     <Content Include="Views\Shared\Product\_ProductPartial.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Shared\Product\_ProductNavbarPartial.cshtml" />
@@ -447,6 +452,8 @@
     <Content Include="Views\Settings\Categories.cshtml" />
     <Content Include="Views\Settings\EditCategory.cshtml" />
     <Content Include="Views\Settings\_EditCategoryFormPartial.cshtml" />
+    <Content Include="Views\Shared\WatchThread.cshtml" />
+    <Content Include="Views\Shared\Thread\_ThreadEntry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
